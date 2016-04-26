@@ -53,3 +53,4 @@ gem 'redis-actionpack', github: 'redis-store/redis-actionpack', branch: 'master'
 gem 'redis-rails', github: 'redis-store/redis-rails', branch: 'master'
 
 gem 'will_paginate', github: 'mislav/will_paginate'
+gem 'devise'
