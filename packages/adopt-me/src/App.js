@@ -1,18 +1,35 @@
-const Pet = () => {
+const Pet = (props) => {
   return React.createElement("div", {}, [
-    React.createElement("h1", {}, "Luna"),
-    React.createElement("h2", {}, "Dog"),
-    React.createElement("h2", {}, "Havanese")
+    React.createElement("h1", {}, props.name),
+    React.createElement("h2", {}, props.animal),
+    React.createElement("h2", {}, props.breed)
   ])
 };
 
-const App = () => {
-  return React.createElement("div", {}, [
-    React.createElement('h1', {}, 'Adopt Me!'),
-    React.createElement(Pet),
-    React.createElement(Pet),
-    React.createElement(Pet)
-  ])
-};
+class App extends React.Component {
+  handleTitleClick() {
+    alert("you clicked the title");
+  }
+  render() {
+    return React.createElement("div", {}, [
+      React.createElement('h1', { onClick: this.handleTitleClick }, 'Adopt Me!'),
+      React.createElement(Pet, {
+        name: "Luna",
+        animal: "dog",
+        breed: "Havanese"
+      }),
+      React.createElement(Pet, {
+        name: "Pepper",
+        animal: "bird",
+        breed: "Cocktiel"
+      }),
+      React.createElement(Pet, {
+        name: "Doink",
+        animal: "cat",
+        breed: "Mixed"
+      })
+    ])
+  }
+}
 
 ReactDOM.render(React.createElement(App), document.getElementById('root'));
