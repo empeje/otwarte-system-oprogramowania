@@ -51,6 +51,8 @@ class App extends React.Component {
                 animal={pet.animal}
                 name={pet.name}
                 breed={breed}
+                media={pet.media}
+                location={`${pet.contact.city}, ${pet.contact.state}`}
               />
             );
           })}
