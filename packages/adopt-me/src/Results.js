@@ -7,7 +7,7 @@ const petFinder = pf({
   secret: process.env.API_SECRET
 });
 
-class Result extends React.Component {
+class Results extends React.Component {
   constructor(props) {
     super(props);
 
@@ -36,7 +36,7 @@ class Result extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="search">
         {this.state.pets.map(pet => {
           let breed;
           if (Array.isArray(pet.breeds.breed)) {
@@ -58,4 +58,4 @@ class Result extends React.Component {
   }
 }
 
-export default Result;
+export default Results;
