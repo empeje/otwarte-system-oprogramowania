@@ -1,14 +1,13 @@
 import React from "react";
-import { render } from "react-dom";
 import pf from "petfinder-client";
-import Result from "./Result";
+import Pet from "./Pet";
 
 const petFinder = pf({
   key: process.env.API_KEY,
   secret: process.env.API_SECRET
 });
 
-class App extends React.Component {
+class Result extends React.Component {
   constructor(props) {
     super(props);
 
@@ -38,11 +37,25 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Adopt me!</h1>
-        <Result />
+        {this.state.pets.map(pet => {
+          let breed;
+          if (Array.isArray(pet.breeds.breed)) {
+            breed = pet.breeds.breed.join(", ");
+          }
+          return (
+            <Pet
+              key={pet.id}
+              animal={pet.animal}
+              name={pet.name}
+              breed={breed}
+              media={pet.media}
+              location={`${pet.contact.city}, ${pet.contact.state}`}
+            />
+          );
+        })}
       </div>
     );
   }
 }
 
-render(<App />, document.getElementById("root"));
+export default Result;
