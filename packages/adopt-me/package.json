@@ -10,7 +10,7 @@
     "lint:fix": "eslint --fix \"**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "parcel build src/index.html --public-url '/adopt-me'"
   },
   "author": "",
   "license": "ISC",
