@@ -31,7 +31,7 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "petfinder": "^0.1.1",
-    "petfinder-client": "0.0.3",
+    "petfinder-client": "git://github.com/empeje/petfinder-client.git#use-https",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
   }
