@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "dev": "npm run webpack -- --mode development",
-    "prod": "npm run webpack -- --mode production"
+    "dev": "npm run webpack -- --mode development --watch",
+    "prod": "npm run webpack -- --mode production",
+    "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
+    "dev:debug": "npm run debug -- --mode development",
+    "prod:debug": "npm run debug -- --mode production",
+    "debugthis": "node --inspect --inspect-brk ./src/index.js"
   },
   "repository": {
     "type": "git",
