@@ -7,7 +7,6 @@ import nav from './nav';
 import {footer} from './footer'
 import makeButton from './button'
 import {makeColorStyle} from './button-styles'
-import foo from './foo.ts'
 
 const button = makeButton('Yay! A button!');
 button.style = makeColorStyle('cyan');
@@ -15,8 +14,6 @@ document.body.appendChild(button);
 document.body.appendChild(footer);
 document.body.appendChild(makeImage(randomImage));
 
-
-console.log(foo);
 console.log('test');
 console.log(nav());
 console.log(top);
