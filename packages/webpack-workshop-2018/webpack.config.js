@@ -7,6 +7,7 @@ const presetConfig = require('./build-utils/loadPresets');
 module.exports = ({mode, presets} = {mode: "production", presets: []}) => {
   console.log('ini presets asli', presets);
   return webpackMerge({
+    devtool: "cheap-module-source-map",
     output: {
       filename: "bundle.js"
     },
