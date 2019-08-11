@@ -8,6 +8,7 @@
     "webpack-dev-server": "webpack-dev-server",
     "dev": "npm run webpack-dev-server -- --env.mode development --hot",
     "prod": "npm run webpack -- --env.mode production",
+    "prod:typescript": "npm run prod -- --env.presets typescript",
     "debug": "node --inspect --debug-brk ./node_modules/webpack/bin/webpack.js",
     "dev:debug": "npm run debug -- --env.mode development",
     "prod:debug": "npm run debug -- --env.mode production",
