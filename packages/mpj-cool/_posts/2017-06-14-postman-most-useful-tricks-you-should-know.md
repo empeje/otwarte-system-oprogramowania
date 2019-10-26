@@ -77,9 +77,9 @@ Postman comes with predefined dynamic variable as shown below. Remember to delet
 
 | Variable | Description|
 | --- | --- |
-| { { $guid } } | Adds a v4 style guid
-| { { ${{$timestamp}} } } | Adds the current timestamps
-| { { $randomInt } } |  Adds a random integer between 0 and 1000
+| `{ { $guid } }` | Adds a v4 style guid
+| `{ { $timestamp }` } | Adds the current timestamps
+| `{ { $randomInt } }` |  Adds a random integer between 0 and 1000
 
 And use it like this.
 
