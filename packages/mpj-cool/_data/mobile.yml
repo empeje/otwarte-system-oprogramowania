@@ -1,0 +1,24 @@
+# Mobile menu navigation links
+- title: Beranda
+  url: /
+
+- title: Semua pos
+  url: /blog/
+
+- title: Akal Sehat
+  url: /kategori/akal-sehat/
+
+- title: Finansial
+  url: /kategori/finansial/
+
+- title: Teknologi
+  url: /kategori/teknologi/
+
+- title: Psikologi
+  url: /kategori/psikologi/
+
+- title: Bisnis
+  url: /kategori/bisnis/
+
+- title: Contact
+  url: /contact/
