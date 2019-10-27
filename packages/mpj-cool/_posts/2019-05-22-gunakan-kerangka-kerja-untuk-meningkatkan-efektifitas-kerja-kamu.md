@@ -2,7 +2,7 @@
 title: Gunakan Kerangka Kerja untuk Meningkatkan Efektifitas Kerja Kamu
 image: ./charlie-munger.jpg
 categories: [akal-sehat]
-tags: [featured]
+tags: []
 hidden: false
 author: empeje
 ---
