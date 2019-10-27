@@ -20,7 +20,7 @@ paginate:           7 # Number of posts displayed on blog page
 paginate_path:      "/blog/:num/" # Blog path
 google_analytics:   UA-150952362-1
 disqus:
-  shortname:        bukanmeme
+  shortname:        mpj-cool-tech
 
 # TODO: we might use Instagram in the future
 instagram_accesstoken:
