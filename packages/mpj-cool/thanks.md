@@ -4,4 +4,4 @@ title: Terimakasih
 permalink: /thanks/
 ---
 
-Terimakasih telah mengunjungi bukanme.me.
+Terimakasih telah mengunjungi mpj-cool.tech.

@@ -44,14 +44,15 @@ social_share:
 
 # Social networks
 social_networks:
-  email:            empukode@pm.me # FIXME: we might use this setting in the future for contact formspree
+  formspree:        myygplpq
+  email:            mpj@mpj-cool.tech # FIXME: we might use this setting in the future for contact formspree
   website:        
   facebook:
   flickr:         
   dribbble:       
   github:           https://github.com/empeje
   reddit:         
-  instagram:        https://www.instagram.com/mpj.svc.cluster.local
+  instagram:        https://www.instagram.com/mpj_raccoon
   linkedin:       
   pinterest:      
   twitter:          https://twitter.com/mpj_raccoon
