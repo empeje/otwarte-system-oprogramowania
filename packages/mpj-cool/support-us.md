@@ -43,3 +43,15 @@ Pernahkah kamu membayangkan kalau kita bisa merekam semua kegiatan kita di semua
 Nah kalau Rescue Time membantu kamu sadar akan waktu, yang ini membantu kamu sadar akan tubuh dan kesehatan kamu, aplikasi ini membantu merekam HRV (heart rate variability) dan memberi tahu kamu tentang stres (secara fisiologi ya bukan mental), produktivitas dan energi kamu, selain itu aplikasi ini juga membantu kamu mengingatkan sebaiknya kegiatan apa yang kamu ambil. **[Daftar di sini untuk menggunakannya dan mendukung kami](https://app.welltory.com/referral?token=0559df88fb80120f80348b85738181a71a3658e8)**.
 
 {% include image.html img="welltory.jpg" alt="welltory-logo" caption="Welltory logo" %}
+
+### Cashbac
+
+Enjoy cashback for every purchase. Use referral code **“abd02ee”** and get extra 50,000 cashback upon linking your first card (the card must be a credit card and has never been linked to Cashbac at all). Download Cashbac from Play Store or App Store. Click [https://referral.cashbac.com/d/abd02ee](https://referral.cashbac.com/d/abd02ee)
+
+{% include image.html img="cashbac.jpg" alt="cashbac-logo" caption="Cashbac logo" %}
+
+### Jenius
+
+Jenius Enjoy a simpler way to manage your finances with Jenius! Get the app now on [bit.ly/GetJeniusNow](https://bit.ly/GetJeniusNow). Don’t forget to insert $Cashtag **$rrachman** in the referral box.
+
+{% include image.html img="jenius.jpg" alt="jenius-logo" caption="Jenius logo" %}
