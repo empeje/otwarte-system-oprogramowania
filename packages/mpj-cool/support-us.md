@@ -55,3 +55,11 @@ Enjoy cashback for every purchase. Use referral code **“abd02ee”** and get e
 Jenius Enjoy a simpler way to manage your finances with Jenius! Get the app now on [bit.ly/GetJeniusNow](https://bit.ly/GetJeniusNow). Don’t forget to insert $Cashtag **$rrachman** in the referral box.
 
 {% include image.html img="jenius.jpg" alt="jenius-logo" caption="Jenius logo" %}
+
+### One Month
+
+Kalau kamu sedang belajar koding/memprogram komputer, saya punya favorit website buat belajar, yaitu [OneMonth.com][ONE_MONTH_COM]. Websitenya dalam bahasa Inggris, tapi kualitasnya bagus sekali. Kamu bisa mendukung kami dengan [mendaftar OneMonth.com di sini][ONE_MONTH_COM].
+
+{% include image.html img="one-month.png" alt="one-month-logo" caption="OneMonth.com logo" %}
+
+[ONE_MONTH_COM]: https://mbsy.co/onemonth/54007142
