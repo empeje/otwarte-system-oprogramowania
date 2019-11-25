@@ -1,16 +1,16 @@
 {
   "name": "biggest-number",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Given numbers to form the biggest number",
   "main": "src/index.js",
   "repository": "git@github.com:empeje/biggest-number.git",
   "author": "mpj <a.mappuji@gmail.com>",
   "license": "Unlicensed",
+  "scripts": {
+    "test": "npx mocha --recursive test"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.2.2"
-  },
-  "dependencies": {
-    "esm": "^3.2.25"
   }
 }
