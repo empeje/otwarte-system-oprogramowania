@@ -1,5 +1,7 @@
 # Biggest Number Generator
 
+[![Build Status](https://travis-ci.com/empeje/biggest-number.svg?branch=master)](https://travis-ci.com/empeje/biggest-number)
+
 ```bash
 $ npm i biggest-number
 ```
