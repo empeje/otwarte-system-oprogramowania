@@ -1,5 +1,7 @@
 # Adopt Me - Toy App for the author to learn React
 
+[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/amappuji?utm_source=github&utm_medium=button&utm_term=amappuji&utm_campaign=github)
+
 ## How to run in development mode
 
 ```
