@@ -23,6 +23,7 @@ disqus:
   shortname:        mpj-cool-tech
 brand:
   image: favicon.png
+  # file favicon.png
   width: 250
   height: 250
 
