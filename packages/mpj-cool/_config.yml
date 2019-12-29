@@ -23,6 +23,8 @@ disqus:
   shortname:        mpj-cool-tech
 brand:
   image: favicon.png
+  width: 250
+  height: 250
 
 # TODO: we might use Instagram in the future
 instagram_accesstoken:
