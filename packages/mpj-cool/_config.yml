@@ -21,6 +21,8 @@ paginate_path:      "/blog/:num/" # Blog path
 google_analytics:   UA-150952362-1
 disqus:
   shortname:        mpj-cool-tech
+brand:
+  image: favicon.png
 
 # TODO: we might use Instagram in the future
 instagram_accesstoken:
