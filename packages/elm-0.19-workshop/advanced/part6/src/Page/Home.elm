@@ -188,13 +188,25 @@ viewTabs isLoggedIn activeTab =
     ul [ class "nav nav-pills outline-active" ] <|
         case activeTab of
             YourFeed ->
-                []
+                [ viewTab [ class "active" ] yourFeed
+                , viewTab [] globalFeed ]
 
             GlobalFeed ->
-                []
+                if isLoggedIn then
+                    [ viewTab [] yourFeed
+                    , viewTab [ class "active" ] globalFeed ]
+                else
+                    [ viewTab [ class "active" ] globalFeed ]
+
 
             TagFeed tagName ->
-                []
+                if isLoggedIn then
+                    [ viewTab [] yourFeed
+                    , viewTab [] globalFeed
+                    , viewTab [ class "active" ] (tagFeed tagName) ]
+                else
+                    [ viewTab [] globalFeed
+                    , viewTab [ class "active" ] (tagFeed tagName) ]
 
 
 tabBar :
