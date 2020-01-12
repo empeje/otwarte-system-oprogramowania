@@ -1,4 +1,4 @@
-module Viewer.Cred exposing (Cred, addHeader, addHeaderIfAvailable, decoder, encodeToken)
+module Viewer.Cred exposing (Cred, addHeader, addHeaderIfAvailable, decoder, encodeToken, username)
 
 import HttpBuilder exposing (RequestBuilder, withHeader)
 import Json.Decode as Decode exposing (Decoder)
@@ -10,30 +10,31 @@ import Username exposing (Username)
 
 -- TYPES
 
+type alias CredData = { username: Username, token: String}
 
-type alias Cred =
-    {- 👉 TODO: Make Cred an opaque type, then fix the resulting compiler errors.
-       Afterwards, it should no longer be possible for any other module to access
-       this `token` value directly!
 
-       💡 HINT: Other modules still depend on being able to access the
-       `username` value. Expand this module's API to expose a new way for them
-       to access the `username` without also giving them access to `token`.
-    -}
-    { username : Username
-    , token : String
-    }
+type Cred =
+    Cred CredData
+
+-- INFO
+
+
+username : Cred -> Username
+username (Cred data) =
+    data.username
 
 
 
 -- SERIALIZATION
 
 
+-- https://stackoverflow.com/questions/40826911/elm-how-to-json-decode-a-union-type-with-a-single-typeconstructor
 decoder : Decoder Cred
 decoder =
-    Decode.succeed Cred
-        |> required "username" Username.decoder
-        |> required "token" Decode.string
+    Decode.map2 CredData
+            (Decode.field "username" Username.decoder)
+            (Decode.field "token" Decode.string)
+            |> Decode.map Cred
 
 
 
@@ -41,14 +42,14 @@ decoder =
 
 
 encodeToken : Cred -> Value
-encodeToken cred =
-    Encode.string cred.token
+encodeToken (Cred { token }) =
+    Encode.string token
 
 
 addHeader : Cred -> RequestBuilder a -> RequestBuilder a
-addHeader cred builder =
+addHeader (Cred { token }) builder =
     builder
-        |> withHeader "authorization" ("Token " ++ cred.token)
+        |> withHeader "authorization" ("Token " ++ token)
 
 
 addHeaderIfAvailable : Maybe Cred -> RequestBuilder a -> RequestBuilder a
