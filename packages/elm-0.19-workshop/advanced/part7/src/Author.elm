@@ -210,13 +210,14 @@ decoder maybeCred =
 
        💡 HINT: `decoderHelp` will help here, but slightly altering its type may make things easier...
     -}
-    Decode.succeed "..."
+    Decode.succeed Tuple.pair
         |> custom Profile.decoder
         |> required "username" Username.decoder
+        |> Decode.andThen (decoderHelp maybeCred)
 
 
-decoderHelp : Maybe Cred -> Profile -> Username -> Decoder Author
-decoderHelp maybeCred prof uname =
+decoderHelp : Maybe Cred -> (Profile, Username) -> Decoder Author
+decoderHelp maybeCred (prof, uname) =
     case maybeCred of
         Nothing ->
             -- If you're logged out, you can't be following anyone!
