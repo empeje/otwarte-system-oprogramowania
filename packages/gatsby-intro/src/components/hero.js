@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import BackgroundImage from 'gatsby-background-image';
-import { css } from '@emotion/core';
 
 const ImageBackground = styled(BackgroundImage)`
   background-position: bottom 20% center;
