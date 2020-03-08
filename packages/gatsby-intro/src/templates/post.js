@@ -3,13 +3,23 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
 import Layout from '../components/layout';
-import usePosts from '../hooks/use-posts';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import ReadLink from '../components/read-link';
 
-const PostTemplate = ({ pageContext }) => {
-  const posts = usePosts();
-  const post = posts.find(post => (post.slug = pageContext.slug));
+export const query = graphql`
+  query($slug: String) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        author
+      }
+      body
+    }
+  }
+`;
+
+const PostTemplate = ({ data: { mdx: post } }) => {
   return (
     <Layout>
       <h1>{post.title}</h1>
@@ -20,7 +30,7 @@ const PostTemplate = ({ pageContext }) => {
       >
         Posted by {post.author}
       </p>
-      <p>{post.excerpt}</p>
+      <MDXRenderer>{post.body}</MDXRenderer>
       <ReadLink to="/">&larr; back to all posts</ReadLink>
     </Layout>
   );
