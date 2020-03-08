@@ -4,5 +4,16 @@ module.exports = {
     description:
       'The site we built together during the full-day Frontend Masters Gatsby workshop',
   },
-  plugins: ['gatsby-plugin-emotion', 'gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/layout.js'),
+        },
+      },
+    },
+  ],
 };

@@ -4,7 +4,7 @@ import Header from './header';
 import Helmet from 'react-helmet/es/Helmet';
 import useSiteMetadata from '../hooks/use-sitemetadata';
 
-export const Layout = ({ children }) => {
+const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <>
@@ -73,3 +73,5 @@ export const Layout = ({ children }) => {
     </>
   );
 };
+
+export default Layout;
