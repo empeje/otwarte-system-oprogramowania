@@ -14,10 +14,6 @@ const Layout = ({ children }) => {
             box-sizing: border-box;
           }
 
-          * + * {
-            margin-top: 1rem;
-          }
-
           html,
           body {
             margin: 0;

@@ -11,17 +11,13 @@ const PostPreview = ({ post }) => (
       display: flex;
       margin-top: 0;
       padding-bottom: 1rem;
-
-      :first-of-type {
-        margin-top: 1rem;
-      }
     `}
   >
     <Link
       to={post.slug}
       css={css`
         margin: 1rem 1rem 0 0;
-        width: 100%;
+        width: 100px;
       `}
     >
       <Image
