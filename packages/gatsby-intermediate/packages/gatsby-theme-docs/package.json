@@ -5,6 +5,10 @@
   "author": "Empeje <mpj@kulkul.tech>",
   "license": "MIT",
   "dependencies": {
+    "@mdx-js/mdx": "^1.5.7",
+    "@mdx-js/react": "^1.5.7",
+    "gatsby-plugin-mdx": "^1.0.77",
+    "gatsby-source-filesystem": "^2.1.50",
     "mkdirp": "^1.0.3"
   },
   "devDependencies": {
