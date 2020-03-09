@@ -3,5 +3,11 @@
   "version": "0.0.1",
   "main": "index.js",
   "author": "Empeje <mpj@kulkul.tech>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "mkdirp": "^1.0.3"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  }
 }
