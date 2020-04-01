@@ -5,6 +5,7 @@ categories: [akal-sehat, psikologi]
 tags: []
 hidden: false
 author: empeje
+lang: id
 ---
 
 Saya menulis tulisan ini ketika dalam perjalanan menuju Semarang menggunakan kereta. Ini merupakan perjalanan menarik karena dari rombongan 5 orang yang berangkat ada beberapa yang tertinggal karena datang terlambat ke stasiun, tapi bukan ini yang saya akan bahas, mungkin di blog berikutnya. Saya akan bahas pengalaman saya 4 hari yang lalu ketika saya pulang pagi hari dari kampung halaman saya di Indramayu ke Jakarta.

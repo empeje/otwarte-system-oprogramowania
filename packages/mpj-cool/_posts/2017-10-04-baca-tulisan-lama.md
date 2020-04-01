@@ -5,6 +5,7 @@ categories: [akal-sehat]
 tags: []
 hidden: false
 author: empeje
+lang: id
 ---
 
 Hari ini saya iseng lihat blog yang pernah saya tulis. Sebenarnya, sudah tinggal sedikit yang beredar di internet karena saya sudah banyak menghapus tulisan lama yang saya anggap jelek, tapi ada satu yang masih ada sejak tahun 2010. Ini tulisan saya waktu akan lulus dari SMP ke SMA tahun 2010. Menarik menurut saya. Berikut tulisannya.

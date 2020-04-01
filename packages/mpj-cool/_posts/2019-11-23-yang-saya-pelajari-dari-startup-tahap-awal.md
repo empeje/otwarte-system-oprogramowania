@@ -5,6 +5,7 @@ categories: [akal-sehat,teknologi,bisnis]
 tags: [featured]
 hidden: false
 author: empeje
+lang: id
 ---
 
 Sekitar 9 bulan yang lalu saya putuskan untuk meninggalkan pekerjaan saya yang nyaman di startup unicorn bernama Go-Jek dan pindah ke startup kecil yang baru saja dimulai. Keputusan itu sangat berat, selain karena saya sudah membangun hubungan yang kuat dengan tim, orang tua yang lebih mendukung pekerjaan saya yang nyaman di Go-Jek, dan yang paling penting meninggalkan Bos atau manager saya yang saya kagumi dan sangat membantu dalam karir saya. Namun startup ini memberikan tempat saya bereksperimen untuk mulai belajar arti dari kewirausahaan atau entrepreneurship. Untuk mempermudah cerita, sebut saja ini adalah startup X.

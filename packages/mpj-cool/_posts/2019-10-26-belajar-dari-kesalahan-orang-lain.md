@@ -5,6 +5,7 @@ categories: [akal-sehat]
 tags: [featured]
 hidden: false
 author: empeje
+lang: id
 ---
 
 Warren Buffet, investor-miliuner terkemuka pernah bilang, _"... about learning from your mistakes, best thing to learn from other guys mistakes. Patton used to say, it's an honor to die for your country, make sure the other guy gets the honor."_.

@@ -5,6 +5,7 @@ categories: [akal-sehat]
 tags: []
 hidden: false
 author: empeje
+lang: id
 ---
 
 Ketika saya masih magang dulu di Microsoft Indonesia, salah satu cabang perusahaan multinasional ternama yang bergerak di bidang perangkat lunak, saya memiliki salah satu mentor yang selalu menekankan mengenai kerangka kerja atau framework.
