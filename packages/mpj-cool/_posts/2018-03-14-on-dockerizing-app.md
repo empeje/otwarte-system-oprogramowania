@@ -15,9 +15,6 @@ Using container technology like docker or VM-based provisioning technology like 
 
 ```dockerfile
 FROM debian:stretch-slim
-LABEL MAINTAINER "Dashlorde <zhouyunlu0216@gmail.com>"
-LABEL MAINTAINER "Abdurrachman Mappuji <mappuji@ole.org>"
-LABEL MAINTAINER "dogi <stefan@unterhauser.name>"
 
 ENV version '3.4.0'
 
