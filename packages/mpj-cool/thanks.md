@@ -4,4 +4,4 @@ title: Terimakasih
 permalink: /thanks/
 ---
 
-Terimakasih telah mengunjungi mpj-cool.tech.
+Terimakasih telah mengunjungi mpj.io.

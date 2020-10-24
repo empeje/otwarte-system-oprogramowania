@@ -5,10 +5,10 @@
 # If you change this file, please restart the server process.
 
 # Site settings
-title:              mpj-cool.tech
+title:              mpj.io
 lang:               id
 description:        Situs pembelajar seumur hidup
-url:                https://mpj-cool.tech
+url:                https://mpj.io
 baseurl:            "" # Site subpath, e.g. /blog
 logo_image:
   dark:             # Dark logo e.g logo-dark.svg upload to /uploads/ folder, used in header, mobile navigation and page sidebar About widget
@@ -53,18 +53,18 @@ social_networks:
   mailchimp:
     url:           https://tech.us17.list-manage.com/subscribe/post?u=b51a8aa48f5a8e472c6c62b2e&amp;id=b123073904
     key:           b_b51a8aa48f5a8e472c6c62b2e_b123073904
-  email:            mpj@mpj-cool.tech # FIXME: we might use this setting in the future for contact formspree
-  website:        
+  email:            mpj@mpj.io # FIXME: we might use this setting in the future for contact formspree
+  website:
   facebook:
-  flickr:         
-  dribbble:       
+  flickr:
+  dribbble:
   github:           https://github.com/empeje
-  reddit:         
+  reddit:
   instagram:        https://www.instagram.com/mpj_raccoon
-  linkedin:       
-  pinterest:      
+  linkedin:
+  pinterest:
   twitter:          https://twitter.com/mpj_raccoon
-  vimeo:          
+  vimeo:
   youtube:
 
 # Strings

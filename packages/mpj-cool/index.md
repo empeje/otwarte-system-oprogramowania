@@ -2,7 +2,7 @@
 layout: full
 ---
 
-{% include section-ad.html image="welcome.png" alt="mpj-cool.tech | ayo kuasai teknologi!" width="" url="https://brave.com/emp740" blank="true" %}
+{% include section-ad.html image="welcome.png" alt="mpj.io | ayo kuasai teknologi!" width="" url="https://brave.com/emp740" blank="true" %}
 
 
 {% include section-featured.html title="Kisah Terpilih" %}

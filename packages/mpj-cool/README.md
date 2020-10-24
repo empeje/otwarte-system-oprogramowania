@@ -1,6 +1,6 @@
-# mpj-cool.tech adalah situs untuk berbagi pengalaman dalam menekuni proses belajar seumur hidup
+# mpj.io adalah situs untuk berbagi pengalaman dalam menekuni proses belajar seumur hidup
 
-mpj-cool.tech dibuat oleh [empeje](https://github.com/empeje), situs bisa dilihat langsung [di sini](https://mpj-cool.tech/).
+mpj.io dibuat oleh [empeje](https://github.com/empeje), situs bisa dilihat langsung [di sini](https://mpj.io/).
 
 ## Features
 
