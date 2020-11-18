@@ -1,5 +1,5 @@
 ipython==7.8.0
 opencv-python==4.1.2.30
-notebook==6.0.1
+notebook==6.1.5
 matplotlib==3.1.1
 PyQt5==5.13.2
