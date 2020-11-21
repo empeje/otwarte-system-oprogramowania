@@ -51,8 +51,8 @@ social_share:
 social_networks:
   formspree:        myygplpq
   mailchimp:
-    url:           https://tech.us17.list-manage.com/subscribe/post?u=b51a8aa48f5a8e472c6c62b2e&amp;id=b123073904
-    key:           b_b51a8aa48f5a8e472c6c62b2e_b123073904
+    url:           https://mpj.us7.list-manage.com/subscribe/post?u=9e31316c25da9de023b3f42dc&amp;id=335f2e0c02
+    key:           b_9e31316c25da9de023b3f42dc_335f2e0c02
   email:            mpj@mpj.io # FIXME: we might use this setting in the future for contact formspree
   website:
   facebook:
