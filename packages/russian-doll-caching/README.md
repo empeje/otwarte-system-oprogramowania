@@ -1,24 +1,8 @@
 ## README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a source code for demonstration of my talk in the [Lazy Load 2021][LAZYLOAD].
 
-Things you may want to cover:
+This project is based on GoRails Screencast on [Russian Doll Caching with Rails 5][GORAILS_DOLL]
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[LAZYLOAD]: https://webdirections.org/lazyload/speakers/abdurrachman-mappuji.php
+[GORAILS_DOLL]: https://gorails.com/episodes/russian-doll-caching-with-rails-5
