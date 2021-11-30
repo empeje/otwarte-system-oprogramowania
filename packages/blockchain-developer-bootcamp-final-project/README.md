@@ -1,3 +1,41 @@
+# About the project
+
+This is my final project for ConsenSys Blockchain Developer Bootcamp.
+
+## Background
+
+As I'm doing this part time, and I want to learn as much as possible. In this project I want to adopt the Decentralize Staking App challenge by Austin Griffith (Scaffold-ETH) and complete it using technique that I learned from the Bootcamp. None of the solution is copy-pasted from other source. Only skeleton and initial setup are taken.
+
+
+## My Ethereum Address
+
+- yokulguy.eth
+- 0x20B35d6E0C4accf0391FD8fA98bBf63d737fC8AA
+
+## Checklist
+
+- [x] GitHub repo name format
+- [x] Contain README.md and ETH address
+- [ ] Contain samrt contract
+  - [ ] Commented
+  - [ ] Specs
+  - [ ] Design pattern
+  - [ ] Avoid common attack
+- [ ] Markdown for
+  - [ ] design pattern
+  - [ ] common attack
+- [ ] At least 5 unit tests
+- [ ] deployed_address.txt
+- [ ] Frontend Interface
+- [ ] Github pages
+- [ ] Clear README
+  - [ ] how to run
+  - [ ] how to access
+  - [ ] run unit test / CI CD
+- [ ] Screencast
+
+---
+
 # 🏗 scaffold-eth | 🏰 BuidlGuidl
 
 ## 🚩 Challenge 1: 🥩 Decentralized Staking App
