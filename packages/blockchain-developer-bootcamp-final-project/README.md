@@ -2,6 +2,8 @@
 
 This is my final project for ConsenSys Blockchain Developer Bootcamp.
 
+This project isn't finish yet, and I request bootcamp extension until January 15.
+
 ## Background
 
 As I'm doing this part time, and I want to learn as much as possible. In this project I want to adopt the Decentralize Staking App challenge by Austin Griffith (Scaffold-ETH) and complete it using technique that I learned from the Bootcamp. None of the solution is copy-pasted from other source. Only skeleton and initial setup are taken.
