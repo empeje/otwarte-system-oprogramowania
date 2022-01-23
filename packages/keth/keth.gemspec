@@ -5,20 +5,20 @@ require_relative "lib/keth/version"
 Gem::Specification.new do |spec|
   spec.name          = "keth"
   spec.version       = Keth::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["TODO: Write your email address"]
+  spec.authors       = ["empeje"]
+  spec.email         = ["mpj@mpj.io"]
 
-  spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "Keth is an Ethereum Key Management Framework"
+  spec.description   = "Keth is an Ethereum Key Management Framework initially designed for AWS KMS. With extendable support with other backend."
+  spec.homepage      = "https://github.com/empeje/keth"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://github.com/empeje/keth"
+  spec.metadata["changelog_uri"] = "https://github.com/empeje/keth/blob/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
