@@ -8,8 +8,8 @@
 title:              mpj.io
 lang:               id
 description:        Situs pembelajar seumur hidup
-url:                https://empeje.github.io
-baseurl:            "/mpj-cool" # Site subpath, e.g. /blog
+url:                https://legacy.mpj.io
+baseurl:            "" # Site subpath, e.g. /blog
 logo_image:
   dark:             # Dark logo e.g logo-dark.svg upload to /uploads/ folder, used in header, mobile navigation and page sidebar About widget
   light:            # Light logo e.g. logo-light.svg upload to /uploads/ folder, used in footer About widget
@@ -54,18 +54,18 @@ social_networks:
     url:           https://mpj.us7.list-manage.com/subscribe/post?u=9e31316c25da9de023b3f42dc&amp;id=335f2e0c02
     key:           b_9e31316c25da9de023b3f42dc_335f2e0c02
   email:            mpj@mpj.io # FIXME: we might use this setting in the future for contact formspree
-  website:
+  website:          https://mpj.io
   facebook:
   flickr:
   dribbble:
   github:           https://github.com/empeje
   reddit:
-  instagram:        https://www.instagram.com/mpj_raccoon
+  instagram:        https://www.instagram.com/yokulguy
   linkedin:
   pinterest:
-  twitter:          https://twitter.com/mpj_raccoon
+  twitter:          https://twitter.com/yokulguy
   vimeo:
-  youtube:
+  youtube:          https://www.youtube.com/@yokulguy
 
 # Strings
 strings:
