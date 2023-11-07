@@ -8,6 +8,10 @@ Telecal is a project developed for TON-foundation challenge and is planned to be
 
 The project aims to provide Calendly-alternative that is native to Telegram.
 
+## Live Version
+
+You can try our live version [here](https://t.me/tele_calendar_bot).
+
 ## Features
 
 
