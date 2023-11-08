@@ -17,7 +17,7 @@ You can try our live version [here](https://t.me/tele_calendar_bot).
 
 - [ ] Configure your calendar
     - [ ] Set your availability via iCal link
-      - [ ] WIP: [Read here to learn how to connect your Google Calendar](#)
+      - [ ] WIP: [Read here to learn how to connect your Google Calendar](https://github.com/empeje/telecal-bot#how-to-get-private-ical-from-google-calendar)
 - [ ] Share your appointment link (Telegram-native)
 - [ ] Your friend can use the link above to booking appointments by sharing their email and confirm the booking confirmation.
 - [ ] Notify your friend that booking request has been sent
