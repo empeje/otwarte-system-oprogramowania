@@ -283,18 +283,18 @@
     "@babel/helper-validator-identifier" "^7.24.7"
     to-fast-properties "^2.0.0"
 
-"@crossmarkio/sdk@^0.3.8":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@crossmarkio/sdk/-/sdk-0.3.8.tgz#ca5f6b64940e4484eb71ad685d89552656ab5394"
-  integrity sha512-l76usTlG1lpnNB2FW/1nlD/587e6FzFxpAaLZo1MHdwtaI4eBeRLbMGUfnMS5XpBHr2yjZo7+CqhkJ5Qj+douA==
+"@crossmarkio/sdk@^0.3.9":
+  version "0.3.9"
+  resolved "https://registry.yarnpkg.com/@crossmarkio/sdk/-/sdk-0.3.9.tgz#426a5062e973080d41f8cc81d62ad890cda3cf42"
+  integrity sha512-/f8hw/vrvb8nDPrIlEIMjW108s7jaXyJmp7AUmLVjqIUMcuvpR/J8laeKllar3sdJ+3dpPzK+giRs7W24hXAgw==
   dependencies:
-    "@crossmarkio/typings" "0.0.4"
+    "@crossmarkio/typings" "0.0.5"
     events "^3.3.0"
 
-"@crossmarkio/typings@0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@crossmarkio/typings/-/typings-0.0.4.tgz#58971412f59c9d2e911fa00082297fbc4e795b59"
-  integrity sha512-X/IjHqQugSe0tC/KTVf7NT9/WEywuKMt2p8jNQkYcKbAtfpstLshvUTpDvkulChocWqtwCZjtTeczNBeB5E9HQ==
+"@crossmarkio/typings@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@crossmarkio/typings/-/typings-0.0.5.tgz#fd2db789ea2b269b1667570898bf51edeb586610"
+  integrity sha512-+e8G4mtedJ6XYv39Mh2P9KcAUp7Dx4UP9xLwUwPcKXo66G653xdwD8MekqbI3VHkzO5j8egDe3v4sMRO63vVyw==
   dependencies:
     "@transia/xrpl" "^2.7.3-alpha.24"
     "@types/chrome" "^0.0.253"
