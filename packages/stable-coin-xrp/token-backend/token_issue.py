@@ -114,21 +114,21 @@ print(cold_balance)
 # admin_cold_wallet.configure_as_cold()
 # admin_wallet.configure_as_hot()
 
-# idr_token_issuer = TokenIssuer(
-#     testnet_client,
-#     'IDR',
-#     admin_wallet.get_wallet(),
-#     admin_cold_wallet.get_wallet(),
-#     1_000_000_000_000_000
-# )
-# idr_token_issuer.issue_tokens(5_000_000)
-# inr_token_issuer = TokenIssuer(
-#     testnet_client,
-#     'INR',
-#     admin_wallet.get_wallet(),
-#     admin_cold_wallet.get_wallet(),
-#     1_000_000_000
-# )
-# inr_token_issuer.issue_tokens(5_000_000)
-#
+idr_token_issuer = TokenIssuer(
+    testnet_client,
+    'IDR',
+    admin_wallet.get_wallet(),
+    admin_cold_wallet.get_wallet(),
+    1_000_000_000_000_000
+)
+idr_token_issuer.issue_tokens(5_000_000)
+inr_token_issuer = TokenIssuer(
+    testnet_client,
+    'INR',
+    admin_wallet.get_wallet(),
+    admin_cold_wallet.get_wallet(),
+    1_000_000_000
+)
+inr_token_issuer.issue_tokens(5_000_000)
+
 
