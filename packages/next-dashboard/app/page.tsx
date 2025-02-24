@@ -1,15 +1,15 @@
-import { CardService } from '@/utils/api/cards';
+import Link from 'next/link';
 
-export default async function Home() {
-  // Since this is a server component, we can directly await
-  const cards = await CardService.getCards();
-  
+export default function Home() {
   return (
     <div className="min-h-screen p-8">
-      <h1 className="text-2xl font-bold mb-4">Cards Data</h1>
-      <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-auto">
-        {JSON.stringify(cards, null, 2)}
-      </pre>
+      <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
+      <Link 
+        href="/data" 
+        className="text-blue-500 hover:text-blue-600 underline"
+      >
+        View Sample Data
+      </Link>
     </div>
   );
 }
