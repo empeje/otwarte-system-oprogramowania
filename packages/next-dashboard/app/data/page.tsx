@@ -3,14 +3,16 @@ import { TransactionService } from '@/utils/api/transactions';
 import { ActivityService } from '@/utils/api/activities';
 import { ExpenseService } from '@/utils/api/expenses';
 import { ContactService } from '@/utils/api/contacts';
+import { BalanceService } from '@/utils/api/balance';
 
 export default async function DataPage() {
-  const [cards, transactions, activities, expenses, contacts] = await Promise.all([
+  const [cards, transactions, activities, expenses, contacts, balanceHistory] = await Promise.all([
     CardService.getCards(),
     TransactionService.getTransactions(),
     ActivityService.getActivities(),
     ExpenseService.getExpenseBreakdown(),
-    ContactService.getContacts()
+    ContactService.getContacts(),
+    BalanceService.getBalanceHistory()
   ]);
   
   return (
@@ -72,6 +74,18 @@ export default async function DataPage() {
         </summary>
         <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-auto">
           {JSON.stringify(contacts, null, 2)}
+        </pre>
+      </details>
+
+      <details className="group" open>
+        <summary className="text-2xl font-bold mb-4 cursor-pointer list-none">
+          Balance History
+          <span className="text-sm ml-2 text-gray-500">
+            ({balanceHistory.history.length} days)
+          </span>
+        </summary>
+        <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-auto">
+          {JSON.stringify(balanceHistory, null, 2)}
         </pre>
       </details>
     </div>
