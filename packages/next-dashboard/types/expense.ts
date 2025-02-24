@@ -1,9 +1,11 @@
 export interface ExpenseCategory {
-  category: string;
+  name: string;
+  category: TransactionCategory;
   amount: number;
-  formattedAmount: string;
-  percentage: number;
   count: number;
+  percentage: number;
+  color: string;
+  formattedAmount: string;
 }
 
 export interface ExpenseBreakdown {

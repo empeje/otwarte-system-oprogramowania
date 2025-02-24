@@ -7,33 +7,65 @@ export class BalanceHistoryGenerator {
     date: Date,
     previousBalance: number
   ): BalanceHistory {
-    // Generate a random change between -500 and 1000
-    const change = parseFloat(
-      faker.finance.amount(-500, 1000, 2, { autoNegative: true })
+    // Increase volatility range significantly
+    const volatilityFactor = faker.number.float({ min: 0.5, max: 2.5 });
+    
+    // 50/50 chance of up/down for more randomness
+    const isUpDay = faker.number.float({ min: 0, max: 1 }) < 0.5;
+    
+    // Increase base change range significantly
+    const baseChange = parseFloat(
+      faker.finance.amount(3000, 8000, 2)
     );
-    const balance = previousBalance + change;
+    
+    // Apply direction and volatility
+    let finalChange = baseChange * volatilityFactor * (isUpDay ? 1 : -1);
+
+    // Increase frequency and magnitude of spikes (25% chance)
+    const spikeChance = faker.number.float({ min: 0, max: 1 });
+    if (spikeChance > 0.75) {
+      // Extreme spike (3-5x)
+      const multiplier = faker.number.float({ min: 3, max: 5 });
+      finalChange *= multiplier;
+    } else if (spikeChance > 0.5) {
+      // Moderate spike (2-3x)
+      const multiplier = faker.number.float({ min: 2, max: 3 });
+      finalChange *= multiplier;
+    }
+
+    // Calculate new balance with wider limits
+    const minBalance = 50000;  // Lower minimum
+    const maxBalance = 400000; // Higher maximum
+    const newBalance = Math.max(
+      Math.min(previousBalance + finalChange, maxBalance),
+      minBalance
+    );
+
+    // Adjust final change based on balance constraints
+    finalChange = newBalance - previousBalance;
 
     return {
       date,
       formattedDate: format(date, 'MMM dd, yyyy'),
-      balance,
+      balance: newBalance,
       formattedBalance: new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD'
-      }).format(balance),
-      change,
+      }).format(newBalance),
+      change: finalChange,
       formattedChange: new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
         signDisplay: 'always'
-      }).format(change),
-      isPositive: change >= 0
+      }).format(finalChange),
+      isPositive: finalChange >= 0
     };
   }
 
-  static generateBalanceHistory(days: number = 30): BalanceHistoryResponse {
+  static generateBalanceHistory(days: number = 180): BalanceHistoryResponse {
     const history: BalanceHistory[] = [];
-    const startingBalance = parseFloat(faker.finance.amount(5000, 10000, 2));
+    // Start with a middle-range balance
+    const startingBalance = 200000; // Higher starting point
     let currentBalance = startingBalance;
     
     // Generate daily balances for the past 'days'
@@ -50,14 +82,14 @@ export class BalanceHistoryGenerator {
         style: 'currency',
         currency: 'USD'
       }).format(currentBalance),
-      history: history.sort((a, b) => b.date.getTime() - a.date.getTime()) // Sort by date desc
+      history: history.sort((a, b) => a.date.getTime() - b.date.getTime())
     };
   }
 
   static generateFixedBalanceHistory(seed: number = 123): BalanceHistoryResponse {
     faker.seed(seed);
     const history = this.generateBalanceHistory();
-    faker.seed(); // Reset the seed
+    faker.seed();
     return history;
   }
 } 
