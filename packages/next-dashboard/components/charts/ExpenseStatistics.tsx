@@ -1,6 +1,5 @@
 'use client';
 
-import { useMemo } from 'react';
 import { Group } from '@visx/group';
 import { Text } from '@visx/text';
 import { Pie } from '@visx/shape';
