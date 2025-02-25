@@ -10,6 +10,7 @@ import User from './assets/user.svg';
 import NotificationOutline from './assets/notification-outline.svg';
 import SettingOutline from './assets/settings-outline.svg';
 import MagnifyingGlass from './assets/magnifying-glass.svg';
+import MasterCard from './assets/master-card.svg';
 
 export const Icons = {
   CreditCard,
@@ -24,4 +25,5 @@ export const Icons = {
   NotificationOutline,
   SettingOutline,
   MagnifyingGlass,
+  MasterCard,
 };

@@ -9,10 +9,10 @@ describe('Home', () => {
     const heading = screen.getByRole('heading', { name: /dashboard/i })
     expect(heading).toBeInTheDocument()
     
-    // Check for dashboard link
+    // Check for dashboard-x link
     const dashboardLink = screen.getByRole('link', { name: /view dashboard/i })
     expect(dashboardLink).toBeInTheDocument()
-    expect(dashboardLink).toHaveAttribute('href', '/dashboard')
+    expect(dashboardLink).toHaveAttribute('href', '/dashboard-x')
     
     // Check for data link
     const dataLink = screen.getByRole('link', { name: /view sample data/i })
