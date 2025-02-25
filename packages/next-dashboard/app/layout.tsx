@@ -40,7 +40,7 @@ type Props = Readonly<{
 export default function RootLayout({children}: Props) {
   return (
     <html lang="en">
-    <body className={`${inter.variable} antialiased h-full bg-white`} suppressHydrationWarning={true}>
+    <body className={`${inter.variable} antialiased h-full bg-white min-w-[375px]`} suppressHydrationWarning={true}>
     <SidebarLayout>
       {children}
     </SidebarLayout>

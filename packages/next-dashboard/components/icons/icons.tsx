@@ -11,6 +11,11 @@ import NotificationOutline from './assets/notification-outline.svg';
 import SettingOutline from './assets/settings-outline.svg';
 import MagnifyingGlass from './assets/magnifying-glass.svg';
 import MasterCard from './assets/master-card.svg';
+import Coin from './assets/coin.svg';
+import Paypal from './assets/paypal.svg';
+import Wallet from './assets/wallet.svg';
+import PlaneOutline from './assets/plane-outline.svg';
+import ChevronRight from './assets/chevron-right.svg';
 
 export const Icons = {
   CreditCard,
@@ -26,4 +31,9 @@ export const Icons = {
   SettingOutline,
   MagnifyingGlass,
   MasterCard,
+  Coin,
+  Paypal,
+  Wallet,
+  PlaneOutline,
+  ChevronRight
 };

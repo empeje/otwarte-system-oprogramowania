@@ -193,4 +193,4 @@ export default async function DataPage() {
       </details>
     </div>
   );
-} 
+}
