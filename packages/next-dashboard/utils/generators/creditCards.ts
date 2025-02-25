@@ -59,7 +59,7 @@ export class CreditCardGenerator {
   static generateFixedCreditCards(seed: number = 123): CreditCard[] {
     faker.seed(seed);
     const cards = Array.from({ length: 3 }, () => this.generateCreditCard());
-    cards[0].isDefault = true; // Make first card default
+    cards[0].isDefault = true; // Make first page default
     faker.seed();
     return cards;
   }
