@@ -4,7 +4,7 @@ import { BalanceService } from '@/utils/api/balance';
 import { WeeklyActivityWrapper } from '@/components/charts/WeeklyActivityWrapper';
 import { ExpenseStatisticsWrapper } from '@/components/charts/ExpenseStatisticsWrapper';
 import { BalanceHistoryWrapper } from '@/components/charts/BalanceHistoryWrapper';
-import PageContainer from "@/components/page/page-container";
+import Container from "@/components/page/container";
 
 export default async function DashboardPage() {
   const [activities, expenses, balanceHistory] = await Promise.all([
@@ -29,7 +29,7 @@ export default async function DashboardPage() {
   }));
 
   return (
-    <PageContainer className="min-h-screen py-[24px]">
+    <Container className="min-h-screen py-[24px]">
       <h1 className="text-2xl font-bold mb-6">Financial Dashboard</h1>
       
       <div className="space-y-6">
@@ -52,6 +52,6 @@ export default async function DashboardPage() {
           </div>
         </div>
       </div>
-    </PageContainer>
+    </Container>
   );
 } 

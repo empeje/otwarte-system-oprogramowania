@@ -1,9 +1,9 @@
-import PageContainer from "@/components/page/page-container";
+import ProfilePage from "@/app/setting/profile/page";
 
 export default async function SettingPage() {
   return (
-    <PageContainer className="min-h-screen py-[24px]">
-      Setting
-    </PageContainer>
+    <ProfilePage/>
   );
-} 
+}
+
+

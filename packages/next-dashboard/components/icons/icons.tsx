@@ -16,6 +16,7 @@ import Paypal from './assets/paypal.svg';
 import Wallet from './assets/wallet.svg';
 import PlaneOutline from './assets/plane-outline.svg';
 import ChevronRight from './assets/chevron-right.svg';
+import Pencil from './assets/pencil.svg';
 
 export const Icons = {
   CreditCard,
@@ -35,5 +36,6 @@ export const Icons = {
   Paypal,
   Wallet,
   PlaneOutline,
-  ChevronRight
+  ChevronRight,
+  Pencil
 };

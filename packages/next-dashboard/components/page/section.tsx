@@ -10,7 +10,7 @@ export default function Section({children, className}: {
   return (
     <div className={
       classNames(
-        "px-4 sm:px-6 lg:px-10",
+        "px-[25px] sm:px-6 lg:px-10",
         className
       )
     }>{children}</div>

@@ -92,6 +92,7 @@ const Navigation = ({navigation, pathname}: NavigationProps) => {
               ? 'bg-transparent text-[#232323]'
               : 'text-[#B1B1B1] hover:bg-transparent hover:text-[#232323]',
             'group flex items-center gap-x-[26px] rounded-md p-2 text-[18px] font-[500]',
+            "whitespace-nowrap"
           )}
         >
           <item.icon
@@ -155,9 +156,7 @@ const MobileMenu = ({navigation, pathname, sidebarOpen, setSidebarOpen}: MobileM
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>
-                  <ul role="list" className="mx-[12px] space-y-0">
-                    <Navigation navigation={navigation} pathname={pathname}/>
-                  </ul>
+                  <Navigation navigation={navigation} pathname={pathname}/>
                 </li>
               </ul>
             </nav>
