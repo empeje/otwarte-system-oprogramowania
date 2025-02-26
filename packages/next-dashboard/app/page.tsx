@@ -7,7 +7,7 @@ export default function Home() {
       <div className="space-y-4">
         <div>
           <Link 
-            href="/dashboard" 
+            href="/dashboard-x"
             className="text-blue-500 hover:text-blue-600 underline block"
           >
             View Dashboard
