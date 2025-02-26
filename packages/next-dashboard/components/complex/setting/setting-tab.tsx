@@ -7,7 +7,7 @@ import Link from "next/link";
 import Container from "@/components/page/container";
 import CardRounded from "@/components/cards/card-rounded";
 
-export function SettingTab({children}: { children: React.ReactNode }) {
+export const SettingTab = ({children}: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   const current = (path: string) => {
@@ -77,3 +77,5 @@ export function SettingTab({children}: { children: React.ReactNode }) {
     </Container>
   )
 }
+
+export default SettingTab;

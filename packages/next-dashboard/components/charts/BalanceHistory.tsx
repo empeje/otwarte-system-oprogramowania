@@ -102,7 +102,7 @@ export function BalanceHistory({
           stroke="#666"
           tickStroke="#666"
           tickFormat={date => {
-            const d = new Date(date);
+            const d = new Date(date as Date);
             return d.toLocaleString('default', { month: 'short' });
           }}
           tickLabelProps={() => ({

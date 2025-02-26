@@ -17,7 +17,7 @@ export class AccountGenerator {
   ];
 
   static generateAccount(): BankAccount {
-    const balance = parseFloat(faker.finance.amount(5000, 100000, 2));
+    const balance = parseFloat(faker.finance.amount({min: 5000, max: 100000, dec: 2}));
     const createdAt = faker.date.past({ years: 3 });
 
     return {

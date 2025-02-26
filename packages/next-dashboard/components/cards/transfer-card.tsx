@@ -1,3 +1,5 @@
+'use client';
+
 import ItemProfile from "@/components/cards/item-profile";
 import {Icons} from "@/components/icons/icons";
 import InputTransfer from "@/components/forms/input-transfer";

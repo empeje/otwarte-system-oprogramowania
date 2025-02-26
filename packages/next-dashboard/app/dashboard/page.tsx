@@ -1,6 +1,6 @@
+import Link from "next/link";
 import CreditCard from "@/components/cards/credit-card";
 import SectionTitle from "@/components/page/section-title";
-import Link from "next/link";
 import Section from "@/components/page/section";
 import {ActivityService} from "@/utils/api/activities";
 import {ExpenseService} from "@/utils/api/expenses";

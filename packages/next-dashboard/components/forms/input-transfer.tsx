@@ -1,3 +1,5 @@
+'use client';
+
 import {Icons} from "@/components/icons/icons";
 import React from "react";
 

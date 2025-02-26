@@ -11,8 +11,8 @@ export class CreditCardGenerator {
     const cardNumber = faker.finance.creditCardNumber();
     const firstFourDigits = cardNumber.slice(0, 4);
     const lastFourDigits = cardNumber.slice(-4);
-    const creditLimit = parseFloat(faker.finance.amount(5000, 50000, 2));
-    const currentBalance = parseFloat(faker.finance.amount(0, creditLimit, 2));
+    const creditLimit = parseFloat(faker.finance.amount({min: 5000, max:50000, dec:2}));
+    const currentBalance = parseFloat(faker.finance.amount({min: 0, max: creditLimit, dec: 2}));
     const dueDate = addMonths(new Date(), 1);
     
     return {
@@ -31,7 +31,7 @@ export class CreditCardGenerator {
       availableCredit: creditLimit - currentBalance,
       dueDate,
       minimumPayment: currentBalance * 0.02, // 2% of current balance
-      apr: parseFloat(faker.finance.amount(12, 24, 2)),
+      apr: parseFloat(faker.finance.amount({min: 12, max: 24, dec: 2})),
       status: faker.helpers.arrayElement(this.CARD_STATUS),
       isDefault: false,
       formattedCreditLimit: new Intl.NumberFormat('en-US', {

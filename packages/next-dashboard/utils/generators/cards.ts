@@ -9,7 +9,7 @@ export class CardGenerator {
     const cardNumber = faker.finance.creditCardNumber();
     const firstFourDigits = cardNumber.slice(0, 4);
     const lastFourDigits = cardNumber.slice(-4);
-    const balance = parseFloat(faker.finance.amount(1000, 50000, 2));
+    const balance = parseFloat(faker.finance.amount({min: 1000, max: 50000, dec: 2}));
     
     return {
       id: faker.string.uuid(),

@@ -1,10 +1,12 @@
+'use client';
+
 import {JSX} from "react";
 import {classNames, ClassNameType} from "@/utils/helper";
 
-export default function Button({type = "button", className}: {
+const Button = ({type = "button", className}: {
   className: ClassNameType;
   type?: "button" | "submit" | "reset"
-}): JSX.Element {
+}): JSX.Element => {
   return (
     <button
       type={type}
@@ -19,3 +21,5 @@ export default function Button({type = "button", className}: {
     </button>
   )
 }
+
+export default Button;

@@ -1,8 +1,10 @@
-import {SettingTab} from "@/components/complex/setting/setting-tab";
+'use client';
+
 import {Icons} from "@/components/icons/icons";
 import Image from "next/image";
 import InputText from "@/components/forms/input-text";
 import Button from "@/components/button/button";
+import SettingTab from "@/components/complex/setting/setting-tab";
 
 export default function ProfilePage() {
   const forms = [

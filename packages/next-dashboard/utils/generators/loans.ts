@@ -9,12 +9,14 @@ export class LoanGenerator {
   static generateLoan(): Loan {
     const type = faker.helpers.arrayElement(this.LOAN_TYPES);
     const amount = parseFloat(faker.finance.amount(
-      type === 'mortgage' ? 100000 : 5000,
-      type === 'mortgage' ? 1000000 : 50000,
-      2
+      {
+        min: (type === 'mortgage' ? 100000 : 5000),
+        max: (type === 'mortgage' ? 1000000 : 50000),
+        dec: 2
+      }
     ));
     const term = type === 'mortgage' ? 360 : 60; // 30 years for mortgage, 5 years for others
-    const interestRate = parseFloat(faker.finance.amount(3, 12, 2));
+    const interestRate = parseFloat(faker.finance.amount({min: 3, max: 12, dec: 2}));
     const monthlyRate = interestRate / 1200; // Convert annual rate to monthly decimal
     const monthlyPayment = (amount * monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
     

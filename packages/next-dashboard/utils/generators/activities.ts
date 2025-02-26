@@ -14,7 +14,7 @@ export class ActivityGenerator {
     // Sum up multiple transactions
     let totalAmount = 0;
     for (let i = 0; i < transactionCount; i++) {
-      totalAmount += parseFloat(faker.finance.amount(baseAmount, maxAmount, 2));
+      totalAmount += parseFloat(faker.finance.amount({min: baseAmount, max: maxAmount, dec: 2}));
     }
     
     return {

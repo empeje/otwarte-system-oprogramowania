@@ -1,3 +1,5 @@
+'use client';
+
 import ItemTransaction from "@/components/cards/item-transaction";
 import CardRounded from "@/components/cards/card-rounded";
 

@@ -1,16 +1,18 @@
+'use client';
+
 type InputType = {
   label: string;
   placeholder?: string,
   type?: "text" | "number" | "email" | 'password' | string,
   name?: string
 }
-export default function InputText(
+export const InputText = (
   {
     label,
     placeholder,
     type = "text",
     name
-  }: InputType) {
+  }: InputType) => {
   return (
     <div>
       {label && <label htmlFor={name} className="block text-[16px] font-medium text-[#232323]">
@@ -28,3 +30,5 @@ export default function InputText(
     </div>
   )
 }
+
+export default InputText

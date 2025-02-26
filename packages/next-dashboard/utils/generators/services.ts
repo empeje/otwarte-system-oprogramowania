@@ -33,7 +33,7 @@ export class ServiceGenerator {
     const category = faker.helpers.arrayElement(this.SERVICE_CATEGORIES);
     const config = this.SERVICE_CONFIG[category];
     const name = faker.helpers.arrayElement(config.names);
-    const monthlyFee = parseFloat(faker.finance.amount(9.99, 99.99, 2));
+    const monthlyFee = parseFloat(faker.finance.amount({min: 9.99, max: 99.99, dec: 2}));
     const enrollmentDate = faker.date.past({ years: 1 });
     
     return {

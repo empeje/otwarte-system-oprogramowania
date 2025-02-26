@@ -31,10 +31,12 @@ export class InvestmentGenerator {
             symbol: faker.finance.currencyCode() 
           };
 
-    const purchasePrice = parseFloat(faker.finance.amount(10, 1000, 2));
-    const priceChange = parseFloat(faker.finance.amount(-200, 300, 2));
+    const purchasePrice = parseFloat(faker.finance.amount({min: 10, max: 1000, dec: 2}));
+    const priceChange = parseFloat(faker.finance.amount({
+      min: -200, max: 300, dec: 2
+    }));
     const currentPrice = purchasePrice + priceChange;
-    const quantity = parseFloat(faker.finance.amount(1, 100, 2));
+    const quantity = parseFloat(faker.finance.amount({min: 1, max: 100, dec: 2}));
     
     const totalValue = currentPrice * quantity;
     const profitLoss = (currentPrice - purchasePrice) * quantity;

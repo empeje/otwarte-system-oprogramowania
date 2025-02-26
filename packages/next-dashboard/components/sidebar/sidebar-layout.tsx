@@ -212,7 +212,7 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
     <div
       className={
         classNames(
-          "sticky top-0 z-40 flex flex-wrap min-h-[100px] max-h-[140px] shrink-0 sm:items-center gap-x-4 bg-white px-4 sm:gap-x-6 sm:px-6 lg:px-10",
+          "sticky top-0 z-40 flex flex-wrap min-h-[100px] max-h-[140px] shrink-0 sm:items-center gap-x-4 bg-white px-[25px] sm:gap-x-6 sm:px-6 lg:px-10",
           "py-[20px] sm:py-0 gap-y-[20px]"
         )
       }>

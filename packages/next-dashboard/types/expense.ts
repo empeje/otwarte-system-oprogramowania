@@ -1,3 +1,5 @@
+import {TransactionCategory} from "@/types/transaction";
+
 export interface ExpenseCategory {
   name: string;
   category: TransactionCategory;

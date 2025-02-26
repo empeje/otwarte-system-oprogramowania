@@ -31,7 +31,7 @@ export class TransactionGenerator {
     const category = faker.helpers.arrayElement(this.TRANSACTION_CATEGORIES);
     const type = faker.helpers.arrayElement(this.TRANSACTION_TYPES);
     const isCredit = type === 'deposit';
-    const amount = parseFloat(faker.finance.amount(10, 1000, 2));
+    const amount = parseFloat(faker.finance.amount({min: 10, max: 1000, dec: 2}));
     const date = faker.date.recent({ days: 30 });
     
     return {

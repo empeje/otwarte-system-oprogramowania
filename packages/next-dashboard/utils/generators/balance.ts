@@ -9,15 +9,15 @@ export class BalanceHistoryGenerator {
   ): BalanceHistory {
     // Increase volatility range significantly
     const volatilityFactor = faker.number.float({ min: 0.5, max: 2.5 });
-    
+
     // 50/50 chance of up/down for more randomness
     const isUpDay = faker.number.float({ min: 0, max: 1 }) < 0.5;
-    
+
     // Increase base change range significantly
     const baseChange = parseFloat(
-      faker.finance.amount(3000, 8000, 2)
+      faker.finance.amount({min: 3000, max: 8000, dec: 2})
     );
-    
+
     // Apply direction and volatility
     let finalChange = baseChange * volatilityFactor * (isUpDay ? 1 : -1);
 
@@ -67,7 +67,7 @@ export class BalanceHistoryGenerator {
     // Start with a middle-range balance
     const startingBalance = 200000; // Higher starting point
     let currentBalance = startingBalance;
-    
+
     // Generate daily balances for the past 'days'
     for (let i = days - 1; i >= 0; i--) {
       const date = subDays(new Date(), i);

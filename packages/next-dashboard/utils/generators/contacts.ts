@@ -24,14 +24,14 @@ export class ContactGenerator {
     const email = type === 'business' 
       ? faker.internet.email({ firstName, lastName, provider: faker.helpers.arrayElement(['company.com', 'corp.net', 'business.org']) })
       : faker.internet.email({ firstName, lastName });
-    
-    const totalTransferred = parseFloat(faker.finance.amount(500, 25000, 2));
+
+    const totalTransferred = parseFloat(faker.finance.amount({min: 500, max: 25000, dec: 2}));
 
     return {
       id: faker.string.uuid(),
       name,
       email,
-      phone: faker.phone.number('+1 ### ### ####'),
+      phone: faker.phone.number(),
       type,
       status: faker.helpers.arrayElement(this.CONTACT_STATUS),
       accountNumber: faker.finance.accountNumber(10),

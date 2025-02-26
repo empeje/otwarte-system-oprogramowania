@@ -1,3 +1,4 @@
+'use client';
 import {classNames} from "@/utils/helper";
 
 export default function CardRounded({className, children}: { className?: string; children?: React.ReactNode }) {
