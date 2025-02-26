@@ -1,3 +1,5 @@
+'use client';
+
 import {classNames} from "@/utils/helper";
 import Image from "next/image";
 
