@@ -5,7 +5,7 @@ import Image from "next/image";
 import InputText from "@/components/forms/input-text";
 import Button from "@/components/button/button";
 import SettingTab from "@/components/complex/setting/setting-tab";
-import {useState} from "react";
+import {FormEvent, useState} from "react";
 import ModalDialog from "@/components/alert/modal-dialog";
 
 export default function ProfilePage() {
@@ -24,9 +24,10 @@ export default function ProfilePage() {
 
   const [open, setOpen] = useState(false);
 
-  const onSubmit = (e) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setOpen(true);
+    e.currentTarget.reset();
   }
 
   const setClose = () => {

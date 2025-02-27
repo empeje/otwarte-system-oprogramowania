@@ -62,8 +62,8 @@ export default async function DashboardPage() {
           <TransactionCard transactions={transactions}/>
         </div>
       </div>
-      <Section className={"!border-0 grid grid-cols-1 sm:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
-        <div className={"sm:col-span-2"}>
+      <Section className={"!border-0 grid grid-cols-1 xl:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
+        <div className={"xl:col-span-2"}>
           <div className={"flex justify-between"}>
             <SectionTitle title={"Weekly Activity"}/>
           </div>
@@ -72,7 +72,7 @@ export default async function DashboardPage() {
           </CardRounded>
         </div>
 
-        <div className={"sm:col-span-1"}>
+        <div className={"xl:col-span-1"}>
           <SectionTitle title={"Expense Statistics"}/>
           <CardRounded className={"!p-0 overflow-hidden"}>
             <ExpenseStatisticsWrapper data={expenseData}/>
@@ -80,15 +80,15 @@ export default async function DashboardPage() {
         </div>
       </Section>
 
-      <Section className={"!border-0 grid grid-cols-1 sm:grid-cols-5 gap-x-[30px] gap-y-[24px]"}>
-        <div className={"sm:col-span-2"}>
+      <Section className={"!border-0 grid grid-cols-1 xl:grid-cols-5 gap-x-[30px] gap-y-[24px]"}>
+        <div className={"xl:col-span-2"}>
           <div className={"flex justify-between"}>
             <SectionTitle title={"Quick Transfer"}/>
           </div>
           <TransferCard contacts={contacts}/>
         </div>
 
-        <div className={"sm:col-span-3"}>
+        <div className={"xl:col-span-3"}>
           <SectionTitle title={"Balance History"}/>
           <CardRounded className={"!p-0 overflow-hidden"}>
             <BalanceHistoryWrapper data={balanceHistory.history}/>
