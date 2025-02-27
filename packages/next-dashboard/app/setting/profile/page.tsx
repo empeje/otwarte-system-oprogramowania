@@ -5,7 +5,7 @@ import Image from "next/image";
 import InputText from "@/components/forms/input-text";
 import Button from "@/components/button/button";
 import SettingTab from "@/components/complex/setting/setting-tab";
-import {FormEvent, useState} from "react";
+import {FormEvent, useRef, useState} from "react";
 import ModalDialog from "@/components/alert/modal-dialog";
 
 export default function ProfilePage() {
@@ -30,20 +30,17 @@ export default function ProfilePage() {
     e.currentTarget.reset();
   }
 
-  const setClose = () => {
-    setOpen(false)
-  }
-
+  const inputFile = useRef<HTMLInputElement>(null);
 
   return (
     <SettingTab>
       <ModalDialog
         open={open}
         setOpen={() => {
-          setClose()
+          setOpen(false)
         }}
         title={"Thank You!"}
-        content={"Send success"}
+        content={"Update Profile Successfully"}
       />
       <form
         onSubmit={onSubmit}
@@ -52,11 +49,17 @@ export default function ProfilePage() {
           <Image
             src={"/people/woman.png"} alt={"Profile image edit"} width={90} height={90}
             className={"size-[100px] sm:size-[90px] rounded-full"}/>
-
-          <div
+          <InputText
+            ref={inputFile}
+            label={"Upload Image"} type={"file"} className={"hidden"}/>
+          <button
+            type="button"
+            onClick={() => {
+              inputFile.current?.click();
+            }}
             className={"size-[30px] absolute -bottom-[1px] -right-[8px] rounded-full bg-[#232323] flex items-center justify-center"}>
             <Icons.Pencil/>
-          </div>
+          </button>
         </div>
 
         {/*Form*/}

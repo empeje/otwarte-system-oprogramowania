@@ -6,7 +6,7 @@ import {
   DialogBackdrop,
   DialogPanel,
   Menu,
-  MenuButton,
+  MenuButton, MenuItem, MenuItems,
   TransitionChild,
 } from '@headlessui/react'
 import {
@@ -17,6 +17,8 @@ import {classNames} from "@/utils/helper";
 import {Icons} from "@/components/icons/icons";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
+import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 type Props = {
   children: React.ReactNode
@@ -181,9 +183,21 @@ const DesktopMenu = ({navigation}: NavigationProps) => {
 }
 
 const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => void; title: string }) => {
+  const router = useRouter();
+
+  const onsubmit = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const searchQuery = formData.get("search") as string;
+
+    if (!searchQuery.trim()) return;
+
+    router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+  }, [router])
 
   const SearchInput = useCallback(() => {
-    return <div
+    return <form
+      onSubmit={onsubmit}
       className="grid flex-1 grid-cols-1 bg-[#F5F7FA] h-[40px] sm:h-[50px] px-[20px] sm:px-[25px] rounded-[40px]">
       <input
         name="search"
@@ -198,8 +212,8 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
         aria-hidden="true"
         className="pointer-events-none col-start-1 row-start-1 size-5 self-center text-[#718EBF]"
       />
-    </div>
-  }, [])
+    </form>
+  }, [onsubmit])
 
   return (
     <div
@@ -225,24 +239,24 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
             <div className={"hidden sm:block"}>
               <SearchInput/>
             </div>
-            <button
-              type="button"
+            <Link
+              href={"/setting"}
               className="hidden md:flex items-center justify-center text-gray-400 hover:text-gray-500 bg-[#F5F7FA] rounded-full size-[50px]">
               <span className="sr-only">View settings</span>
               <Icons.SettingOutline
                 width={25}
                 height={25}
                 aria-hidden="true" className="size-6 text-[#718EBF]"/>
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              href={"/notification"}
               className="hidden md:flex items-center justify-center text-gray-400 hover:text-gray-500 bg-[#F5F7FA] rounded-full size-[50px]">
               <span className="sr-only">View notifications</span>
               <Icons.NotificationOutline
                 width={25}
                 height={25}
                 aria-hidden="true" className="size-6 text-[#396AFF]"/>
-            </button>
+            </Link>
 
             {/* Profile dropdown */}
             <Menu as="div" className="relative pl-[5px]">
@@ -256,6 +270,27 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
                   className="size-[35px] sm:size-[60px] rounded-full"
                 />
               </MenuButton>
+              <MenuItems
+                transition
+                className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
+              >
+                <MenuItem>
+                  <Link
+                    href={"/setting/profile"}
+                    className="block px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
+                  >
+                    Profile
+                  </Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link
+                    href={"/dashboard"}
+                    className="block px-3 py-1 text-sm/6 text-gray-900 data-[focus]:bg-gray-50 data-[focus]:outline-none"
+                  >
+                    Logout
+                  </Link>
+                </MenuItem>
+              </MenuItems>
             </Menu>
           </div>
         </div>
