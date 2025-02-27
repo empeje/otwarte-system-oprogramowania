@@ -5,14 +5,16 @@ import Image from "next/image";
 import InputText from "@/components/forms/input-text";
 import Button from "@/components/button/button";
 import SettingTab from "@/components/complex/setting/setting-tab";
+import {useState} from "react";
+import ModalDialog from "@/components/alert/modal-dialog";
 
 export default function ProfilePage() {
   const forms = [
     {name: 'name', label: 'Your Name', placeholder: 'Charlene Reed', type: 'text'},
     {name: 'username', label: 'User Name', placeholder: 'Charlene Reed', type: 'text'},
-    {name: 'email', label: 'Email', placeholder: 'charlenereed@gmail.com', type: 'text'},
+    {name: 'email', label: 'Email', placeholder: 'charlenereed@gmail.com', type: 'email'},
     {name: 'password', label: 'Password', placeholder: 'Password', type: 'password'},
-    {name: 'data_of_birth', label: 'Date of Birth', placeholder: 'Date of Birth', type: 'text'},
+    {name: 'data_of_birth', label: 'Date of Birth', placeholder: 'Date of Birth', type: 'date'},
     {name: 'present_address', label: 'Present Address', placeholder: 'San Jose, California, USA', type: 'text'},
     {name: 'permanent_address', label: 'Permanent Address', placeholder: 'San Jose, California, USA', type: 'text'},
     {name: 'city', label: 'City', placeholder: 'San Jose', type: 'text'},
@@ -20,9 +22,30 @@ export default function ProfilePage() {
     {name: 'country', label: 'Country', placeholder: 'USA', type: 'text'},
   ]
 
+  const [open, setOpen] = useState(false);
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setOpen(true);
+  }
+
+  const setClose = () => {
+    setOpen(false)
+  }
+
+
   return (
     <SettingTab>
-      <div
+      <ModalDialog
+        open={open}
+        setOpen={() => {
+          setClose()
+        }}
+        title={"Thank You!"}
+        content={"Send success"}
+      />
+      <form
+        onSubmit={onSubmit}
         className="sm:space-x-[65px] sm:pl-[30px] pt-[45px] sm:pt-[40px] flex flex-col items-center sm:items-start sm:flex-row flex-wrap">
         <div className={"size-[100px] sm:size-[90px] relative flex-shrink-0"}>
           <Image
@@ -43,9 +66,12 @@ export default function ProfilePage() {
         </div>
 
         <div className={"flex-1 basis-full w-full text-right mt-[16px] sm:mt-[40px]"}>
-          <Button className={"ml-auto w-full sm:w-fit"}/>
+          <Button type={"submit"} className={"ml-auto w-full sm:w-fit"}/>
         </div>
-      </div>
+      </form>
+
     </SettingTab>
+
   )
 }
+

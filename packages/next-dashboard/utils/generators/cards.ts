@@ -38,10 +38,10 @@ export class CardGenerator {
     return Array.from({ length: count }, () => this.generateCard());
   }
 
-  // Generate a fixed set of cards for consistent data across refreshes
+  // Generate a fixed set of credit-cards for consistent data across refreshes
   static generateFixedCards(seed: number = 123): Card[] {
     faker.seed(seed);
-    const cards = this.generateCards(4); // Generate 4 fixed cards
+    const cards = this.generateCards(4); // Generate 4 fixed credit-cards
     faker.seed(); // Reset the seed
     return cards;
   }

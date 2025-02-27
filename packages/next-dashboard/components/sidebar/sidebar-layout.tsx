@@ -18,18 +18,6 @@ import {Icons} from "@/components/icons/icons";
 import Image from "next/image";
 import {usePathname} from "next/navigation";
 
-const navigation = [
-  {name: 'Dashboard', href: '/Dashboard', icon: Icons.Home, current: true},
-  {name: 'Transactions', href: '/Transactions', icon: Icons.Transfer, current: false},
-  {name: 'Accounts', href: '/Accounts', icon: Icons.User, current: false},
-  {name: 'Investments', href: '/Investments', icon: Icons.EconomicInvestment, current: false},
-  {name: 'Credit Cards', href: '/Credit', icon: Icons.CreditCard, current: false},
-  {name: 'Loans', href: '/Loans', icon: Icons.Loan, current: false},
-  {name: 'Services', href: '/Services', icon: Icons.Service, current: false},
-  {name: 'My Privileges', href: '/My', icon: Icons.Econometrics, current: false},
-  {name: 'Setting', href: '/setting', icon: Icons.Settings, current: false},
-]
-
 type Props = {
   children: React.ReactNode
 }
@@ -37,18 +25,27 @@ type Props = {
 export default function SidebarLayout({children}: Props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const pathname = usePathname();
+  const navigation = [
+    {name: 'Dashboard', href: '/dashboard', icon: Icons.Home, current: (pathname === '/dashboard')},
+    {name: 'Transactions', href: '/transactions', icon: Icons.Transfer, current: (pathname === '/Transactions')},
+    {name: 'Accounts', href: '/Accounts', icon: Icons.User, current: (pathname === '/Accounts')},
+    {name: 'Investments', href: '/Investments', icon: Icons.EconomicInvestment, current: (pathname === '/Investments')},
+    {name: 'Credit Cards', href: '/credit-cards', icon: Icons.CreditCard, current: (pathname === '/credit-cards')},
+    {name: 'Loans', href: '/Loans', icon: Icons.Loan, current: (pathname === '/Loans')},
+    {name: 'Services', href: '/Services', icon: Icons.Service, current: (pathname === '/Services')},
+    {name: 'My Privileges', href: '/My', icon: Icons.Econometrics, current: (pathname === '/My')},
+    {name: 'Setting', href: '/setting', icon: Icons.Settings, current: (pathname === '/setting')},
+  ]
 
   return (
     <div>
       <MobileMenu
-        pathname={pathname}
         navigation={navigation}
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}/>
 
       {/* Static sidebar for desktop */}
       <DesktopMenu
-        pathname={pathname}
         navigation={navigation}/>
 
       <div className="lg:pl-[249px]">
@@ -67,28 +64,24 @@ type NavigationProps = {
     name: string;
     href: string;
     icon: typeof Icons.Home;
+    current: typeof Icons.Home;
   }[];
-  pathname: string;
 }
 
-const Navigation = ({navigation, pathname}: NavigationProps) => {
-  const current = (path: string) => {
-    return path === pathname
-  }
-
+const Navigation = ({navigation}: NavigationProps) => {
   return <ul role="list" className="mx-[12px] space-y-0">
     {navigation.map((item) => (
       <li key={item.name} className={"h-[60px] flex items-center relative"}>
         <div className={
           classNames(
-            current(item.href) ? "block" : "hidden",
+            item.current ? "block" : "hidden",
             "w-[6px] h-full absolute -left-[36px] bg-[#232323] rounded-r-[10px]"
           )
         }/>
         <a
           href={item.href}
           className={classNames(
-            current(item.href)
+            item.current
               ? 'bg-transparent text-[#232323]'
               : 'text-[#B1B1B1] hover:bg-transparent hover:text-[#232323]',
             'group flex items-center gap-x-[26px] rounded-md p-2 text-[18px] font-[500]',
@@ -98,7 +91,7 @@ const Navigation = ({navigation, pathname}: NavigationProps) => {
           <item.icon
             aria-hidden="true"
             className={classNames(
-              current(item.href) ? 'text-[#232323]' : 'text-[#B1B1B1] group-hover:text-[#232323]',
+              item.current ? 'text-[#232323]' : 'text-[#B1B1B1] group-hover:text-[#232323]',
               'size-[25px] shrink-0',
             )}
           />
@@ -126,7 +119,7 @@ type MobileMenuProps = {
   setSidebarOpen: (open: boolean) => void;
 } & NavigationProps
 
-const MobileMenu = ({navigation, pathname, sidebarOpen, setSidebarOpen}: MobileMenuProps) => {
+const MobileMenu = ({navigation, sidebarOpen, setSidebarOpen}: MobileMenuProps) => {
   return (
     <Dialog open={sidebarOpen} onClose={setSidebarOpen} className="relative z-50 lg:hidden">
       <DialogBackdrop
@@ -156,7 +149,7 @@ const MobileMenu = ({navigation, pathname, sidebarOpen, setSidebarOpen}: MobileM
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
                 <li>
-                  <Navigation navigation={navigation} pathname={pathname}/>
+                  <Navigation navigation={navigation}/>
                 </li>
               </ul>
             </nav>
@@ -167,7 +160,7 @@ const MobileMenu = ({navigation, pathname, sidebarOpen, setSidebarOpen}: MobileM
   )
 }
 
-const DesktopMenu = ({navigation, pathname}: NavigationProps) => {
+const DesktopMenu = ({navigation}: NavigationProps) => {
   return (
     <div className="hidden lg:fixed lg:inset-y-0 lg:z-50 lg:flex lg:w-[249px] lg:flex-col border-r border-[#E6EFF5]">
       {/* Sidebar component, swap this element with another sidebar if you like */}
@@ -178,7 +171,7 @@ const DesktopMenu = ({navigation, pathname}: NavigationProps) => {
         <nav className="flex flex-1 flex-col">
           <ul role="list" className="flex flex-1 flex-col gap-y-7">
             <li>
-              <Navigation navigation={navigation} pathname={pathname}/>
+              <Navigation navigation={navigation}/>
             </li>
           </ul>
         </nav>

@@ -11,12 +11,18 @@ import {ExpenseStatisticsWrapper} from "@/components/charts/ExpenseStatisticsWra
 import CardRounded from "@/components/cards/card-rounded";
 import TransferCard from "@/components/cards/transfer-card";
 import TransactionCard from "@/components/cards/transaction-card";
+import {CardService} from "@/utils/api/cards";
+import {TransactionService} from "@/utils/api/transactions";
+import {ContactService} from "@/utils/api/contacts";
 
 export default async function DashboardPage() {
-  const [activities, expenses, balanceHistory] = await Promise.all([
+  const [activities, expenses, balanceHistory, cards, transactions, contacts,] = await Promise.all([
     ActivityService.getActivities(),
     ExpenseService.getExpenseBreakdown(),
-    BalanceService.getBalanceHistory()
+    BalanceService.getBalanceHistory(),
+    CardService.getCards(),
+    TransactionService.getTransactions(),
+    ContactService.getContacts(),
   ]);
 
   const weeklyTotals = ActivityService.getWeeklyTotals(activities);
@@ -35,24 +41,25 @@ export default async function DashboardPage() {
   }));
 
   return (
-    <div className="min-h-screen py-[24px] space-y-[22px] sm:space-y-[24px] sm:bg-[#F5F7FA]">
+    <div className="min-h-[calc(100vh-100px)]  py-[24px] space-y-[22px] sm:space-y-[24px] sm:bg-[#F5F7FA]">
       <div className={"px-0 sm:px-6 lg:px-10 grid grid-cols-2 xl:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
         <div className={"col-span-2 overflow-x-hidden scrollbar-hide"}>
           <div className={"px-[25px] sm:px-0 flex justify-between"}>
             <SectionTitle title={"My Cards"}/>
-            <Link href={"/dashboard"}>
+            <Link href={"/credit-cards"}>
               <SectionTitle title={"See All"}/>
             </Link>
           </div>
           <div className={"pl-[25px] sm:px-0 flex space-x-[30px] overflow-x-auto scrollbar-hide"}>
-            <CreditCard dark={true}/>
-            <CreditCard/>
+            {cards.map((card, index) => (
+              <CreditCard card={card} key={index}/>
+            ))}
           </div>
         </div>
 
         <div className={"px-[25px] sm:px-0 col-span-2 xl:col-span-1"}>
           <SectionTitle title={"Recent Transaction"}/>
-          <TransactionCard/>
+          <TransactionCard transactions={transactions}/>
         </div>
       </div>
       <Section className={"!border-0 grid grid-cols-1 sm:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
@@ -78,7 +85,7 @@ export default async function DashboardPage() {
           <div className={"flex justify-between"}>
             <SectionTitle title={"Quick Transfer"}/>
           </div>
-          <TransferCard/>
+          <TransferCard contacts={contacts}/>
         </div>
 
         <div className={"sm:col-span-3"}>

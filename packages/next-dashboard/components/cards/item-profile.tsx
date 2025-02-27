@@ -1,12 +1,13 @@
+/* eslint-disable  @next/next/no-img-element */
 'use client';
 
-import Image from "next/image";
 import {classNames} from "@/utils/helper";
+import {Contact} from "@/types/contact";
 
-export default function ItemProfile() {
+export default function ItemProfile({contact}: { contact: Contact }) {
   return (
     <div className={"flex flex-col items-center justify-center"}>
-      <Image src={"/people/woman.png"} alt={"People"} width={70} height={70} className={"size-[50px] sm:size-[70px]"}/>
+      <img src={contact.avatar} alt={"People"} width={70} height={70} className={"size-[50px] sm:size-[70px]"}/>
       <div className={
         classNames("mt-[12px] sm:mt-[15px]",
           "text-[12px] leading-[15px] font-normal",
@@ -15,7 +16,7 @@ export default function ItemProfile() {
           "whitespace-nowrap",
         )
       }>
-        Livia Bator
+        {contact.name}
       </div>
       <div className={
         classNames(
@@ -23,10 +24,10 @@ export default function ItemProfile() {
           "text-[12px] leading-[15px] font-normal",
           "sm:text-[15px] sm:leading-[18px]",
           "text-[#718EBF]",
-        "whitespace-nowrap",
+          "whitespace-nowrap",
         )
       }>
-        CEO
+        {contact.bankName}
       </div>
     </div>
   )
