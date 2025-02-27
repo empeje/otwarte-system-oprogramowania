@@ -44,7 +44,7 @@ export default async function DataPage() {
   ]);
 
   return (
-    <div className="min-h-[calc(100vh-100px)]  p-8 space-y-6 text-black">
+    <div className="min-h-[calc(100vh-135px)] sm:min-h-[calc(100vh-100px)]  p-8 space-y-6 text-black">
       <details className="group">
         <summary className="text-2xl font-bold mb-4 cursor-pointer list-none">
           Cards

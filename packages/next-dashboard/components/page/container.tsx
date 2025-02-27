@@ -5,7 +5,7 @@ import {classNames, ClassNameType} from "@/utils/helper";
 
 export default function Container({children, className}: {
   children: React.ReactNode;
-  className: ClassNameType
+  className?: ClassNameType
 }) {
   return (
     <div className={

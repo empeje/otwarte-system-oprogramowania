@@ -29,13 +29,13 @@ export default function SidebarLayout({children}: Props) {
   const pathname = usePathname();
   const navigation = [
     {name: 'Dashboard', href: '/dashboard', icon: Icons.Home, current: (pathname === '/dashboard')},
-    {name: 'Transactions', href: '/transactions', icon: Icons.Transfer, current: (pathname === '/Transactions')},
-    {name: 'Accounts', href: '/Accounts', icon: Icons.User, current: (pathname === '/Accounts')},
-    {name: 'Investments', href: '/Investments', icon: Icons.EconomicInvestment, current: (pathname === '/Investments')},
+    {name: 'Transactions', href: '/transactions', icon: Icons.Transfer, current: (pathname === '/transactions')},
+    {name: 'Accounts', href: '/accounts', icon: Icons.User, current: (pathname === '/accounts')},
+    {name: 'Investments', href: '/investments', icon: Icons.EconomicInvestment, current: (pathname === '/investments')},
     {name: 'Credit Cards', href: '/credit-cards', icon: Icons.CreditCard, current: (pathname === '/credit-cards')},
-    {name: 'Loans', href: '/Loans', icon: Icons.Loan, current: (pathname === '/Loans')},
-    {name: 'Services', href: '/Services', icon: Icons.Service, current: (pathname === '/Services')},
-    {name: 'My Privileges', href: '/My', icon: Icons.Econometrics, current: (pathname === '/My')},
+    {name: 'Loans', href: '/loans', icon: Icons.Loan, current: (pathname === '/loans')},
+    {name: 'Services', href: '/services', icon: Icons.Service, current: (pathname === '/services')},
+    {name: 'My Privileges', href: '/privileges', icon: Icons.Econometrics, current: (pathname === '/privileges')},
     {name: 'Setting', href: '/setting', icon: Icons.Settings, current: (pathname === '/setting')},
   ]
 
