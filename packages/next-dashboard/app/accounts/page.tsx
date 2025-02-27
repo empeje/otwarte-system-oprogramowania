@@ -12,13 +12,14 @@ export default async function AccountPage() {
       <Section className={"!border-0 grid grid-cols-1 gap-x-[30px] gap-y-[24px]"}>
         <div className={"sm:px-0"}>
           <SectionTitle title={"Accounts"}/>
-          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 align-middle px-[20px] sm:px-6 lg:px-8">
+          <div className="-mx-[1px] overflow-x-auto -my-2">
+            <div className="inline-block min-w-full py-2 align-middle px-[1px]">
               <div className="overflow-hidden shadow ring-1 ring-black/5 sm:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
                   <thead className="bg-gray-50">
                   <tr>
-                    <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
+                    <th scope="col"
+                        className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">
                       Name
                     </th>
                     <th scope="col"
@@ -39,7 +40,7 @@ export default async function AccountPage() {
                     </th>
                     <th scope="col"
                         className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Formatted Balance
+                      Balance
                     </th>
                     <th scope="col"
                         className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
@@ -51,15 +52,7 @@ export default async function AccountPage() {
                     </th>
                     <th scope="col"
                         className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Is Default
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
                       Created
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Formatted Date
                     </th>
                     <th scope="col"
                         className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
@@ -80,9 +73,6 @@ export default async function AccountPage() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedBalance}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.bankName}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.routingNumber}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.isDefault}</td>
-                      <td
-                        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.createdAt.toLocaleDateString()}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedDate}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.currency}</td>
                     </tr>

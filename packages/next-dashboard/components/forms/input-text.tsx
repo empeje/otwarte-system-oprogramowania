@@ -10,6 +10,7 @@ type InputType = {
   name?: string,
   required?: boolean,
   className?: ClassNameType,
+  defaultValue?: string,
 }
 
 // eslint-disable-next-line react/display-name
@@ -21,6 +22,7 @@ export const InputText = forwardRef<HTMLInputElement, InputType>((
     name,
     required = true,
     className,
+    defaultValue,
   }: InputType, ref: ForwardedRef<HTMLInputElement>) => {
   return (
     <div className={classNames(className)}>
@@ -35,6 +37,9 @@ export const InputText = forwardRef<HTMLInputElement, InputType>((
           type={type}
           placeholder={placeholder}
           required={required}
+          defaultValue={defaultValue}
+          autoComplete={"off"}
+          aria-autocomplete={"none"}
           className="text-[#718EBF] text-[15px] leading-[18px] font-normal block w-full rounded-[15px] bg-white h-[50px] px-[20px] py-[16px] outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-1 focus:-outline-offset-1 focus:outline-indigo-600 sm:text-sm/6"
         />
       </div>

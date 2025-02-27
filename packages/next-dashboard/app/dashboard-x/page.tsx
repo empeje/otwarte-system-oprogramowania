@@ -5,6 +5,7 @@ import {WeeklyActivityWrapper} from '@/components/charts/WeeklyActivityWrapper';
 import {ExpenseStatisticsWrapper} from '@/components/charts/ExpenseStatisticsWrapper';
 import {BalanceHistoryWrapper} from '@/components/charts/BalanceHistoryWrapper';
 import Container from "@/components/page/container";
+import Link from "next/link";
 
 export default async function DashboardPage() {
   const [activities, expenses, balanceHistory] = await Promise.all([
@@ -31,7 +32,24 @@ export default async function DashboardPage() {
   return (
     <Container className="min-h-[calc(100vh-100px)]  py-[24px]">
       <h1 className="text-2xl font-bold mb-6">Financial Dashboard</h1>
-
+      <div className="space-y-4">
+        <div>
+          <Link
+            href="/dashboard"
+            className="text-blue-500 hover:text-blue-600 underline block"
+          >
+            View Dashboard
+          </Link>
+        </div>
+        <div>
+          <Link
+            href="/data"
+            className="text-blue-500 hover:text-blue-600 underline block"
+          >
+            View Sample Data
+          </Link>
+        </div>
+      </div>
       <div className="space-y-6">
         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
           <h2 className="text-xl font-semibold mb-4">Balance History</h2>

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Home from '@/app/page'
+import Home from '@/app/page/dashboard-x'
 
 describe('Home', () => {
   it('renders heading and links', () => {
@@ -12,7 +12,7 @@ describe('Home', () => {
     // Check for dashboard-x link
     const dashboardLink = screen.getByRole('link', { name: /view dashboard/i })
     expect(dashboardLink).toBeInTheDocument()
-    expect(dashboardLink).toHaveAttribute('href', '/dashboard-x')
+    expect(dashboardLink).toHaveAttribute('href', '/dashboard')
     
     // Check for data link
     const dataLink = screen.getByRole('link', { name: /view sample data/i })

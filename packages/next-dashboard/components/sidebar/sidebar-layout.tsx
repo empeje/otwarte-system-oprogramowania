@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useCallback, useState} from 'react'
+import React, {useCallback, useEffect, useState} from 'react'
 import {
   Dialog,
   DialogBackdrop,
@@ -16,9 +16,10 @@ import {
 import {classNames} from "@/utils/helper";
 import {Icons} from "@/components/icons/icons";
 import Image from "next/image";
-import {usePathname} from "next/navigation";
-import {useRouter} from "next/navigation";
+import {usePathname, useRouter} from "next/navigation";
 import Link from "next/link";
+import {SettingsService} from "@/utils/api/settings";
+import {UserSettings} from "@/types/setting";
 
 type Props = {
   children: React.ReactNode
@@ -28,7 +29,7 @@ export default function SidebarLayout({children}: Props) {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const pathname = usePathname();
   const navigation = [
-    {name: 'Dashboard', href: '/dashboard', icon: Icons.Home, current: (pathname === '/dashboard')},
+    {name: 'Dashboard', href: '/dashboard', icon: Icons.Home, current: (pathname === '/dashboard' || pathname === '/')},
     {name: 'Transactions', href: '/transactions', icon: Icons.Transfer, current: (pathname === '/transactions')},
     {name: 'Accounts', href: '/accounts', icon: Icons.User, current: (pathname === '/accounts')},
     {name: 'Investments', href: '/investments', icon: Icons.EconomicInvestment, current: (pathname === '/investments')},
@@ -36,8 +37,16 @@ export default function SidebarLayout({children}: Props) {
     {name: 'Loans', href: '/loans', icon: Icons.Loan, current: (pathname === '/loans')},
     {name: 'Services', href: '/services', icon: Icons.Service, current: (pathname === '/services')},
     {name: 'My Privileges', href: '/privileges', icon: Icons.Econometrics, current: (pathname === '/privileges')},
-    {name: 'Setting', href: '/setting', icon: Icons.Settings, current: (pathname === '/setting')},
+    {
+      name: 'Setting', href: '/setting', icon: Icons.Settings, current: (pathname === '/setting' || [
+        '/setting/profile',
+        '/setting/preference',
+        '/setting/security',
+      ].includes(pathname))
+    },
   ]
+
+  const activePage = navigation.find(d => d.current)
 
   return (
     <div>
@@ -51,7 +60,7 @@ export default function SidebarLayout({children}: Props) {
         navigation={navigation}/>
 
       <div className="lg:pl-[249px]">
-        <Navbar setSidebarOpen={setSidebarOpen} title={"Overview"}/>
+        <Navbar setSidebarOpen={setSidebarOpen} title={activePage?.name || "Overview"}/>
 
         <main>
           {children}
@@ -215,6 +224,15 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
     </form>
   }, [onsubmit])
 
+  const [setting, setSetting] = useState<UserSettings>();
+
+  useEffect(() => {
+    SettingsService.getSettings().then(data => {
+      console.log(data);
+      setSetting(data);
+    })
+  }, []);
+
   return (
     <div
       className={
@@ -262,13 +280,13 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
             <Menu as="div" className="relative pl-[5px]">
               <MenuButton className="-m-1.5 flex items-center p-1.5">
                 <span className="sr-only">Open user menu</span>
-                <Image
-                  alt="Image admin"
-                  width={60}
-                  height={60}
-                  src="/admin.png"
-                  className="size-[35px] sm:size-[60px] rounded-full"
-                />
+                {setting?.profile.avatar && <Image
+                    alt={setting?.profile.name}
+                    width={60}
+                    height={60}
+                    src={setting?.profile.avatar}
+                    className="size-[35px] sm:size-[60px] rounded-full"
+                />}
               </MenuButton>
               <MenuItems
                 transition

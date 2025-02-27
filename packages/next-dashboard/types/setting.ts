@@ -1,3 +1,5 @@
+import type {Contact} from "@/types/contact";
+
 export type NotificationType = 'email' | 'sms' | 'push';
 export type ThemeMode = 'light' | 'dark' | 'system';
 export type Language = 'en' | 'es' | 'fr' | 'de' | 'zh';
@@ -19,4 +21,5 @@ export interface UserSettings {
   phoneVerified: boolean;
   lastUpdated: Date;
   formattedLastUpdated: string;
+  profile: Contact
 } 

@@ -12,8 +12,8 @@ export default async function InvestmentPage() {
       <Section className={"!border-0 grid grid-cols-1 gap-x-[30px] gap-y-[24px]"}>
         <div className={"sm:px-0"}>
           <SectionTitle title={"Services"}/>
-          <div className="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 align-middle px-[20px] sm:px-6 lg:px-8">
+          <div className="-mx-[1px] overflow-x-auto -my-2">
+            <div className="inline-block min-w-full py-2 align-middle px-[1px]">
               <div className="overflow-hidden shadow ring-1 ring-black/5 sm:rounded-lg">
                 <table className="min-w-full divide-y divide-gray-300">
                   <thead className="bg-gray-50">
@@ -35,6 +35,10 @@ export default async function InvestmentPage() {
                     </th>
                     <th scope="col"
                         className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
+                      Features
+                    </th>
+                    <th scope="col"
+                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
                       Monthly Fee
                     </th>
                     <th scope="col"
@@ -44,26 +48,6 @@ export default async function InvestmentPage() {
                     <th scope="col"
                         className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
                       Enrollment Date
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Features
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Formatted Monthly Fee
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Formatted Billing Date
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Formatted Enrollment Date
-                    </th>
-                    <th scope="col"
-                        className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900 whitespace-nowrap">
-                      Is Auto Renew
                     </th>
                   </tr>
                   </thead>
@@ -76,11 +60,6 @@ export default async function InvestmentPage() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.category}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.status}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.description}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.monthlyFee}</td>
-                      <td
-                        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.billingDate.toLocaleDateString()}</td>
-                      <td
-                        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.enrollmentDate.toLocaleDateString()}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.features}</td>
                       <td
                         className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedMonthlyFee}</td>
@@ -88,7 +67,6 @@ export default async function InvestmentPage() {
                         className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedBillingDate}</td>
                       <td
                         className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedEnrollmentDate}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.isAutoRenew}</td>
                     </tr>
                   ))}
                   </tbody>
