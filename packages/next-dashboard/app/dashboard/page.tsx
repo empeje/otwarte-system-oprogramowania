@@ -51,7 +51,7 @@ export default async function DashboardPage() {
               <SectionTitle title={"See All"}/>
             </Link>
           </div>
-          <div className={"pl-[25px] sm:px-0 flex space-x-[30px] overflow-x-auto scrollbar-hide"}>
+          <div className={"pl-[25px] sm:px-0 flex space-x-[30px] overflow-x-auto overflow-y-hidden scrollbar-hide"}>
             {cards.map((card, index) => (
               <CreditCard card={card} key={index} className={classNames(
                 "w-[265px] sm:w-[350px]",
