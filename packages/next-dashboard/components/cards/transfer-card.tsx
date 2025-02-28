@@ -28,6 +28,8 @@ export default function TransferCard({ contacts }: { contacts: Contact[] }) {
     }
   };
 
+  const [profileActive, setProfileActive] = useState<string>();
+
   return (
     <CardRounded className="w-full space-y-[22px] sm:space-y-[30px] py-[20px] sm:py-[35px] sm:min-h-[276px]">
       <div className="relative">
@@ -36,7 +38,15 @@ export default function TransferCard({ contacts }: { contacts: Contact[] }) {
           className="flex gap-[21px] sm:gap-[28px] overflow-x-auto scrollbar-hide scroll-smooth"
         >
           {contacts.map((contact: Contact, key) => (
-            <ItemProfile contact={contact} key={key} />
+            <button key={key} onClick={() => {
+              if (profileActive === contact.id) {
+                setProfileActive(undefined)
+              } else {
+                setProfileActive(contact.id)
+              }
+            }}>
+              <ItemProfile contact={contact} active={profileActive === contact.id}/>
+            </button>
           ))}
         </div>
         <button
@@ -47,7 +57,6 @@ export default function TransferCard({ contacts }: { contacts: Contact[] }) {
             classNames(
               isAtEnd && "rotate-180",
               "transition transition-all duration-300"
-
             )
           } />
         </button>
@@ -56,7 +65,7 @@ export default function TransferCard({ contacts }: { contacts: Contact[] }) {
         <div className="text-[#718EBF] text-[12px] sm:text-[16px] leading-[20px] font-normal">
           Write Amount
         </div>
-        <InputTransfer />
+        <InputTransfer disabled={!profileActive}/>
       </div>
     </CardRounded>
   );

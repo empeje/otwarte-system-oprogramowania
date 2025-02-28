@@ -1,10 +1,10 @@
 'use client';
 
 import {Icons} from "@/components/icons/icons";
-import React, {FormEvent, useState} from "react";
+import React, {FormEvent, useMemo, useState} from "react";
 import ModalDialog from "@/components/alert/modal-dialog";
 
-export default function InputTransfer({}) {
+export default function InputTransfer({disabled=true}: {disabled: boolean}) {
   const [open, setOpen] = useState(false);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -16,6 +16,12 @@ export default function InputTransfer({}) {
   const setClose = () => {
     setOpen(false)
   }
+
+  const [amount, setAmount] = useState<string>("0");
+
+  const buttonDisabled = useMemo(() => {
+    return !parseFloat(amount) || disabled;
+  }, [amount, disabled])
 
   return (
     <>
@@ -31,6 +37,9 @@ export default function InputTransfer({}) {
         onSubmit={onSubmit}
         className="grid flex-1 grid-cols-1 bg-[#F5F7FA] h-[40px] sm:h-[50px] pl-[15px] sm:pl-[25px] rounded-[40px]">
         <input
+          onChange={(event) => {
+            setAmount(event.currentTarget.value)
+          }}
           name="search"
           type="number"
           required={true}
@@ -39,7 +48,8 @@ export default function InputTransfer({}) {
         />
         <button
           type={"submit"}
-          className={"col-start-2 row-start-1 flex items-center px-[21px] sm:px-[24px] justify-between bg-[#232323] shadow-[4px_4px_18px_-2px_#E7E4E8CC] w-[100px] sm:w-[125px] h-full rounded-[40px]"}>
+          disabled={buttonDisabled}
+          className={"disabled:bg-[#232323]/[0.7] col-start-2 row-start-1 flex items-center px-[21px] sm:px-[24px] justify-between bg-[#232323] shadow-[4px_4px_18px_-2px_#E7E4E8CC] w-[100px] sm:w-[125px] h-full rounded-[40px]"}>
           <div className={"text-[13px] sm:text-[16px] font-semibold leading-[20px] text-white"}>
             Send
           </div>
