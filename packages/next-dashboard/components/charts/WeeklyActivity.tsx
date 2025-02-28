@@ -185,6 +185,7 @@ export function WeeklyActivity({
               fontSize: 13,
               textAnchor: 'middle',
               dy: '1em',
+              angle: -45,
             })}
           />
 
