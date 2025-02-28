@@ -69,7 +69,7 @@ export default async function DashboardPage() {
       <Section className={"!border-0 grid grid-cols-1 lg:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
         <div className={"lg:col-span-2"}>
           <div className={"flex justify-between"}>
-            <SectionTitle title={"Weekly Activity"}/>
+            <SectionTitle title={"Weekly Activity"} className={"mb-0"}/>
           </div>
           <CardRounded className={"!p-0 overflow-hidden"}>
             <WeeklyActivityWrapper data={weeklyActivityData}/>
@@ -77,7 +77,7 @@ export default async function DashboardPage() {
         </div>
 
         <div className={"lg:col-span-1"}>
-          <SectionTitle title={"Expense Statistics"}/>
+          <SectionTitle title={"Expense Statistics"} className={"mb-0"}/>
           <CardRounded className={"!p-0 overflow-hidden"}>
             <ExpenseStatisticsWrapper data={expenseData}/>
           </CardRounded>
@@ -93,7 +93,7 @@ export default async function DashboardPage() {
         </div>
 
         <div className={"xl:col-span-3"}>
-          <SectionTitle title={"Balance History"}/>
+          <SectionTitle title={"Balance History"} className={"mb-0"}/>
           <CardRounded className={"!p-0 overflow-hidden"}>
             <BalanceHistoryWrapper data={balanceHistory.history}/>
           </CardRounded>
