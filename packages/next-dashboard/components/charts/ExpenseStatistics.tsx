@@ -15,6 +15,13 @@ interface ExpenseStatisticsProps {
   height?: number;
 }
 
+type Arc = { startAngle: number; endAngle: number };
+
+type PathFunction = {
+  (arc: Arc): string; // Function signature (callable)
+  centroid: (arc: Arc) => [number, number]; // Additional field
+};
+
 export function ExpenseStatistics(
   {
     data,
@@ -26,8 +33,8 @@ export function ExpenseStatistics(
   const centerX = width / 2;
 
   const Content = ({pie, arc, i}: {
-    pie: { path: { centroid: (arc: { startAngle: number; endAngle: number }) => [number, number] } };
-    arc: { startAngle: number; endAngle: number };
+    pie: { path: PathFunction };
+    arc: Arc;
     i: number;
   }) => {
     const [centroidX, centroidY] = pie.path.centroid(arc);
