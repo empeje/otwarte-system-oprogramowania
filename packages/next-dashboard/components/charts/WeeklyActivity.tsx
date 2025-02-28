@@ -36,7 +36,7 @@ export function WeeklyActivity({
   }>();
 
   // Margins
-  const margin = { top: 40, right: 30, bottom: 40, left: 80 };
+  const margin = { top: 68, right: 30, bottom: 63, left: 80 };
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -172,7 +172,7 @@ export function WeeklyActivity({
               fontSize: 13,
               textAnchor: 'end',
               dy: '0.33em',
-              dx: -4,
+              dx: -1,
             })}
           />
           <AxisBottom
@@ -189,7 +189,7 @@ export function WeeklyActivity({
           />
 
           {/* Legend */}
-          <g transform={`translate(${innerWidth - 150}, -40)`}>
+          <g transform={`translate(${innerWidth - 150}, -43)`}>
             <circle cx={6} cy={6} r={6} fill="#396AFF" />
             <text x={20} y={10} fontSize={12} fill="#718EBF">Deposit</text>
             <circle cx={86} cy={6} r={6} fill="#232323" />

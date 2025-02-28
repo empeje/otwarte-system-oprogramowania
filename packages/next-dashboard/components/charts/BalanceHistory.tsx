@@ -1,12 +1,13 @@
 'use client';
 
-import { useMemo } from 'react';
-import { AxisLeft, AxisBottom } from '@visx/axis';
-import { scaleLinear, scaleTime } from '@visx/scale';
-import { Group } from '@visx/group';
-import { LinePath, AreaClosed } from '@visx/shape';
-import { curveMonotoneX } from '@visx/curve';
-import { GridRows } from '@visx/grid';
+import {useMemo} from 'react';
+import {AxisLeft, AxisBottom} from '@visx/axis';
+import {scaleLinear, scaleTime} from '@visx/scale';
+import {Group} from '@visx/group';
+import {LinePath, AreaClosed} from '@visx/shape';
+import {curveMonotoneX} from '@visx/curve';
+import {GridColumns, GridRows} from '@visx/grid';
+import {LinearGradient} from "@visx/gradient";
 
 interface BalanceHistoryProps {
   data: {
@@ -18,12 +19,12 @@ interface BalanceHistoryProps {
 }
 
 export function BalanceHistory({
-  data,
-  width = 800,
-  height = 400
-}: BalanceHistoryProps) {
+                                 data,
+                                 width = 800,
+                                 height = 400
+                               }: BalanceHistoryProps) {
   // Margins
-  const margin = { top: 40, right: 30, bottom: 50, left: 60 };
+  const margin = {top: 35, right: 25, bottom: 70, left: 80};
   const innerWidth = width - margin.left - margin.right;
   const innerHeight = height - margin.top - margin.bottom;
 
@@ -55,20 +56,35 @@ export function BalanceHistory({
         <GridRows
           scale={yScale}
           width={innerWidth}
-          strokeDasharray="1,3"
+          strokeDasharray="4"
+          stroke="#e0e0e0"
+          strokeOpacity={0.8}
+          pointerEvents="none"
+        />
+        {/* Vertical lines */}
+        <GridColumns
+          scale={xScale}
+          height={innerHeight}
+          strokeDasharray="4"
           stroke="#e0e0e0"
           strokeOpacity={0.8}
           pointerEvents="none"
         />
 
+        <LinearGradient
+          id="gradient"
+          from="#2d60ff"
+          to="#2d60ff"
+          toOpacity={0}
+        />
         {/* Area chart */}
         <AreaClosed
           data={data}
           x={d => xScale(new Date(d.date))}
           y={d => yScale(d.balance)}
           yScale={yScale}
-          fill="#4C6FFF"
-          fillOpacity={0.1}
+          fill="url(#gradient)"
+          fillOpacity={0.3}
           curve={curveMonotoneX}
         />
 
@@ -77,20 +93,21 @@ export function BalanceHistory({
           data={data}
           x={d => xScale(new Date(d.date))}
           y={d => yScale(d.balance)}
-          stroke="#4C6FFF"
-          strokeWidth={2}
+          stroke="#1814F3"
+          strokeWidth={3}
           curve={curveMonotoneX}
         />
 
         {/* Axes */}
         <AxisLeft
           scale={yScale}
-          stroke="#666"
-          tickStroke="#666"
+          stroke="#DFE5EE"
+          strokeDasharray="4"
+          tickStroke="#718EBF"
           tickFormat={value => `${value}`}
           tickLabelProps={() => ({
-            fill: '#666',
-            fontSize: 12,
+            fill: '#718EBF',
+            fontSize: 13,
             textAnchor: 'end',
             dy: '0.33em',
             dx: -4,
@@ -99,15 +116,15 @@ export function BalanceHistory({
         <AxisBottom
           top={innerHeight}
           scale={xScale}
-          stroke="#666"
-          tickStroke="#666"
+          stroke="transparent"
+          tickStroke="#718EBF"
           tickFormat={date => {
             const d = new Date(date as Date);
-            return d.toLocaleString('default', { month: 'short' });
+            return d.toLocaleString('default', {month: 'short'});
           }}
           tickLabelProps={() => ({
-            fill: '#666',
-            fontSize: 12,
+            fill: '#718EBF',
+            fontSize: 14,
             textAnchor: 'middle',
             dy: '1em',
           })}

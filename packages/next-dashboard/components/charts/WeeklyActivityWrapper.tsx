@@ -39,7 +39,7 @@ export function WeeklyActivityWrapper({data}: WeeklyActivityWrapperProps) {
       <WeeklyActivity
         data={data}
         width={size}
-        height={367-28-28}
+        height={367}
       />
     </div>
   );

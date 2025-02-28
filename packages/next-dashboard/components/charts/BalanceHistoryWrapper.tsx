@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import {useEffect, useRef, useState} from "react";
 
 const BalanceHistory = dynamic(
   () => import('./BalanceHistory').then(mod => mod.BalanceHistory),
@@ -15,12 +16,30 @@ interface BalanceHistoryWrapperProps {
 }
 
 export function BalanceHistoryWrapper({ data }: BalanceHistoryWrapperProps) {
+  const [size, setSize] = useState(400);
+  const divRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (divRef.current) {
+        const newSize = divRef.current.clientWidth;
+        setSize(newSize);
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+
   return (
-    <div className="h-[400px] w-full">
+    <div ref={divRef} className="h-[276px] w-full">
       <BalanceHistory 
         data={data}
-        width={800}
-        height={400}
+        width={size}
+        height={276}
       />
     </div>
   );
