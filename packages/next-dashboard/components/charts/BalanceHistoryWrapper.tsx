@@ -16,7 +16,7 @@ interface BalanceHistoryWrapperProps {
 }
 
 export function BalanceHistoryWrapper({ data }: BalanceHistoryWrapperProps) {
-  const [size, setSize] = useState(400);
+  const [size, setSize] = useState(0);
   const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

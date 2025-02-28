@@ -23,7 +23,8 @@ export function ExpenseStatisticsWrapper({data}: ExpenseStatisticsWrapperProps) 
   useEffect(() => {
     const updateSize = () => {
       if (divRef.current) {
-        const newSize = divRef.current.clientWidth;
+        const size = divRef.current.clientWidth;
+        const newSize = size < 367 ? size : 367;
         setSize(newSize);
       }
     };
@@ -35,7 +36,7 @@ export function ExpenseStatisticsWrapper({data}: ExpenseStatisticsWrapperProps) 
   }, []);
 
   return (
-      <div ref={divRef} className="min-h-[367px] w-full flex items-center justify-center">
+      <div ref={divRef} className="min-h-[367px] xl:max-h-[367] w-full flex items-center justify-center">
       <ExpenseStatistics
         data={data}
         width={size}
