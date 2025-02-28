@@ -13,7 +13,6 @@ type InputType = {
   defaultValue?: string,
 }
 
-// eslint-disable-next-line react/display-name
 export const InputText = forwardRef<HTMLInputElement, InputType>((
   {
     label,
@@ -46,5 +45,7 @@ export const InputText = forwardRef<HTMLInputElement, InputType>((
     </div>
   )
 })
+
+InputText.displayName = 'InputText';
 
 export default InputText

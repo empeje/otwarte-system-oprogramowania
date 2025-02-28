@@ -25,8 +25,11 @@ export function ExpenseStatistics(
   const centerY = height / 2;
   const centerX = width / 2;
 
-  // eslint-disable-next-line
-  const Content = ({pie, arc, i}: { pie: any; arc: any; i: number }) => {
+  const Content = ({pie, arc, i}: {
+    pie: { path: { centroid: (arc: { startAngle: number; endAngle: number }) => [number, number] } };
+    arc: { startAngle: number; endAngle: number };
+    i: number;
+  }) => {
     const [centroidX, centroidY] = pie.path.centroid(arc);
     const hasSpaceForLabel = arc.endAngle - arc.startAngle >= 0.1;
     const [isHovered, setHovered] = useState(false);

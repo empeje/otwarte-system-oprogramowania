@@ -1,6 +1,38 @@
+# Financial Services Dashboard
+
 ![CI](https://github.com/empeje/next-dashboard/actions/workflows/ci.yml/badge.svg?branch=main)
 
+This application demonstrates a Financial Services Dashboard application written in Next.js, D3, and Tailwind.
+
+## Demo Page
+
+You can view the demo page [here](https://fin-next-dashboard.vercel.app/).
+
+## Features
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+- **Financial Data Management**
+  - Service tracking (Insurance, Banking, Credit)
+  - Loan management with amortization calculations
+  - Credit card transaction monitoring
+  - Client/contact relationship management
+- **Data Visualization**
+  - Interactive charts using Visx
+  - Real-time balance tracking
+  - Expense breakdowns by category
+- **Mock Data Generation**
+  - Realistic financial data using Faker.js
+  - Auto-renewal status tracking
+  - Dynamic transaction histories
+
+## Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) + Headless UI
+- **Visualization**: [Visx](https://airbnb.io/visx/) (D3 Derivatives)
+- **Testing**: Jest + Testing Library
+- **Data Mocking**: [Faker.js](https://fakerjs.dev/)
 
 ## Getting Started
 
@@ -17,10 +49,6 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/button.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 

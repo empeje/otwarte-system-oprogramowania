@@ -25,7 +25,7 @@ export function dateFormatter(
 
 // format datetime-local: "YYYY-MM-DDTHH:mm"
 export const dbToInputDate = (utcDate: string) => {
-  const date = new Date(utcDate); // Konversi string UTC menjadi objek Date
+  const date = new Date(utcDate); // Convert UTC string to Date object
 
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");

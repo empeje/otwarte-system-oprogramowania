@@ -62,8 +62,7 @@ export default function CreditCard({card, className}: { card: Card;className?:Cl
           cardColor === 'rose-gold' && "bg-orange-300",
           cardColor === 'gold' && "bg-yellow-500",
           cardColor === 'platinum' && "bg-neutral-300",
-          "rounded-[25px]", //  xl:max-w-[350px]
-          // "w-[265px] h-[170px]",
+          "rounded-[25px]",
           "aspect-[256/170]",
           "xl:w-[350px] xl:h-[235px]",
           "border border-[#DFEAF2] dark:border-0",
@@ -90,8 +89,7 @@ export default function CreditCard({card, className}: { card: Card;className?:Cl
             classNames(
               "px-5 xl:px-[24px]",
               "bg-[linear-gradient(180deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0)_100%)]",
-              // "xl:h-[70px]",
-              "aspect-[256/50] mt-auto", // perlu di benerin
+              "aspect-[256/50] mt-auto",
               "flex items-center justify-between",
               "border-t border-[#DFEAF2] dark:border-0",
             )
