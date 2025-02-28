@@ -51,11 +51,11 @@ export function ExpenseStatistics(
           <g>
             <Text
               x={centroidX}
-              y={centroidY - 15}
+              y={centroidY - 0}
               fill="white"
               fontSize={16}
-              textAnchor="middle"
               fontWeight="bold"
+              textAnchor="middle"
             >
               {`${data[i].percentage}%`}
             </Text>
@@ -63,7 +63,8 @@ export function ExpenseStatistics(
               x={centroidX}
               y={centroidY + 15}
               fill="white"
-              fontSize={14}
+              fontSize={13}
+              fontWeight="bold"
               textAnchor="middle"
             >
               {data[i].category}

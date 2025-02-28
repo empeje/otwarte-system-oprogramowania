@@ -17,9 +17,8 @@ interface WeeklyActivityWrapperProps {
 }
 
 export function WeeklyActivityWrapper({data}: WeeklyActivityWrapperProps) {
-  const [size, setSize] = useState();
-  const divRef = useRef(null);
-
+  const [size, setSize] = useState<number>();
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateSize = () => {

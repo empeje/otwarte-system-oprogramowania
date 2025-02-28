@@ -18,8 +18,7 @@ interface ExpenseStatisticsWrapperProps {
 
 export function ExpenseStatisticsWrapper({data}: ExpenseStatisticsWrapperProps) {
   const [size, setSize] = useState(400);
-  const divRef = useRef(null);
-
+  const divRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const updateSize = () => {

@@ -45,7 +45,7 @@ export function WeeklyActivity({
     () => scaleBand<string>({
       range: [0, innerWidth],
       domain: data.map(d => d.week),
-      padding: 0.2,
+      padding: 0.35,
     }),
     [data, innerWidth]
   );
@@ -53,7 +53,7 @@ export function WeeklyActivity({
   const xSubScale = scaleBand({
     domain: ['black', 'blue'],
     range: [0, xScale.bandwidth()],
-    padding: 0.2, // space bar between category
+    padding: 0.35, // space bar between category
   });
 
   const yScale = useMemo(() => {
@@ -95,8 +95,8 @@ export function WeeklyActivity({
               x2={innerWidth}
               y1={yScale(tick)}
               y2={yScale(tick)}
-              stroke="#e5e7eb"
-              strokeDasharray="4,4"
+              stroke="#F3F3F5"
+              strokeDasharray="0"
             />
           ))}
 
@@ -165,11 +165,11 @@ export function WeeklyActivity({
                 maximumFractionDigits: 0,
               }).format(Number(value))
             }
-            stroke="#666"
-            tickStroke="#666"
+            stroke="transparent"
+            tickStroke="transparent"
             tickLabelProps={() => ({
-              fill: '#666',
-              fontSize: 12,
+              fill: '#718EBF',
+              fontSize: 13,
               textAnchor: 'end',
               dy: '0.33em',
               dx: -4,
@@ -178,22 +178,22 @@ export function WeeklyActivity({
           <AxisBottom
             top={innerHeight}
             scale={xScale}
-            stroke="#666"
-            tickStroke="#666"
+            stroke="transparent"
+            tickStroke="transparent"
             tickLabelProps={() => ({
-              fill: '#666',
-              fontSize: 12,
+              fill: '#718EBF',
+              fontSize: 13,
               textAnchor: 'middle',
               dy: '1em',
             })}
           />
 
           {/* Legend */}
-          <g transform={`translate(${innerWidth - 200}, -20)`}>
-            <circle cx={6} cy={6} r={6} fill="#4C6FFF" />
-            <text x={20} y={10} fontSize={12} fill="#666">Deposit</text>
-            <circle cx={86} cy={6} r={6} fill="#000000" />
-            <text x={100} y={10} fontSize={12} fill="#666">Withdraw</text>
+          <g transform={`translate(${innerWidth - 150}, -40)`}>
+            <circle cx={6} cy={6} r={6} fill="#396AFF" />
+            <text x={20} y={10} fontSize={12} fill="#718EBF">Deposit</text>
+            <circle cx={86} cy={6} r={6} fill="#232323" />
+            <text x={100} y={10} fontSize={12} fill="#718EBF">Withdraw</text>
           </g>
         </Group>
       </svg>
