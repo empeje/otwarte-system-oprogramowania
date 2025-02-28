@@ -40,7 +40,7 @@ export default function InputTransfer({}) {
         <button
           type={"submit"}
           className={"col-start-2 row-start-1 flex items-center px-[21px] sm:px-[24px] justify-between bg-[#232323] shadow-[4px_4px_18px_-2px_#E7E4E8CC] w-[100px] sm:w-[125px] h-full rounded-[40px]"}>
-          <div className={"text-[13px] sm:text-[16px] font-semibold leading-[20px]"}>
+          <div className={"text-[13px] sm:text-[16px] font-semibold leading-[20px] text-white"}>
             Send
           </div>
           <Icons.PlaneOutline
