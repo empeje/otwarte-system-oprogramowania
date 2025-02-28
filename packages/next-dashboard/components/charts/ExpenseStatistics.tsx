@@ -4,6 +4,7 @@ import {Group} from '@visx/group';
 import {Text} from '@visx/text';
 import {Pie} from '@visx/shape';
 import {useState} from "react";
+import { PieArcDatum, ProvidedProps } from '@visx/shape/lib/shapes/Pie';
 
 interface ExpenseStatisticsProps {
   data: {
@@ -15,12 +16,7 @@ interface ExpenseStatisticsProps {
   height?: number;
 }
 
-type Arc = { startAngle: number; endAngle: number };
-
-type PathFunction = {
-  (arc: Arc): string; // Function signature (callable)
-  centroid: (arc: Arc) => [number, number]; // Additional field
-};
+type Arc = PieArcDatum<{ category: string; percentage: number; color: string }>;
 
 export function ExpenseStatistics(
   {
@@ -33,11 +29,11 @@ export function ExpenseStatistics(
   const centerX = width / 2;
 
   const Content = ({pie, arc, i}: {
-    pie: { path: PathFunction };
+    pie: ProvidedProps<{ category: string; percentage: number; color: string }>;
     arc: Arc;
     i: number;
   }) => {
-    const [centroidX, centroidY] = pie.path.centroid(arc);
+    const [centroidX, centroidY] = pie.path?.centroid(arc) || [0, 0];
     const hasSpaceForLabel = arc.endAngle - arc.startAngle >= 0.1;
     const [isHovered, setHovered] = useState(false);
 
@@ -54,7 +50,7 @@ export function ExpenseStatistics(
          onMouseEnter={() => setHovered(true)}
          onMouseLeave={() => setHovered(false)}>
         <path
-          d={pie.path(arc) || ''}
+          d={pie.path?.(arc) || ''}
           fill={data[i].color}
         />
         {hasSpaceForLabel && (
