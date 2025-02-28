@@ -228,7 +228,6 @@ const Navbar = ({setSidebarOpen, title}: { setSidebarOpen: (open: boolean) => vo
 
   useEffect(() => {
     SettingsService.getSettings().then(data => {
-      console.log(data);
       setSetting(data);
     })
   }, []);

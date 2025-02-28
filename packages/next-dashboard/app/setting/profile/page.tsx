@@ -68,7 +68,6 @@ export default function ProfilePage() {
 
   useEffect(() => {
     SettingsService.getSettings().then(data => {
-      console.log(data);
       setSetting(data);
     })
   }, []);

@@ -36,7 +36,7 @@ export class ContactGenerator {
       status: faker.helpers.arrayElement(this.CONTACT_STATUS),
       accountNumber: faker.finance.accountNumber(10),
       bankName: faker.helpers.arrayElement(this.BANK_NAMES),
-      avatar: `https://api.dicebear.com/7.x/avataaars/svg?seed=${encodeURIComponent(name)}`,
+      avatar: `https://api.dicebear.com/9.x/avataaars-neutral/jpeg?seed=${encodeURIComponent(name)}`,
       createdAt: faker.date.past({ years: 1 }),
       formattedDate: format(faker.date.past({ years: 1 }), 'MMM dd, yyyy'),
       recentTransactions: faker.number.int({ min: 0, max: 15 }),
