@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import Home from '@/app/page/dashboard-x'
+import Home from '@/app/dashboard-x/page'
 
 describe('Home', () => {
   it('renders heading and links', () => {
