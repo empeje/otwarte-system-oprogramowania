@@ -66,8 +66,8 @@ export default async function DashboardPage() {
           <TransactionCard transactions={transactions}/>
         </div>
       </div>
-      <Section className={"!border-0 grid grid-cols-1 xl:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
-        <div className={"xl:col-span-2"}>
+      <Section className={"!border-0 grid grid-cols-1 lg:grid-cols-3 gap-x-[30px] gap-y-[24px]"}>
+        <div className={"lg:col-span-2"}>
           <div className={"flex justify-between"}>
             <SectionTitle title={"Weekly Activity"}/>
           </div>
@@ -76,7 +76,7 @@ export default async function DashboardPage() {
           </CardRounded>
         </div>
 
-        <div className={"xl:col-span-1"}>
+        <div className={"lg:col-span-1"}>
           <SectionTitle title={"Expense Statistics"}/>
           <CardRounded className={"!p-0 overflow-hidden"}>
             <ExpenseStatisticsWrapper data={expenseData}/>

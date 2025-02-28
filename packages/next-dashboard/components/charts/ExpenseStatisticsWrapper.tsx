@@ -1,10 +1,11 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import React, {useEffect, useRef, useState} from "react";
 
 const ExpenseStatistics = dynamic(
   () => import('./ExpenseStatistics').then(mod => mod.ExpenseStatistics),
-  { ssr: false }
+  {ssr: false}
 );
 
 interface ExpenseStatisticsWrapperProps {
@@ -15,13 +16,31 @@ interface ExpenseStatisticsWrapperProps {
   }[];
 }
 
-export function ExpenseStatisticsWrapper({ data }: ExpenseStatisticsWrapperProps) {
+export function ExpenseStatisticsWrapper({data}: ExpenseStatisticsWrapperProps) {
+  const [size, setSize] = useState(400);
+  const divRef = useRef(null);
+
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (divRef.current) {
+        const newSize = divRef.current.clientWidth;
+        setSize(newSize);
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
-    <div className="h-[400px] w-full">
-      <ExpenseStatistics 
+      <div ref={divRef} className="min-h-[367px] w-full flex items-center justify-center">
+      <ExpenseStatistics
         data={data}
-        width={400}
-        height={400}
+        width={size}
+        height={size}
       />
     </div>
   );

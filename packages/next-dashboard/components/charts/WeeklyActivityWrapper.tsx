@@ -1,10 +1,11 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import {useEffect, useRef, useState} from "react";
 
 const WeeklyActivity = dynamic(
   () => import('./WeeklyActivity').then(mod => mod.WeeklyActivity),
-  { ssr: false }
+  {ssr: false}
 );
 
 interface WeeklyActivityWrapperProps {
@@ -15,13 +16,31 @@ interface WeeklyActivityWrapperProps {
   }[];
 }
 
-export function WeeklyActivityWrapper({ data }: WeeklyActivityWrapperProps) {
+export function WeeklyActivityWrapper({data}: WeeklyActivityWrapperProps) {
+  const [size, setSize] = useState();
+  const divRef = useRef(null);
+
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (divRef.current) {
+        const newSize = divRef.current.clientWidth;
+        setSize(newSize);
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
   return (
-    <div className="h-[400px] w-full">
-      <WeeklyActivity 
+    <div ref={divRef} className="min-h-[367px] w-full flex items-center justify-center">
+      <WeeklyActivity
         data={data}
-        width={800}
-        height={400}
+        width={size}
+        height={367-28-28}
       />
     </div>
   );

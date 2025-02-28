@@ -50,6 +50,12 @@ export function WeeklyActivity({
     [data, innerWidth]
   );
 
+  const xSubScale = scaleBand({
+    domain: ['black', 'blue'],
+    range: [0, xScale.bandwidth()],
+    padding: 0.2, // space bar between category
+  });
+
   const yScale = useMemo(() => {
     const maxValue = Math.max(
       ...data.map(d => Math.max(d.deposits, d.withdrawals))
@@ -105,7 +111,7 @@ export function WeeklyActivity({
                 <Bar
                   x={x}
                   y={yScale(d.withdrawals)}
-                  width={barWidth}
+                  width={xSubScale.bandwidth()}
                   height={innerHeight - yScale(d.withdrawals)}
                   fill="url(#withdrawal-gradient)"
                   rx={4}
@@ -128,7 +134,7 @@ export function WeeklyActivity({
                 <Bar
                   x={x + barWidth}
                   y={yScale(d.deposits)}
-                  width={barWidth}
+                  width={xSubScale.bandwidth()}
                   height={innerHeight - yScale(d.deposits)}
                   fill="url(#deposit-gradient)"
                   rx={4}
