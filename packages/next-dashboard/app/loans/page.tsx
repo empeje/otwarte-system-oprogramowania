@@ -76,7 +76,7 @@ export default async function LoanPage() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedStartDate}</td>
                       <td
                         className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedNextPaymentDate}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.progress}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.progress.toFixed(2)}%</td>
                     </tr>
                   ))}
                   </tbody>

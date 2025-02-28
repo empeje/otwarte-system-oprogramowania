@@ -68,7 +68,7 @@ export default async function PrivilegePage() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.points}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.requiredPoints}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.benefits}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.progress}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.progress.toFixed(2)}%</td>
                       <td
                         className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedValidUntil}</td>
                     </tr>

@@ -74,7 +74,7 @@ export default async function InvestmentPage() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.status}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.quantity}</td>
                       <td
-                        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.profitLossPercentage}</td>
+                        className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.profitLossPercentage.toFixed(2)}%</td>
                       <td
                         className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{person.formattedPurchasePrice}</td>
                       <td

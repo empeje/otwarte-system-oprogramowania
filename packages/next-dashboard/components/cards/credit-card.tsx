@@ -1,17 +1,17 @@
 'use client';
 
-import {classNames} from "@/utils/helper";
+import {classNames, ClassNameType} from "@/utils/helper";
 import Image from "next/image";
 import {Card, CardColor} from "@/types/card";
 
-export default function CreditCard({card}: { card: Card }) {
+export default function CreditCard({card, className}: { card: Card;className?:ClassNameType }) {
   const Detail = ({title, content}: { title: string; content: string }) => {
     return (
       <div>
         <div className={
           classNames(
             "text-[11px] leading-[13px] font-normal",
-            "sm:text-[12px] sm:leading-[14px]",
+            "xl:text-[12px] xl:leading-[14px]",
             "text-[#718EBF] dark:text-white/[.7]"
           )
         }>{title}</div>
@@ -19,7 +19,7 @@ export default function CreditCard({card}: { card: Card }) {
         <div className={
           classNames(
             "text-[16px] leading-[20px] font-semibold",
-            "sm:text-[20px] sm:leading-[24px]",
+            "xl:text-[20px] xl:leading-[24px]",
             "text-[#343C6A] dark:text-white"
           )
         }>{content}</div>
@@ -32,7 +32,7 @@ export default function CreditCard({card}: { card: Card }) {
         <div className={
           classNames(
             "text-[10px] leading-[12px] font-normal",
-            "sm:text-[12px] sm:leading-[14px]",
+            "xl:text-[12px] xl:leading-[14px]",
             "text-[#718EBF] dark:text-white/[.7]",
             "whitespace-nowrap"
           )
@@ -40,7 +40,7 @@ export default function CreditCard({card}: { card: Card }) {
 
         <div className={classNames(
           "text-[13px] leading-[15px] font-semibold",
-          "sm:text-[15px] sm:leading-[18px]",
+          "xl:text-[15px] xl:leading-[18px]",
           "text-[#343C6A] dark:text-white",
           "whitespace-nowrap"
         )}>{content}</div>
@@ -62,13 +62,16 @@ export default function CreditCard({card}: { card: Card }) {
           cardColor === 'rose-gold' && "bg-orange-300",
           cardColor === 'gold' && "bg-yellow-500",
           cardColor === 'platinum' && "bg-neutral-300",
-          "rounded-[25px] w-[265px] sm:w-[350px]", //  sm:max-w-[350px]
-          "h-[170px] sm:h-[235px]",
+          "rounded-[25px]", //  xl:max-w-[350px]
+          // "w-[265px] h-[170px]",
+          "aspect-[256/170]",
+          "xl:w-[350px] xl:h-[235px]",
           "border border-[#DFEAF2] dark:border-0",
-          "text-[#343C6A] dark:text-white"
+          "text-[#343C6A] dark:text-white",
+          className
         )
       }>
-        <div className={"px-5 sm:px-[24px] pt-[18px] pb-4 sm:pb-[35px] h-[119px] sm:h-[165px] flex flex-col"}>
+        <div className={"px-5 xl:px-[24px] pt-[18px] pb-4 xl:pb-[35px] aspect-[256/119] xl:h-[165px] flex flex-col"}>
           <div className="flex items-start justify-between w-full">
             <Detail title={"Balance"} content={card.formattedBalance}/>
             <div>
@@ -77,7 +80,7 @@ export default function CreditCard({card}: { card: Card }) {
                 height={35}/>
             </div>
           </div>
-          <div className="mt-auto flex items-start space-x-[57px] sm:space-x-[67px] w-full">
+          <div className="mt-auto flex items-start space-x-[57px] xl:space-x-[67px] w-full">
             <SecondaryDetail title={"CARD HOLDER"} content={card.cardholderName}/>
             <SecondaryDetail title={"VALID THRU"} content={card.expiryDate}/>
           </div>
@@ -85,16 +88,19 @@ export default function CreditCard({card}: { card: Card }) {
         <div
           className={
             classNames(
-              "px-5 sm:px-[24px]",
-              "bg-[linear-gradient(180deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0)_100%)] h-[50] sm:h-[70px]",
+              "px-5 xl:px-[24px]",
+              "bg-[linear-gradient(180deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0)_100%)]",
+              // "xl:h-[70px]",
+              "aspect-[256/50] mt-auto", // perlu di benerin
               "flex items-center justify-between",
               "border-t border-[#DFEAF2] dark:border-0",
             )
           }>
-          <div className={
+          <div
+            className={
             classNames(
               "text-[15px] leading-[18px]",
-              "sm:text-[22px] sm:leading-[26px]"
+              "xl:text-[22px] xl:leading-[26px]"
             )
 
           }>
@@ -103,7 +109,7 @@ export default function CreditCard({card}: { card: Card }) {
           {isMasterCard &&
               <Image src={idDark ? "/master-card-light.png" : "/master-card-dark.png"} alt={"Mater card"} width={44}
                      height={30}
-                     className={"h-[27px] sm:h-[30px] w-auto"}/>}
+                     className={"h-[27px] xl:h-[30px] w-auto"}/>}
         </div>
       </div>
     </div>

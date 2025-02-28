@@ -14,7 +14,7 @@ export default async function CardPage() {
           <div className={"px-[25px] sm:px-0 flex justify-between"}>
             <SectionTitle title={"Credit Cards"}/>
           </div>
-          <div className={"pl-[25px] sm:px-0 flex flex-wrap gap-[30px] overflow-x-auto scrollbar-hide"}>
+          <div className={"px-[25px] sm:px-0 grid sm:grid-cols-2 xl:flex flex-wrap gap-[30px] overflow-x-auto scrollbar-hide"}>
             {cards.map((card, index) => (
               <CreditCard card={card} key={index}/>
             ))}

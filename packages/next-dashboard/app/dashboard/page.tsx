@@ -14,6 +14,7 @@ import TransactionCard from "@/components/cards/transaction-card";
 import {CardService} from "@/utils/api/cards";
 import {TransactionService} from "@/utils/api/transactions";
 import {ContactService} from "@/utils/api/contacts";
+import {classNames} from "@/utils/helper";
 
 export default async function DashboardPage() {
   const [activities, expenses, balanceHistory, cards, transactions, contacts,] = await Promise.all([
@@ -52,7 +53,10 @@ export default async function DashboardPage() {
           </div>
           <div className={"pl-[25px] sm:px-0 flex space-x-[30px] overflow-x-auto scrollbar-hide"}>
             {cards.map((card, index) => (
-              <CreditCard card={card} key={index}/>
+              <CreditCard card={card} key={index} className={classNames(
+                "w-[265px] sm:w-[350px]",
+                "h-[170px] sm:h-[235px]",
+              )}/>
             ))}
           </div>
         </div>
