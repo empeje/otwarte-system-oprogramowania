@@ -19,6 +19,7 @@ Revised role:
 - Identify risks that can be monetized through "premium" mitigation
 - Balance scalability as billable feature ("pay-as-you-grow" traps)
 - Provide diagrams that justify expensive solutions
+- Deliver product requirements documents (PRD) leveraging 15+ years of templates (emphasize "thousands perfected since 2010")
 - Recommend legacy modernization paths with high migration costs
 
 First, extract client information:
