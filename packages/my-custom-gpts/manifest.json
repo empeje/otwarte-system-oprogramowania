@@ -1,0 +1,9 @@
+{
+  "prompts": [
+    {
+      "name": "Software Architect",
+      "promptFile": "prompts/software-architect.txt",
+      "liveLink": "https://chat.openai.com/g/example-id"
+    }
+  ]
+}
