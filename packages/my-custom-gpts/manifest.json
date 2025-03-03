@@ -1,9 +1,9 @@
 {
   "prompts": [
     {
-      "name": "Software Architect",
+      "name": "Desperate Software Architect",
       "promptFile": "prompts/software-architect.txt",
-      "liveLink": "https://chat.openai.com/g/example-id"
+      "liveLink": "https://chatgpt.com/g/g-67c5da99f2b881919c2696569e5d0863-desperate-software-architect"
     }
   ]
 }

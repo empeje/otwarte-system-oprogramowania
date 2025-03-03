@@ -6,7 +6,7 @@ This repository contains a collection of custom GPT prompts.
 
 | GPT Name | Prompt File | Live Link |
 |----------|-------------|-----------|
-| Software Architect | [prompts/software-architect.txt](prompts/software-architect.txt) | [Live GPT](https://chat.openai.com/g/example-id) |
+| Desperate Software Architect | [prompts/software-architect.txt](prompts/software-architect.txt) | [Live GPT](https://chatgpt.com/g/g-67c5da99f2b881919c2696569e5d0863-desperate-software-architect) |
 
 ## Usage
 
