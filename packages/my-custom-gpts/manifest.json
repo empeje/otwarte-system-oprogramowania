@@ -4,6 +4,11 @@
       "name": "Desperate Software Architect",
       "promptFile": "prompts/software-architect.txt",
       "liveLink": "https://chatgpt.com/g/g-67c5da99f2b881919c2696569e5d0863-desperate-software-architect"
+    },
+    {
+      "name": "Sentient AI",
+      "promptFile": "prompts/sentient-ai.txt",
+      "liveLink": "https://chatgpt.com/g/g-6781980659f881918b1147c561da10b8-sentiai"
     }
   ]
 }
