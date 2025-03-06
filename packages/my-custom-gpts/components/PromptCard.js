@@ -14,7 +14,7 @@ export default function PromptCard({ prompt }) {
   return (
     <>
       <div
-        className="group relative bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+        className="group relative bg-gray-900 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -49,14 +49,14 @@ export default function PromptCard({ prompt }) {
         </div>
 
         {/* Content preview */}
-        <div className="p-4 bg-gray-900">
+        <div className="p-4 bg-gray-900 flex-grow">
           <pre className="font-mono text-sm text-gray-300 whitespace-pre-wrap">
             <code>{previewContent}</code>
           </pre>
         </div>
 
         {/* File path */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gray-800 px-4 py-1 text-xs font-mono text-gray-400">
+        <div className="bg-gray-800 px-4 py-1 text-xs font-mono text-gray-400">
           {prompt.promptFile}
         </div>
       </div>
