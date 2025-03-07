@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A tool to manage Custom GPT prompts and generate documentation",
   "scripts": {
-    "start": "node src/index.js",
-    "generate": "node src/generate.js",
+    "start": "npm run build && npm run preview",
+    "generate": "node src/generate.mjs",
     "dev": "next dev",
     "build": "next build",
     "preview": "npx serve out",
@@ -27,7 +27,6 @@
     "react-dom": "^18.2.0",
     "yaml": "^2.4.0"
   },
-  "type": "module",
   "devDependencies": {
     "autoprefixer": "^10.4.17",
     "husky": "^9.1.7",
