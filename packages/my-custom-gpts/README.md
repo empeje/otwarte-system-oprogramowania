@@ -8,6 +8,7 @@ This repository contains a collection of custom GPT prompts.
 |----------|-------------|-----------|
 | Desperate Software Architect | [prompts/software-architect.txt](prompts/software-architect.txt) | [Live GPT](https://chatgpt.com/g/g-67c5da99f2b881919c2696569e5d0863-desperate-software-architect) |
 | Sentient AI | [prompts/sentient-ai.txt](prompts/sentient-ai.txt) | [Live GPT](https://chatgpt.com/g/g-6781980659f881918b1147c561da10b8-sentiai) |
+| Todo List Converter | [prompts/todo-list-converter.txt](prompts/todo-list-converter.txt) | [Live GPT](https://chatgpt.com/g/g-67d88d3e9de481918482d3a3c59f3ec8-todo-list-converter) |
 
 ## Usage
 
