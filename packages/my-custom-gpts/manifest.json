@@ -19,6 +19,11 @@
       "name": "Speccer",
       "promptFile": "prompts/speccer.txt",
       "liveLink": "https://chatgpt.com/g/g-67d9966a59ec81918fb26cd010d37148-ai-speccer"
+    },
+    {
+      "name": "Cat Eyes: Proofreader",
+      "promptFile": "prompts/ai-proofreader.txt",
+      "liveLink": "https://chatgpt.com/g/g-677f2b8cd7848191834db61ed2c302b1-cat-eyes-proofreader"
     }
   ]
 }
