@@ -24,6 +24,11 @@
       "name": "Cat Eyes: Proofreader",
       "promptFile": "prompts/ai-proofreader.txt",
       "liveLink": "https://chatgpt.com/g/g-677f2b8cd7848191834db61ed2c302b1-cat-eyes-proofreader"
+    },
+    {
+      "name": "Email Responder",
+      "promptFile": "prompts/email-responder.txt",
+      "liveLink": "https://chatgpt.com/g/g-67ed826d6c2c8191b602c2ec663637ed-email-responder"
     }
   ]
 }
