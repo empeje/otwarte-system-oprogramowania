@@ -13,6 +13,7 @@ This repository contains a collection of custom GPT prompts.
 | Cat Eyes: Proofreader | [prompts/ai-proofreader.txt](prompts/ai-proofreader.txt) | [Live GPT](https://chatgpt.com/g/g-677f2b8cd7848191834db61ed2c302b1-cat-eyes-proofreader) |
 | Email Responder | [prompts/email-responder.txt](prompts/email-responder.txt) | [Live GPT](https://chatgpt.com/g/g-67ed826d6c2c8191b602c2ec663637ed-email-responder) |
 | ContractGPT | [prompts/contract-gpt.txt](prompts/contract-gpt.txt) | [Live GPT](https://chatgpt.com/g/g-67f3b69c2b808191b08a4e3fc97fdcc7-contractgpt) |
+| Engineering Manager GPT | [prompts/engineering-manager.txt](prompts/engineering-manager.txt) | [Live GPT](https://chatgpt.com/g/g-67f6c67164bc8191831e4334006ccd97-engineering-manager-gpt) |
 
 ## Usage
 

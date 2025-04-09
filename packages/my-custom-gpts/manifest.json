@@ -34,6 +34,11 @@
       "name": "ContractGPT",
       "promptFile": "prompts/contract-gpt.txt",
       "liveLink": "https://chatgpt.com/g/g-67f3b69c2b808191b08a4e3fc97fdcc7-contractgpt"
+    },
+    {
+      "name": "Engineering Manager GPT",
+      "promptFile": "prompts/engineering-manager.txt",
+      "liveLink": "https://chatgpt.com/g/g-67f6c67164bc8191831e4334006ccd97-engineering-manager-gpt"
     }
   ]
 }
