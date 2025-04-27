@@ -1,0 +1,14 @@
+version: '3.0'
+
+services:
+  eta:
+    image: typelead/eta:c3d2cb6
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+    command: sleep infinity
+    ports:
+      - 9000:9000
+volumes:
+  data: {}
