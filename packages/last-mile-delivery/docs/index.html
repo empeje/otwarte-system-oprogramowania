@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Last Mile Delivery Design</title>
+</head>
+<body>
+<h1>Relational Data Design</h1>
+<div class="mermaid">
+  classDiagram
+  class Order
+  Order : +UUID id
+  Order : +DECIMAL(7,4) origin
+  Order : +DECIMAL(7,4) destination
+  Order : +STRING status
+</div>
+
+<h1>Sequence Diagram</h1>
+<div class="mermaid">
+  sequenceDiagram
+  participant User
+  participant Driver
+  participant API
+  participant GoogleMaps
+  User->>API: Create Order
+  API->>GoogleMaps: Ask for distance
+  GoogleMaps->>API: Returning distance
+  loop SaveData
+  API->>API: Set status to UNASSIGNED
+  API->>API: Save distance to database
+  end
+  API->>User: Returning Order Creation Response
+  Driver->>API: Take Order
+  loop UpdateStatus
+  API->>API: Update status to TAKEN
+  end
+</div>
+<script src="index.bundle.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+version: '3.7'
+
+volumes:
+  mysql_volume:
+  node_modules:
+
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: last-mile-delivery
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql-root
+    volumes:
+      - type: volume
+        source: mysql_volume
+        target: /var/lib/mysql
+
+  app:
+    build:
+      dockerfile: Dockerfile.dev
+      context: ./
+    ports:
+      - 8080:8080
+    volumes:
+      - type: volume
+        source: node_modules
+        target: /app/node_modules
+      - type: bind
+        source: ./
+        target: /app
+    depends_on:
+      - mysql
+
+

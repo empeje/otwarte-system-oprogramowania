@@ -1,0 +1,92 @@
+{
+  "name": "last-mile-delivery",
+  "version": "0.0.1",
+  "description": "Last Mile Delivery API written in Node.js",
+  "main": "src/index.js",
+  "repository": "git@github.com:empeje/last-mile-delivery.git",
+  "author": "mpj <a.mappuji@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:docs": "webpack --config webpack.config.docs.js --progress --colors",
+    "dev:docs": "yarn build:docs --watch",
+    "deploy:docs": "yarn build:docs && gh-pages -d docs",
+    "runner": "node -r esm",
+    "runner:dev": "node -r esm -r dotenv/config",
+    "runner:dev:watch": "nodemon -r esm -r dotenv/config",
+    "prestart": "yarn db:migrate && yarn db:seed:all",
+    "start": "yarn runner src/index.js",
+    "develop": "yarn runner:dev:watch src/index.js",
+    "pretest": "yarn db:migrate && yarn db:seed:all",
+    "test": "yarn runner:dev $(which npx) mocha --recursive test",
+    "posttest": "yarn db:seed:undo:all && yarn db:migrate:undo:all",
+    "sequelize": "yarn runner:dev $(which npx) sequelize",
+    "db:migrate": "yarn sequelize db:migrate",
+    "db:migrate:undo": "yarn sequelize db:migrate:undo",
+    "db:migrate:undo:all": "yarn sequelize db:migrate:undo:all",
+    "db:seed": "yarn sequelize db:seed --seed",
+    "db:seed:all": "yarn sequelize db:seed:all",
+    "db:seed:undo": "yarn sequelize db:seed:undo --seed",
+    "db:seed:undo:all": "yarn sequelize db:seed:undo:all"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "bootstrap": "^4.3.1",
+    "chai": "^4.2.0",
+    "chai-uuid": "^1.0.6",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsdoc": "^17.1.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-security": "^1.4.0",
+    "faker": "^4.1.0",
+    "gh-pages": "^2.1.1",
+    "husky": "^3.0.9",
+    "jquery": "^3.5.0",
+    "lint-staged": "^9.4.2",
+    "mermaid": "^8.4.1",
+    "mocha": "^6.2.2",
+    "nodemon": "^1.19.4",
+    "popper.js": "^1.16.0",
+    "prettier": "^1.19.1",
+    "sinon": "^7.5.0",
+    "sinon-chai": "^3.3.0",
+    "supertest": "^4.0.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "@google/maps": "^1.0.2",
+    "@hapi/joi": "^16.1.7",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "express-joi-validation": "^4.0.2",
+    "express-winston": "^4.0.1",
+    "lodash": "^4.17.19",
+    "mysql2": "^2.0.0",
+    "sequelize": "^5.21.2",
+    "sequelize-cli": "^5.5.1",
+    "winston": "^3.2.1"
+  }
+}
