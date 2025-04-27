@@ -1,3 +1,4 @@
+
 git@github.com:empeje/address-book-snap.git main
 git@github.com:empeje/adopt-me.git master
 git@github.com:empeje/akademi.git master
@@ -10,9 +11,13 @@ git@github.com:empeje/coin.git master
 git@github.com:empeje/conf42-web-dev-eta.git main
 git@github.com:empeje/cryptopals.git master
 git@github.com:empeje/devops-article-series.git master
+git@github.com:empeje/elm-0.19-workshop.git mpj-solution
 git@github.com:empeje/encode-bootcamp.git master
+git@github.com:empeje/ethereum-address-generator-js.git solution
+git@github.com:empeje/fem-layout.git mpj-solution
 git@github.com:empeje/first-web-application-spring-mvc.git master
 git@github.com:empeje/flask-upload-example.git main
+git@github.com:empeje/fullstack-course1-module2.git mpj-solution
 git@github.com:empeje/gas-fee-snap.git main
 git@github.com:empeje/gatsby-intermediate.git mpj-solution
 git@github.com:empeje/gatsby-intro.git mpj-solution
@@ -34,13 +39,15 @@ git@github.com:empeje/my-custom-gpts.git master
 git@github.com:empeje/next-dashboard.git main
 git@github.com:empeje/php-laravel-enlightn.git master
 git@github.com:empeje/purr-spective.git main
+git@github.com:empeje/recipe_puppy_bootstrap.git master
 git@github.com:empeje/reverse-proxy-demo.git master
 git@github.com:empeje/russian-doll-caching.git master
 git@github.com:empeje/scalawaw-eth-in-scala.git master
 git@github.com:empeje/spring-in-5-steps.git master
 git@github.com:empeje/stable-coin-xrp.git core
-git@github.com:empeje/telecal.git main
 git@github.com:empeje/telecal-bot.git main
+git@github.com:empeje/telecal.git main
 git@github.com:empeje/tma-trial.git master
 git@github.com:empeje/wallstreet.git main
+git@github.com:empeje/webpack-workshop-2018.git mpj-solution
 git@github.com:empeje/webpigram.git main

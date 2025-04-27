@@ -31,8 +31,8 @@ def get_public_repos(token):
             break
             
         for repo in page_repos:
-            # Only include non-fork repos owned by GITHUB_USERNAME
-            if repo['owner']['login'] == GITHUB_USERNAME and not repo['fork']:
+            # Include both original and forked repos owned by GITHUB_USERNAME
+            if repo['owner']['login'] == GITHUB_USERNAME:
                 default_branch = repo['default_branch']
                 repos.append({
                     'name': repo['full_name'],
@@ -58,7 +58,7 @@ def main():
         print("Please set your GitHub personal access token as GITHUB_TOKEN")
         return
         
-    print("Fetching public repositories...")
+    print("Fetching public repositories (including forks)...")
     repos = get_public_repos(token)
     
     print(f"Found {len(repos)} public repositories")
