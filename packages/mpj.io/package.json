@@ -1,0 +1,23 @@
+{
+  "name": "mpj.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "mpj <11813607+empeje@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "env NODE_OPTIONS=--openssl-legacy-provider PORT=8001 elm-app start --no-browser",
+    "build": "env NODE_OPTIONS=--openssl-legacy-provider elm-app build"
+  },
+  "devDependencies": {
+    "create-elm-app": "^5.22.0",
+    "elm-format": "^0.8.7"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "elm": "0.19.1-6",
+    "elm-review": "^2.12.0",
+    "elm-test": "0.19.1-revision12",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1"
+  }
+}
