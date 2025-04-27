@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.3</version>
+        <relativePath/>
+        <!-- lookup parent from repository -->
+    </parent>
+    <groupId>io.mpj</groupId>
+    <artifactId>webpigram</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>webpigram</name>
+    <description>Web Epigram</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
+    <properties>
+        <assertj.version>3.27.3</assertj.version>
+        <checkstyle.version>10.16.0</checkstyle.version>
+        <error-prone.version>2.36.0</error-prone.version>
+        <flyway-maven-plugin.version>3.0</flyway-maven-plugin.version>
+        <fmt-maven-plugin.version>2.21.1</fmt-maven-plugin.version>
+        <guava.version>33.4.0-jre</guava.version>
+        <h2.version>2.3.232</h2.version>
+        <java.version>23</java.version>
+        <jooq.version>3.20.2</jooq.version>
+        <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
+        <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
+        <nullaway.version>0.12.4</nullaway.version>
+        <postgresql.version>42.7.5</postgresql.version>
+        <sortpom-maven-plugin.version>3.4.0</sortpom-maven-plugin.version>
+        <spotless-maven-plugin.version>2.44.3</spotless-maven-plugin.version>
+        <spring-boot.version>3.4.3</spring-boot.version>
+        <spring-session.version>3.4.2</spring-session.version>
+    </properties>
+    <dependencies>
+        <!-- Utilities Dependencies -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Database Dependencies -->
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+            <version>${jooq.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- Spring Boot Dependencies -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-core</artifactId>
+            <version>${spring-session.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${spotless-maven-plugin.version}</version>
+                <configuration>
+                    <java>
+                        <googleJavaFormat/>
+                    </java>
+                </configuration>
+            </plugin>
+
+            <!-- Sort POM plugin -->
+            <plugin>
+                <groupId>com.github.ekryd.sortpom</groupId>
+                <artifactId>sortpom-maven-plugin</artifactId>
+                <version>${sortpom-maven-plugin.version}</version>
+                <configuration>
+                    <sortProperties>true</sortProperties>
+                    <nrOfIndentSpace>4</nrOfIndentSpace>
+                    <sortDependencies>groupId,artifactId</sortDependencies>
+                    <sortPlugins>groupId,artifactId</sortPlugins>
+                    <keepBlankLines>true</keepBlankLines>
+                    <expandEmptyElements>false</expandEmptyElements>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>sort</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Spotify formatter plugin -->
+            <plugin>
+                <groupId>com.spotify.fmt</groupId>
+                <artifactId>fmt-maven-plugin</artifactId>
+                <version>${fmt-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>format</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Checkstyle plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>${maven-checkstyle-plugin.version}</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.version}</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>validate</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>23</source>
+                    <target>23</target>
+                    <encoding>UTF-8</encoding>
+                    <fork>true</fork>
+                    <showWarnings>true</showWarnings>
+                    <compilerArgs>
+                        <arg>-XDcompilePolicy=simple</arg>
+                        <arg>--should-stop=ifError=FLOW</arg>
+                        <arg>-Xplugin:ErrorProne -XepAllErrorsAsWarnings -Xep:NullAway:ERROR -XepOpt:NullAway:AnnotatedPackages=io.mpj -Xep:DeadException:WARN -Xep:GuardedBy:WARN -XepDisableWarningsInGeneratedCode</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED</arg>
+                        <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
+                        <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED</arg>
+                        <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
+                    </compilerArgs>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>com.google.errorprone</groupId>
+                            <artifactId>error_prone_core</artifactId>
+                            <version>${error-prone.version}</version>
+                        </path>
+                        <path>
+                            <groupId>com.uber.nullaway</groupId>
+                            <artifactId>nullaway</artifactId>
+                            <version>${nullaway.version}</version>
+                        </path>
+                        <!-- Other annotation processors go here.
+
+                        If 'annotationProcessorPaths' is set, processors will no longer be
+                        discovered on the regular -classpath; see also 'Using Error Prone
+                        together with other annotation processors' below. -->
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
+
+            <!-- Flyway plugin -->
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flyway-maven-plugin.version}</version>
+
+                <!-- Note that we need to prefix the db/migration path with filesystem: to prevent Flyway
+                     from looking for our migration scripts only on the classpath -->
+                <configuration>
+                    <url>${env.DATABASE_URL}</url>
+                    <user>${env.DATABASE_USERNAME}</user>
+                    <password>${env.DATABASE_PASSWORD}</password>
+                    <locations>
+                        <location>filesystem:src/main/resources/db/migration</location>
+                    </locations>
+                </configuration>
+
+                <!-- Note that we're executing the Flyway plugin in the "generate-sources" phase -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- JOOQ plugin -->
+            <plugin>
+                <!-- Use org.jooq                for the Open Source Edition
+                         org.jooq.pro            for commercial editions with Java 21 support,
+                         org.jooq.pro-java-17    for commercial editions with Java 17 support,
+                         org.jooq.pro-java-11    for commercial editions with Java 11 support,
+                         org.jooq.pro-java-8     for commercial editions with Java 8 support,
+                         org.jooq.trial          for the free trial edition with Java 21 support,
+                         org.jooq.trial-java-17  for the free trial edition with Java 17 support,
+                         org.jooq.trial-java-11  for the free trial edition with Java 11 support,
+                         org.jooq.trial-java-8   for the free trial edition with Java 8 support
+
+                 Note: Only the Open Source Edition is hosted on Maven Central.
+                       Install the others locally using the provided scripts, or access them from here: https://repo.jooq.org
+                       See the JDK version support matrix here: https://www.jooq.org/download/support-matrix-jdk -->
+
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>${jooq.version}</version>
+
+                <!-- This is a minimal working configuration. See the manual's section about the code generator for more details -->
+                <configuration>
+                    <jdbc>
+                        <url>${env.DATABASE_URL}</url>
+                        <user>${env.DATABASE_USERNAME}</user>
+                        <password>${env.DATABASE_PASSWORD}</password>
+                    </jdbc>
+                    <generator>
+                        <database>
+                            <includes>.*</includes>
+                            <inputSchema>public</inputSchema>
+                        </database>
+                        <target>
+                            <packageName>io.mpj.webpigram.db.postgres</packageName>
+                            <directory>target/generated-sources/jooq-postgres</directory>
+                        </target>
+                    </generator>
+                </configuration>
+
+                <!-- The jOOQ code generation plugin is also executed in the generate-sources phase, prior to compilation -->
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <configuration>
+                    <mainClass>io.mpj.webpigram.WebpigramApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>load-fortunes</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                        <version>${spring-boot.version}</version>
+                        <configuration>
+                            <mainClass>io.mpj.webpigram.tools.FortuneLoader</mainClass>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
