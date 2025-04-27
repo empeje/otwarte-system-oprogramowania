@@ -1,0 +1,133 @@
+# Welcome to Plus!
+#
+# This config file affects your whole blog.
+# This file is *NOT* reloaded automatically when you use 'bundle exec jekyll serve'.
+# If you change this file, please restart the server process.
+
+# Site settings
+title:              mpj.io
+lang:               id
+description:        Situs pembelajar seumur hidup
+url:                https://legacy.mpj.io
+baseurl:            "" # Site subpath, e.g. /blog
+logo_image:
+  dark:             # Dark logo e.g logo-dark.svg upload to /uploads/ folder, used in header, mobile navigation and page sidebar About widget
+  light:            # Light logo e.g. logo-light.svg upload to /uploads/ folder, used in footer About widget
+permalink:          /:title/ # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
+date_format:        "%B %-d, %Y" # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+uploads:            /uploads/ # Path to post content assets directory i.e post images, pdfs etc
+paginate:           7 # Number of posts displayed on blog page
+paginate_path:      "/blog/:num/" # Blog path
+google_analytics:   UA-150952362-1
+disqus:
+  shortname:        mpj-cool-tech
+brand:
+  image: favicon.png
+  # file favicon.png
+  width: 250
+  height: 250
+
+# TODO: we might use Instagram in the future
+instagram_accesstoken:
+
+footer:             # Default footer image settings
+  copyright:        Karya <a href="https://github.com/empeje">empeje</a> di suatu kosan di Indonesia.
+
+# navbar settings
+navbar_primary:
+  sticky:           true
+  social:           true
+  search:           true
+
+# Social share buttons
+social_share:
+  twitter:          true
+  facebook:         true
+  linkedin:         true
+  pinterest:        true
+  reddit:           true
+
+# Social networks
+social_networks:
+  formspree:        myygplpq
+  mailchimp:
+    url:           https://mpj.us7.list-manage.com/subscribe/post?u=9e31316c25da9de023b3f42dc&amp;id=335f2e0c02
+    key:           b_9e31316c25da9de023b3f42dc_335f2e0c02
+  email:            mpj@mpj.io # FIXME: we might use this setting in the future for contact formspree
+  website:          https://mpj.io
+  facebook:
+  flickr:
+  dribbble:
+  github:           https://github.com/empeje
+  reddit:
+  instagram:        https://www.instagram.com/yokulguy
+  linkedin:
+  pinterest:
+  twitter:          https://twitter.com/yokulguy
+  vimeo:
+  youtube:          https://www.youtube.com/@yokulguy
+
+# Strings
+strings:
+  author_by:        Ditulis oleh
+
+# Build settings
+markdown:           kramdown
+highlighter:        rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-avatar
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - CHANGELOG
+  - LICENSE
+  - README
+  - /docs
+
+sass:
+  style:            compressed
+
+# collections:
+collections:
+  authors:
+    output: true
+  category:
+    output: true
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      share: true
+      related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      sidebar: left
+  # _authors
+  - scope:
+      path: ""
+      type: authors
+    values:
+      layout: author
+  # _category
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: category

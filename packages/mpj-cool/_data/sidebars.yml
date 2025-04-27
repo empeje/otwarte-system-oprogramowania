@@ -1,0 +1,61 @@
+# Page sidebar widgets
+page:
+  - widget: recent
+    title: ARTIKEL TERKINI
+    count: 8
+
+  - widget: categories
+    title: KATEGORI
+    count: 5
+
+  - widget: authors
+    title: KONTRIBUTOR
+    count: 5
+    
+# Footer sidebar widgets
+footer:
+  - widget: recent
+    title: ARTIKEL TERKINI
+    count: 4
+
+  - widget: links
+    title: TENTANG
+    # FIXME: Please provide URLs and pages for the following
+    links:
+      - title: "Tentang Kami"
+        url: /#/
+      - title: "Kisah Kami"
+        url: /#/
+      - title: "Berkontribusi"
+        url: /contact/
+      - title: "Syarat dan Ketentuan"
+        url: /#/
+      - title: Dukung Kami
+        url: /support-us/
+      - title: "Kontak"
+        url: /contact/
+
+  - widget: links
+    title: PRODUK
+    # FIXME: Please provide URLs and pages for the following
+    links:
+      - title: "Periklanan"
+        url: /contact/
+      - title: "Podcast"
+        url: /#/
+      - title: "Kisah Terpilih"
+        url: /#/
+      - title: "Donasi"
+        url: /#/
+
+  - widget: categories
+    title: KATEGORI
+    count: 5
+
+  - widget: authors
+    title: KONTRIBUTOR
+    count: 5
+
+  - widget: about
+    # content: Content of some sort..
+    copyright: true
