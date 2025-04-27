@@ -1,0 +1,913 @@
+.perplexity-sidebar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 360px;
+  height: 480px; /* Default small mode height */
+  background: #FFFFFF;
+  box-shadow: 0 2px 20px rgba(144, 180, 197, 0.2);
+  border: 2px solid rgba(144, 180, 197, 0.3);
+  border-radius: 16px;
+  z-index: 10000;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  color: #4a5567;
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.perplexity-sidebar.expanded {
+  height: calc(100vh - 40px);
+}
+
+.perplexity-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.perplexity-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.perplexity-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(144, 180, 197, 0.3);
+  border-radius: 10px;
+}
+
+.perplexity-sidebar.hidden {
+  transform: translateX(calc(100% + 20px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+.perplexity-sidebar.hidden:hover {
+  opacity: 1;
+}
+
+/* Cute toggle button with Ghibli-style */
+#perplexity-toggle {
+  display: none;
+}
+
+/* Header styling */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  margin: -20px -20px 15px -20px;
+  border-bottom: 1px solid rgba(144, 180, 197, 0.2);
+  flex-shrink: 0;
+  background: #FFFFFF; /* Solid white background */
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.sidebar-header h2 {
+  font-size: 20px;
+  color: #2c4a5e;
+  margin: 0;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* Control buttons */
+.header-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: #FFFFFF;
+  border: 1px solid rgba(144, 180, 197, 0.3);
+  border-radius: 6px;
+  color: #4a5567;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.control-button:hover {
+  background: rgba(144, 180, 197, 0.15);
+  color: #2c4a5e;
+  border-color: rgba(144, 180, 197, 0.5);
+}
+
+/* Size toggle specific styles */
+#size-toggle {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+}
+
+/* Hide button specific styles */
+#hide-toggle {
+  padding-top: 1px;
+}
+
+#hide-toggle svg {
+  transform: rotate(0);
+  transition: transform 0.3s ease;
+}
+
+.perplexity-sidebar.hidden #hide-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Sidebar states */
+.perplexity-sidebar {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 360px;
+  height: 480px; /* Default small mode height */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.perplexity-sidebar.expanded {
+  height: calc(100vh - 40px);
+}
+
+.perplexity-sidebar.hidden {
+  transform: translateX(calc(100% + 20px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Remove old toggle styles */
+#perplexity-toggle,
+#size-toggle {
+  display: none;
+}
+
+/* Expand button styling */
+.expand-button {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: transparent;
+  border: 1px solid rgba(144, 180, 197, 0.3);
+  border-radius: 6px;
+  color: #4a5567;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.expand-button:hover {
+  background: rgba(144, 180, 197, 0.1);
+  color: #2c4a5e;
+}
+
+.expand-button svg {
+  transition: transform 0.2s ease;
+}
+
+.expand-button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Update tab spacing */
+.tabs {
+  display: flex;
+  padding: 15px 0;
+  margin: 0 -5px; /* Negative margin to align with scroll area */
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  white-space: nowrap;
+}
+
+/* Hide scrollbar but keep functionality */
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tab buttons */
+.tab-btn {
+  flex: 0 0 auto; /* Don't grow or shrink, stay at content width */
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid rgba(144, 180, 197, 0.2);
+  border-radius: 8px;
+  color: #4a5567;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 13px;
+  margin: 0 5px;
+  white-space: nowrap;
+}
+
+/* Tab button content */
+.tab-btn span {
+  font-size: 15px;
+  display: inline-block;
+}
+
+/* Active and hover states */
+.tab-btn.active {
+  background: rgba(144, 180, 197, 0.1);
+  border-color: rgba(144, 180, 197, 0.4);
+  color: #2c4a5e;
+}
+
+.tab-btn:hover {
+  background: rgba(144, 180, 197, 0.05);
+}
+
+/* Content area adjustments */
+.tab-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 0 -20px;
+  padding: 0;
+}
+
+/* Content styling */
+.related-sites-content {
+  margin-top: 15px;
+  opacity: 0.95;
+}
+
+/* Section headers */
+.related-sites-content h1 {
+  font-size: 20px;
+  color: #2c4a5e;
+  margin: 0;
+  padding: 12px 15px;
+  background: rgba(144, 180, 197, 0.15);
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Summary section */
+.related-sites-content h1:first-of-type + p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a5567;
+  background: rgba(144, 180, 197, 0.08);
+  padding: 15px;
+  border-radius: 10px;
+  margin: 0;
+  border: 2px solid rgba(144, 180, 197, 0.2);
+}
+
+/* Site entries container */
+.related-sites-content h1:last-of-type ~ * {
+  margin-left: 5px;
+}
+
+/* Site entry titles */
+.related-sites-content h2 {
+  font-size: 17px;
+  margin: 0;
+  color: #2c4a5e;
+  padding: 10px 15px;
+  background: rgba(144, 180, 197, 0.1);
+  border-radius: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Site descriptions */
+.related-sites-content h2 + p {
+  margin: 8px 0 0 32px;
+  color: #4a5567;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 0 12px;
+}
+
+/* Links in site titles */
+.related-sites-content h2 a {
+  color: #3c7a9b;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.related-sites-content h2 a:hover {
+  color: #2c4a5e;
+  background: rgba(144, 180, 197, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px -6px;
+}
+
+/* Bullet points */
+.related-sites-content h2::before {
+  content: "•";
+  color: #3c7a9b;
+  font-size: 24px;
+  line-height: 0;
+  margin-right: 4px;
+}
+
+/* Space between entries */
+.related-sites-content h2:not(:first-of-type) {
+  margin-top: 20px;
+}
+
+/* Remove any empty elements */
+.related-sites-content *:empty {
+  display: none;
+}
+
+/* Loading animation */
+.loading-spinner {
+  text-align: center;
+  padding: 30px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  border: 4px solid rgba(144, 180, 197, 0.3);
+  border-top: 4px solid #3c7a9b;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite, spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Error message styling */
+.error-message {
+  text-align: center;
+  padding: 20px;
+  color: #e67e7e;
+  background: rgba(230, 126, 126, 0.1);
+  border: 2px solid rgba(230, 126, 126, 0.3);
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.error-message h3 {
+  color: #e67e7e;
+  margin-bottom: 10px;
+}
+
+.error-message button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: rgba(230, 126, 126, 0.15);
+  color: #e67e7e;
+  border: 2px solid rgba(230, 126, 126, 0.3);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.error-message button:hover {
+  background: rgba(230, 126, 126, 0.25);
+  transform: translateY(-2px);
+}
+
+/* API Key Prompt */
+.api-key-prompt {
+  padding: 25px;
+  text-align: center;
+  color: #4a5567;
+}
+
+.api-key-prompt h3 {
+  margin-bottom: 15px;
+  color: #2c4a5e;
+  font-size: 20px;
+}
+
+.api-key-prompt p {
+  color: #4a5567;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.api-key-prompt .steps {
+  text-align: left;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(144, 180, 197, 0.1);
+  border-radius: 12px;
+  border: 2px solid rgba(144, 180, 197, 0.3);
+}
+
+.api-key-prompt .steps p {
+  margin: 12px 0;
+  color: #4a5567;
+  padding-left: 20px;
+  position: relative;
+}
+
+.api-key-prompt .steps p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #3c7a9b;
+}
+
+.retry-button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background: rgba(144, 180, 197, 0.15);
+  color: #2c4a5e;
+  border: 2px solid rgba(144, 180, 197, 0.4);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.retry-button:hover {
+  background: rgba(144, 180, 197, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Add transition for content */
+.perplexity-sidebar.hidden .related-sites-content {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Add subtle indicator that header is clickable */
+.sidebar-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: rgba(144, 180, 197, 0.3);
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.perplexity-sidebar.hidden .sidebar-header::after {
+  opacity: 1;
+}
+
+/* Add hover effect to header when minimized */
+.perplexity-sidebar.hidden .sidebar-header:hover {
+  background-color: rgba(144, 180, 197, 0.1);
+}
+
+/* Update the toggle button position when sidebar is hidden */
+.perplexity-sidebar.hidden + #perplexity-toggle {
+  right: 20px;
+  border-left: 2px solid rgba(144, 180, 197, 0.3);
+  border-right: 2px solid rgba(144, 180, 197, 0.3);
+}
+
+.perplexity-sidebar.hidden + #perplexity-toggle:hover {
+  right: 25px;
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  gap: 5px;
+  padding: 15px 0;
+  flex-shrink: 0; /* Prevent tabs from shrinking */
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid rgba(144, 180, 197, 0.2);
+  border-radius: 8px;
+  color: #4a5567;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.tab-btn span {
+  font-size: 15px;
+}
+
+.tab-btn.active {
+  background: rgba(144, 180, 197, 0.1);
+  border-color: rgba(144, 180, 197, 0.4);
+  color: #2c4a5e;
+}
+
+.tab-btn:hover {
+  background: rgba(144, 180, 197, 0.05);
+}
+
+/* Tab content */
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 15px;
+}
+
+.tab-pane.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Header styling */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#size-toggle {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  color: #4a5567;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#size-toggle:hover {
+  background: rgba(144, 180, 197, 0.1);
+  color: #2c4a5e;
+}
+
+/* Add these styles to your existing CSS */
+
+.logo {
+  font-size: 24px;
+  margin-right: 8px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 30px;
+}
+
+.loading-spinner .spinner {
+  font-size: 40px;
+  margin: 20px auto;
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  33% { content: "😺"; }
+  66% { content: "😸"; }
+  100% { transform: rotate(360deg); }
+}
+
+/* Update tab button styles */
+.tab-btn span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.tab-btn:hover span {
+  animation: wiggle 0.5s ease;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+}
+
+/* Update size toggle and refresh button */
+#size-toggle,
+.refresh-button {
+  font-size: 18px;
+}
+
+#size-toggle:hover,
+.refresh-button:hover {
+  animation: bounce 0.5s ease;
+}
+
+/* Update error message */
+.error-message h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.error-message h3::before {
+  content: "😿";
+  font-size: 24px;
+}
+
+/* Show button styling */
+.show-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 253, 250, 0.97);
+  border: 2px solid rgba(144, 180, 197, 0.3);
+  border-radius: 12px;
+  z-index: 10000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 20px rgba(144, 180, 197, 0.2);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show-button.hidden {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.show-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 25px rgba(144, 180, 197, 0.3);
+}
+
+.show-button .logo {
+  font-size: 22px;
+  margin: 0;
+  animation: none;
+}
+
+.show-button:hover .logo {
+  animation: bounce 1s infinite;
+}
+
+/* Update sidebar transition */
+.perplexity-sidebar {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.perplexity-sidebar.hidden {
+  transform: translateX(calc(100% + 20px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Remove old toggle styles that might interfere */
+#perplexity-toggle,
+#size-toggle {
+  display: none;
+}
+
+/* Logo button (shown when sidebar is hidden) */
+.logo-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 1px solid rgba(144, 180, 197, 0.3);
+  border-radius: 8px;
+  z-index: 10000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(144, 180, 197, 0.15);
+}
+
+.logo-button .logo {
+  font-size: 20px;
+  margin: 0;
+  line-height: 1;
+}
+
+.logo-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 25px rgba(144, 180, 197, 0.3);
+}
+
+/* Trust meters */
+.trust-meters {
+  display: flex;
+  gap: 15px;
+  padding: 10px 15px;
+  background: rgba(144, 180, 197, 0.08);
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.meter {
+  flex: 1;
+}
+
+.meter-label {
+  font-size: 12px;
+  color: #4a5567;
+  margin-bottom: 4px;
+}
+
+.meter-bar {
+  height: 6px;
+  background: rgba(144, 180, 197, 0.2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0;
+  transition: width 1s ease-out;
+}
+
+.meter-fill.high {
+  background: #4CAF50;
+}
+
+.meter-fill.medium {
+  background: #FFC107;
+}
+
+.meter-fill.low {
+  background: #F44336;
+}
+
+.meter-value {
+  font-size: 12px;
+  color: #2c4a5e;
+  text-align: right;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Fact Check styling */
+.fact-check-content {
+  padding: 15px;
+}
+
+.credibility-details {
+  background: rgba(144, 180, 197, 0.08);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4a5567;
+}
+
+.fact-check-indicators {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(144, 180, 197, 0.05);
+  border: 1px solid rgba(144, 180, 197, 0.2);
+}
+
+.indicator.high {
+  background: rgba(76, 175, 80, 0.1);
+  border-color: rgba(76, 175, 80, 0.3);
+}
+
+.indicator.medium {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.indicator.low {
+  background: rgba(244, 67, 54, 0.1);
+  border-color: rgba(244, 67, 54, 0.3);
+}
+
+.indicator-icon {
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator-details {
+  flex: 1;
+}
+
+.indicator-details h4 {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  color: #2c4a5e;
+}
+
+.indicator-details p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #4a5567;
+}
+
+.fact-check-summary {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(144, 180, 197, 0.1);
+}
+
+.fact-check-summary h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #2c4a5e;
+}
+
+.fact-check-summary ul {
+  margin: 0;
+  padding: 0 0 0 20px;
+  list-style-type: none;
+}
+
+.fact-check-summary li {
+  position: relative;
+  padding: 4px 0;
+  font-size: 14px;
+  color: #4a5567;
+  line-height: 1.5;
+}
+
+.fact-check-summary li::before {
+  content: "•";
+  position: absolute;
+  left: -15px;
+  color: #3c7a9b;
+} 
