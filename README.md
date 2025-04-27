@@ -5,3 +5,4 @@ This project is a collection of my public personal software which includes softw
 While most packages are collection from the past, here are some actively maintained project
 
 - [Journey to Personal Software](./packages/journey-to-personal-software): it's a draft of upcoming free book on Personal Software
+  - [Read the book live here!](https://liascript.github.io/course/?https://raw.githubusercontent.com/empeje/otwarte-system-oprogramowania/master/packages/journey-to-personal-software/README.md#1)
