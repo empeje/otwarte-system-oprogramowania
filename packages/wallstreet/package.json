@@ -1,0 +1,98 @@
+{
+  "name": "wallstreet",
+  "version": "1.0.0",
+  "description": "Wallstreet is a websocket app",
+  "main": "main.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "webpack",
+    "lint": "npx eslint --fix \"src/**/*.js\" main.js config.js && npx prettier --write \"src/**/*.{js,jsx,}\" main.js config.js",
+    "start": "concurrently --kill-others \"yarn build --watch\" \"electron-forge start\"",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "start:ws:docker": "docker run -p 5001:5001 -p 5002:5002 -it -v $PWD/ws-server:/app ubuntu bash -c \"/app/run_ws-server.sh 5001 5002\"",
+    "start:ws": "./ws-server/run_ws-server.sh 5001 5002"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/empeje/wallstreet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/empeje/wallstreet/issues"
+  },
+  "homepage": "https://github.com/empeje/wallstreet#readme",
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.53",
+    "@electron-forge/maker-deb": "6.0.0-beta.53",
+    "@electron-forge/maker-rpm": "6.0.0-beta.53",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.53",
+    "@electron-forge/maker-zip": "6.0.0-beta.53",
+    "concurrently": "^5.3.0",
+    "css-loader": "^5.0.0",
+    "electron": "^10.1.3",
+    "elm-webpack-loader": "^7.0.1",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "file-loader": "^6.1.1",
+    "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "^2.1.2",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.1.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-merge": "^5.2.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "electron-squirrel-startup": "^1.0.0",
+    "font-awesome": "^4.7.0",
+    "handlebars": "^4.7.6",
+    "handlebars-loader": "^1.7.1"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "wallstreet"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": "eslint --fix",
+    "src/**/*.elm": "elm-format --yes",
+    "src/**/*.hbs": "prettier --write --parser glimmer",
+    "src/**/*.{css,js,json,html}": [
+      "prettier --write"
+    ]
+  }
+}

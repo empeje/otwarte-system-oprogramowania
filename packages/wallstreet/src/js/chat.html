@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <section class="chat">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ibox chat-view">
+              <div class="ibox-title text-muted">
+                <small id="connection-status" class="pull-right"
+                  >Checking connection...</small
+                >
+                (<span id="username"></span> |
+                <a class="text-info" href="index.html">Logout</a>) Chat room
+                panel
+              </div>
+              <div class="ibox-content">
+                <div class="row">
+                  <div class="col-md-9">
+                    <div id="chatbox" class="chat-discussion"></div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="chat-users">
+                      <div id="users-list" class="users-list"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="chat-message-form">
+                      <div class="form-group">
+                        <textarea
+                          id="new-message"
+                          class="form-control message-input"
+                          name="message"
+                          placeholder="Enter message text and press enter"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ibox-footer text-muted">
+                <p>Chat client listening on port <span id="port"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
