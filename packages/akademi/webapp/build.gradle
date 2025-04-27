@@ -1,0 +1,26 @@
+plugins {
+    id 'org.siouan.frontend-jdk11'
+}
+
+frontend {
+    nodeVersion = '14.17.3'
+    nodeInstallDirectory = project.nodeInstallDirectory
+    assembleScript = 'run build'
+    cleanScript = 'run clean'
+    checkScript = 'run check'
+}
+
+task runWebDev(type: Exec) {
+    workingDir "$projectDir"
+    commandLine 'bash', '-c', 'echo Running web dev...'
+    doLast {
+        exec {
+            workingDir "$projectDir"
+            if (System.getProperty('os.name').toLowerCase(Locale.ROOT).contains('windows')) {
+                commandLine 'cmd', '/c', 'npm run develop'
+            } else {
+                commandLine 'bash', '-c', 'npm run develop'
+            }
+        }
+    }
+}
