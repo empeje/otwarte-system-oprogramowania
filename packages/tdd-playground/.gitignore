@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+coverage/
+reports/
+packages/python-exercise/.coverage
+
+# JavaScript - uses pnpm, ignore the rests
+node_modules/
+yarn.lock
+package-lock.json
+
+# IDE
+.idea
+
+.nx/installation
+.nx/cache
+.nx/workspace-data

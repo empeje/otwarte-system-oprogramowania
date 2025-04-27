@@ -1,0 +1,40 @@
+name: Python Exercise Test
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'packages/python-exercise/**'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'packages/python-exercise/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: '10.8.1'
+        
+    - name: Install dependencies
+      run: pnpm install
+      
+    - name: Install uv
+      run: pip install uv
+      
+    - name: Install Python dependencies
+      run: pnpm dlx nx install python-exercise
+      
+    - name: Run tests
+      run: pnpm dlx nx test python-exercise --no-cloud

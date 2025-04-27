@@ -1,0 +1,38 @@
+name: Ruby Exercise Test
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'packages/ruby-exercise/**'
+  pull_request:
+    branches: [ master ]
+    paths:
+      - 'packages/ruby-exercise/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.2'
+        bundler-cache: true
+        
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: '10.8.1'
+
+    - name: Install dependencies
+      run: pnpm install
+      
+    - name: Install Ruby dependencies with nx
+      run: pnpm dlx nx bundle ruby-exercise
+      
+    - name: Run tests
+      run: pnpm dlx nx test ruby-exercise --no-cloud
