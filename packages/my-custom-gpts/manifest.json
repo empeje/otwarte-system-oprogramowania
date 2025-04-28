@@ -44,6 +44,11 @@
       "name": "Client-Staff Forwarder",
       "promptFile": "prompts/client-staff-forwarder.txt",
       "liveLink": "https://chatgpt.com/g/g-680eb7eeb48c819188bdc4851b2f949b-info-forwarder"
+    },
+    {
+      "name": "Chat Viber",
+      "promptFile": "prompts/chat-viber.txt",
+      "liveLink": "https://chatgpt.com/g/g-680fb1d120f081919464d2c3bf689eed-chat-viber"
     }
   ]
 }
