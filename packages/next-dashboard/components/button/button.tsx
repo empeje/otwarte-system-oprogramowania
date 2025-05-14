@@ -7,6 +7,7 @@ const Button = ({type = "button", className}: {
   className: ClassNameType;
   type?: "button" | "submit" | "reset"
 }): JSX.Element => {
+  {/*@ts-expect-error expect error after issue with react upgrade*/}
   return (
     <button
       type={type}

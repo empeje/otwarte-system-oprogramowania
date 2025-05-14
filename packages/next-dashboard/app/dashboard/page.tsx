@@ -15,9 +15,16 @@ import {CardService} from "@/utils/api/cards";
 import {TransactionService} from "@/utils/api/transactions";
 import {ContactService} from "@/utils/api/contacts";
 import {classNames} from "@/utils/helper";
+import { Activity } from "@/types/activity";
+import { ExpenseBreakdown } from "@/types/expense";
+import { BalanceHistoryResponse } from "@/types/balance";
+import { Card } from "@/types/card";
+import { Transaction } from "@/types/transaction";
+import { Contact } from "@/types/contact";
 
-export default async function DashboardPage() {
-  const [activities, expenses, balanceHistory, cards, transactions, contacts,] = await Promise.all([
+let fetchResults: [Activity[], ExpenseBreakdown, BalanceHistoryResponse, Card[], Transaction[], Contact[]];
+(async () => {
+  fetchResults = await Promise.all([
     ActivityService.getActivities(),
     ExpenseService.getExpenseBreakdown(),
     BalanceService.getBalanceHistory(),
@@ -25,6 +32,10 @@ export default async function DashboardPage() {
     TransactionService.getTransactions(),
     ContactService.getContacts(),
   ]);
+})()
+
+export default function DashboardPage() {
+  const [activities, expenses, balanceHistory, cards, transactions, contacts,] = fetchResults;
 
   const weeklyTotals = ActivityService.getWeeklyTotals(activities);
 

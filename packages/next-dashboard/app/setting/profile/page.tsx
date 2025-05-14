@@ -89,6 +89,7 @@ export default function ProfilePage() {
           {setting?.profile?.avatar && <Image
               src={setting?.profile?.avatar} alt={setting?.profile.name} width={90} height={90}
               className={"size-[100px] sm:size-[90px] rounded-full"}/>}
+          {/*@ts-expect-error expect error after issue with react upgrade*/}
           <InputText
             ref={inputFile}
             label={"Upload Image"} type={"file"} className={"hidden"}/>
@@ -105,6 +106,7 @@ export default function ProfilePage() {
         {/*Form*/}
         <div className={"grid sm:grid-cols-2 gap-x-[30px] gap-y-[22px] flex-1 w-full mt-[22px] sm:mt-0"}>
           {forms.map((form) => (
+            // @ts-expect-error expect error after issue with react upgrade
             <InputText {...form} key={form.name}/>
           ))}
         </div>

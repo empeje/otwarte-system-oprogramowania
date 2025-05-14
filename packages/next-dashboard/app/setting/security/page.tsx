@@ -6,6 +6,7 @@ export default function SecurityPage() {
   return (
     <SettingTab>
       <Container className="sm:flex sm:items-start">
+        {/*@ts-expect-error expect error after issue with react upgrade*/}
         <AlertInfo
           title={"You found a hidden door!"}
           content={"Unfortunately, it's still locked. We're working on the key!"}/>

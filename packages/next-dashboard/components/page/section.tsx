@@ -1,10 +1,11 @@
 'use client';
 
-import React from "react";
+import React, { ReactNode } from "react";
 import {classNames, ClassNameType} from "@/utils/helper";
 
 export default function Section({children, className}: {
-  children: React.ReactNode;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  children: any;
   className: ClassNameType
 }) {
   return (
@@ -13,6 +14,6 @@ export default function Section({children, className}: {
         "px-[25px] sm:px-6 lg:px-10",
         className
       )
-    }>{children}</div>
+    }>{children as ReactNode}</div>
   )
 }

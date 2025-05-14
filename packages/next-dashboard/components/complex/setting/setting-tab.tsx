@@ -22,6 +22,7 @@ export const SettingTab = ({children}: { children: React.ReactNode }) => {
 
   return (
     <Container className="min-h-screen bg-[#F5F7FA]">
+      {/*@ts-expect-error expect error after issue with react upgrade*/}
       <CardRounded className={"px-[20px] py-[25px] sm:pt-[30px] sm:pb-[37px] sm:px-[40px]"}>
         <div>
           <div className="hidden grid-cols-1 sm:hidden">

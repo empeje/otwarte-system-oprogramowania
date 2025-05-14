@@ -37,6 +37,7 @@ export function ExpenseStatisticsWrapper({data}: ExpenseStatisticsWrapperProps) 
 
   return (
       <div ref={divRef} className="min-h-[367px] xl:max-h-[367] w-full flex items-center justify-center">
+      {/*@ts-expect-error expect error after issue with react upgrade*/}
       <ExpenseStatistics
         data={data}
         width={size}

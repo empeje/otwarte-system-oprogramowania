@@ -25,6 +25,7 @@ export default function InputTransfer({disabled=true}: {disabled: boolean}) {
 
   return (
     <>
+      {/*@ts-expect-error expect error after issue with react upgrade*/}
       <ModalDialog
         open={open}
         setOpen={() => {

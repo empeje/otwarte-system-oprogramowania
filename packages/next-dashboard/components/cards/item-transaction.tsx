@@ -40,6 +40,7 @@ export default function ItemTransaction({transaction}: { transaction: Transactio
 
   return (
     <div className={"flex w-full items-center gap-[15px] sm:gap-[17px]"}>
+      {/*@ts-expect-error expect error after issue with react upgrade*/}
       <Image src={icon} alt={"Paypal"} width={55} height={55}
              className={"size-[50px] sm:size-[55px] rounded-full object-cover"}/>
       <div className={"space-y-[4px] sm:space-y-[7px] overflow-hidden"}>

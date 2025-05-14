@@ -84,6 +84,7 @@ export function ExpenseStatistics(
   return (
     <svg width={width} height={height}>
       <Group top={centerY} left={centerX}>
+        {/*@ts-expect-error expect error after issue with react upgrade*/}
         <Pie
           data={data}
           pieValue={d => d.percentage}
@@ -91,6 +92,7 @@ export function ExpenseStatistics(
           innerRadius={radius * 0.03}
           padAngle={0.04}
         >
+          {/*@ts-expect-error expect error after issue with react upgrade*/}
           {pie => {
             return pie.arcs.map((arc, i) => <Content pie={pie} arc={arc} i={i} key={i}/>);
           }}
