@@ -85,6 +85,5 @@ export default async function AccountPage() {
         </div>
       </Section>
     </div>
-
   )
 }
