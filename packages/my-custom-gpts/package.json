@@ -1,5 +1,5 @@
 {
-  "name": "gpt-prompt-manager",
+  "name": "my-custom-gpts",
   "version": "1.0.0",
   "description": "A tool to manage Custom GPT prompts and generate documentation",
   "scripts": {
