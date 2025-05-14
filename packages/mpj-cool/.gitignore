@@ -9,3 +9,6 @@ _site
 
 # IDE
 .idea
+
+# Add by force
+_sass/

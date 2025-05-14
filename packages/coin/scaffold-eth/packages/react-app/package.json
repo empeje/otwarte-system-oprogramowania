@@ -96,8 +96,8 @@
     "surge": "cp build/index.html build/200.html && surge ./build",
     "s3": "node ./scripts/s3.js",
     "ship": "yarn surge",
-    "theme": "npx gulp less",
+    "theme": "pnpm dlx gulp less",
     "watch": "node ./scripts/watch.js",
-    "prettier": "npx prettier --write . '!(node_module|build)/**/*'"
+    "prettier": "pnpm dlx prettier --write . '!(node_module|build)/**/*'"
   }
 }

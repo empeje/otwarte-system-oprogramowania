@@ -16,7 +16,7 @@
     "esm": "^3.2.25"
   },
   "scripts": {
-    "mocha": "npx mocha -r esm",
+    "mocha": "pnpm dlx mocha -r esm",
     "test": "pnpm mocha test/**/*.test.js"
   }
 }

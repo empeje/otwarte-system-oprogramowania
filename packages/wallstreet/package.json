@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "build": "webpack",
-    "lint": "npx eslint --fix \"src/**/*.js\" main.js config.js && npx prettier --write \"src/**/*.{js,jsx,}\" main.js config.js",
+    "lint": "pnpm dlx eslint --fix \"src/**/*.js\" main.js config.js && pnpm dlx prettier --write \"src/**/*.{js,jsx,}\" main.js config.js",
     "start": "concurrently --kill-others \"yarn build --watch\" \"electron-forge start\"",
     "package": "electron-forge package",
     "make": "electron-forge make",

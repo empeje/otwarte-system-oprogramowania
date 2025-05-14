@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "A tool to manage Custom GPT prompts and generate documentation",
   "scripts": {
-    "start": "npm run build && npm run preview",
+    "start": "pnpm build && pnpm preview",
     "generate": "node src/generate.mjs",
     "dev": "next dev",
     "build": "next build",
-    "preview": "npx serve out",
-    "lint": "next lint",
-    "prepare": "husky"
+    "preview": "pnpm dlx serve out",
+    "lint": "next lint"
   },
   "keywords": [
     "gpt",

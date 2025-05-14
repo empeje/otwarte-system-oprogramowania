@@ -7,7 +7,7 @@
   "author": "mpj <a.mappuji@gmail.com>",
   "license": "Unlicensed",
   "scripts": {
-    "test": "npx mocha --recursive test"
+    "test": "pnpm dlx mocha --recursive test"
   },
   "devDependencies": {
     "chai": "^4.2.0",
