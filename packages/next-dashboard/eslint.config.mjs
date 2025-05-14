@@ -14,6 +14,7 @@ const eslintConfig = [
   {
     rules: {
       "@typescript-eslint/no-unsafe-declaration-merging": "off",
+      "@next/next/no-duplicate-head": "off",
     },
   },
 ];
