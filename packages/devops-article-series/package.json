@@ -24,6 +24,6 @@
   },
   "homepage": "https://github.com/empeje/devops-article-series#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.22.0"
   }
 }
