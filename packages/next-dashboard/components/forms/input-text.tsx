@@ -13,7 +13,6 @@ type InputType = {
   defaultValue?: string,
 }
 
-// @ts-expect-error expect error after issue with react upgrade
 export const InputText = forwardRef<HTMLInputElement, InputType>((
   {
     label,
