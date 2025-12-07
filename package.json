@@ -39,5 +39,11 @@
     "ncp": "latest",
     "onchange": "^3.3.0",
     "uglify-js": "^3.3.18"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19.1.0",
+      "@types/react-dom": "^19.1.0"
+    }
   }
 }

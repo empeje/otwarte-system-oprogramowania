@@ -33,11 +33,12 @@ export const metadata: Metadata = {
   },
 };
 
-type Props = Readonly<{
+export default function RootLayout({
+  children,
+}: {
   children: React.ReactNode;
-}>
-
-export default function RootLayout({children}: Props) {
+  params: Promise<{}>;
+}) {
   return (
     <html lang="en">
     <body className={`${inter.variable} antialiased h-full bg-white min-w-[375px]`} suppressHydrationWarning={true}>

@@ -1,21 +1,15 @@
 import { NextConfig } from "next";
 
-const isDev = process.env.NODE_ENV === "development";
-
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  experimental: isDev
-    ? {
-      turbo: {
-        rules: {
-          "*.svg": {
-            loaders: ["@svgr/webpack"],
-            as: "*.js",
-          },
-        },
+  turbopack: {
+    rules: {
+      "*.svg": {
+        loaders: ["@svgr/webpack"],
+        as: "*.js",
       },
-    }
-    : {},
+    },
+  },
 
   images: {
     remotePatterns: [
@@ -28,12 +22,10 @@ const nextConfig: NextConfig = {
   },
 
   webpack(config) {
-    if (!isDev) {
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ["@svgr/webpack"],
-      });
-    }
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
     return config;
   },
 };
