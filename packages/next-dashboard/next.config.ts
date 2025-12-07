@@ -4,14 +4,12 @@ const isDev = process.env.NODE_ENV === "development";
 
 /** @type {import('next').NextConfig} */
 const nextConfig: NextConfig = {
-  experimental: isDev
+  turbopack: isDev
     ? {
-      turbo: {
-        rules: {
-          "*.svg": {
-            loaders: ["@svgr/webpack"],
-            as: "*.js",
-          },
+      rules: {
+        "*.svg": {
+          loaders: ["@svgr/webpack"],
+          as: "*.js",
         },
       },
     }
