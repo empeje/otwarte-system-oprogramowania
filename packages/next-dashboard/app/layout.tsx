@@ -33,6 +33,7 @@ export const metadata: Metadata = {
   },
 };
 
+// Using LayoutProps global type from Next.js 16 (.next/types/routes.d.ts)
 export default function RootLayout({
   children,
 }: LayoutProps<"/">) {
