@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <assertj.version>3.27.3</assertj.version>
+        <assertj.version>3.27.7</assertj.version>
         <checkstyle.version>10.16.0</checkstyle.version>
         <error-prone.version>2.36.0</error-prone.version>
         <flyway-maven-plugin.version>3.0</flyway-maven-plugin.version>
