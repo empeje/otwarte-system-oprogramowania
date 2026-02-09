@@ -34,7 +34,7 @@
     "css-loader": "^5.0.0",
     "electron": "^35.7.5",
     "elm-webpack-loader": "^7.0.1",
-    "eslint": "^7.11.0",
+    "eslint": "^9.26.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.1",
     "file-loader": "^6.1.1",
