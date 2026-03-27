@@ -52,7 +52,7 @@
     "bootstrap": "^4.5.3",
     "electron-squirrel-startup": "^1.0.0",
     "font-awesome": "^4.7.0",
-    "handlebars": "^4.7.6",
+    "handlebars": "^4.7.9",
     "handlebars-loader": "^1.7.1"
   },
   "config": {
