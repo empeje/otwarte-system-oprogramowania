@@ -11009,8 +11009,8 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  follow-redirects@1.15.11:
-    resolution: {integrity: sha512-deG2P0JfjrTxl50XGCDyfI97ZGVCxIpfKYmfyrQ54n5FO/0gfIES8C/Psl6kWVDolizcaaxZJnTS0QSMxvnsBQ==}
+  follow-redirects@1.15.9:
+    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -11018,8 +11018,8 @@ packages:
       debug:
         optional: true
 
-  follow-redirects@1.15.9:
-    resolution: {integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==}
+  follow-redirects@1.16.0:
+    resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -28550,7 +28550,7 @@ snapshots:
 
   axios@1.15.0:
     dependencies:
-      follow-redirects: 1.15.11(debug@4.4.1)
+      follow-redirects: 1.16.0(debug@4.4.1)
       form-data: 4.0.5
       proxy-from-env: 2.1.0
     transitivePeerDependencies:
@@ -28558,7 +28558,7 @@ snapshots:
 
   axios@1.4.0:
     dependencies:
-      follow-redirects: 1.15.11(debug@4.4.1)
+      follow-redirects: 1.16.0(debug@4.4.1)
       form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -30147,7 +30147,7 @@ snapshots:
 
   centra@2.7.0(debug@4.4.1):
     dependencies:
-      follow-redirects: 1.15.11(debug@4.4.1)
+      follow-redirects: 1.16.0(debug@4.4.1)
     transitivePeerDependencies:
       - debug
 
@@ -35580,10 +35580,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  follow-redirects@1.15.11(debug@4.4.1):
-    optionalDependencies:
-      debug: 4.4.1(supports-color@5.5.0)
-
   follow-redirects@1.15.9(debug@3.2.7):
     optionalDependencies:
       debug: 3.2.7(supports-color@5.5.0)
@@ -35599,6 +35595,10 @@ snapshots:
   follow-redirects@1.15.9(debug@4.4.3):
     optionalDependencies:
       debug: 4.4.3(supports-color@6.1.0)
+
+  follow-redirects@1.16.0(debug@4.4.1):
+    optionalDependencies:
+      debug: 4.4.1(supports-color@5.5.0)
 
   follow-redirects@1.5.10:
     dependencies:
