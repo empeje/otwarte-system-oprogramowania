@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@twa-dev/sdk": "^6.9.1",
-    "axios": "^1.15.0",
+    "axios": "^1.15.2",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0"
