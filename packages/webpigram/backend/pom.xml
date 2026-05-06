@@ -39,7 +39,7 @@
         <maven-checkstyle-plugin.version>3.3.1</maven-checkstyle-plugin.version>
         <maven-compiler-plugin.version>3.14.0</maven-compiler-plugin.version>
         <nullaway.version>0.12.4</nullaway.version>
-        <postgresql.version>42.7.7</postgresql.version>
+        <postgresql.version>42.7.11</postgresql.version>
         <sortpom-maven-plugin.version>3.4.0</sortpom-maven-plugin.version>
         <spotless-maven-plugin.version>2.44.3</spotless-maven-plugin.version>
         <spring-boot.version>3.4.3</spring-boot.version>
