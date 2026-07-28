@@ -675,7 +675,7 @@ importers:
         specifier: ^9.1.7
         version: 9.1.7
       postcss:
-        specifier: ^8.5.18
+        specifier: ^8.5.19
         version: 8.5.24
       serve:
         specifier: ^14.2.1
@@ -776,7 +776,7 @@ importers:
         version: 29.7.0(bufferutil@4.0.9)(utf-8-validate@5.0.10)
       postcss:
         specifier: ^8
-        version: 8.5.18
+        version: 8.5.19
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.17(ts-node@10.9.1(@swc/core@1.5.29(@swc/helpers@0.5.23))(@types/node@20.17.47)(typescript@5.7.3))
@@ -796,7 +796,7 @@ importers:
         specifier: ^4.18.1
         version: 4.18.1
       postcss:
-        specifier: ^8.5.18
+        specifier: ^8.5.19
         version: 8.5.24
       vite:
         specifier: ^4.0.0
@@ -897,7 +897,7 @@ importers:
         specifier: ^13.0.3
         version: 13.3.0(enquirer@2.4.1)
       postcss:
-        specifier: ^8.5.18
+        specifier: ^8.5.19
         version: 8.5.24
       prettier:
         specifier: ^2.8.7
@@ -16594,8 +16594,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.5.18:
-    resolution: {integrity: sha512-xdB1oSLHbz1vRWgCDalrCqEFTWzFlhqFC5tIHLMOSUIjhm3XXQ1qrFy8S/ESr1JYRRXqM3c1QFiMZUJdUTqyMQ==}
+  postcss@8.5.19:
+    resolution: {integrity: sha512-Mz8SaolMd8nB+G13WkORcxQKHZ/NE4xXevtkJHVuG+guo9/wYKlIMTKAqGdEmYOXR2ijPjTYNHssizdaVSUNdQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.5.24:
@@ -44711,7 +44711,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.5.18:
+  postcss@8.5.19:
     dependencies:
       nanoid: 3.3.16
       picocolors: 1.1.1
