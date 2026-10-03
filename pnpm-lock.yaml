@@ -787,8 +787,8 @@ importers:
   packages/php-laravel-enlightn:
     devDependencies:
       axios:
-        specifier: ^1.18.1
-        version: 1.18.1
+        specifier: ^1.20.0
+        version: 1.20.0
       laravel-vite-plugin:
         specifier: ^0.7.2
         version: 0.7.8(vite@4.5.14(@types/node@26.1.2)(terser@5.46.0))
@@ -845,8 +845,8 @@ importers:
         specifier: ^6.9.1
         version: 6.9.2(react@18.2.0)
       axios:
-        specifier: ^1.18.1
-        version: 1.18.1
+        specifier: ^1.20.0
+        version: 1.20.0
       next:
         specifier: latest
         version: 16.3.8(@babel/core@7.29.7)(@types/node@18.11.3)(babel-plugin-macros@3.1.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -6960,8 +6960,8 @@ packages:
   axios@0.21.4:
     resolution: {integrity: sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==}
 
-  axios@1.18.1:
-    resolution: {integrity: sha512-3nTvFlvpn9Zu/RkHUqtc7/+al4UpRW5az71ap5zccp6e8RAYEzhMTecX8Dz1wWDYrPpUoB1HAQEGEAEvUr7S9g==}
+  axios@1.20.0:
+    resolution: {integrity: sha512-r8aOh8j9cGKpgQAqpzrUHnSIc6a59Y3Xf/cv8sy1DrHCkZHzQGEuoq1tARk6qSyDdtQGSDgpb9kFlruzPvrgwg==}
 
   axios@1.4.0:
     resolution: {integrity: sha512-S4XCWMEmzvo64T9GfvQDOXgYRDJ/wsSZc7Jvdgx5u1sd0JwsuPLqb3SYmusag+edF6ziyMensPVqLTSc1PiSEA==}
@@ -11316,6 +11316,15 @@ packages:
 
   follow-redirects@1.16.0:
     resolution: {integrity: sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==}
+    engines: {node: '>=4.0'}
+    peerDependencies:
+      debug: '*'
+    peerDependenciesMeta:
+      debug:
+        optional: true
+
+  follow-redirects@1.16.1:
+    resolution: {integrity: sha512-FNvFGzoMLWmE6Yj9spb/zjd7yiNCHiAW9/Tg9CXrQ8wuu32HtlJOwWO11OJafl5FfY3DxTdQ0vj42zU1kvv5jg==}
     engines: {node: '>=4.0'}
     peerDependencies:
       debug: '*'
@@ -26600,8 +26609,8 @@ snapshots:
   '@nx/key@1.3.3':
     dependencies:
       '@napi-rs/wasm-runtime': 0.2.9
-      axios: 1.18.1
-      axios-retry: 4.5.0(axios@1.18.1)
+      axios: 1.20.0
+      axios-retry: 4.5.0(axios@1.20.0)
       chalk: 4.1.2
       enquirer: 2.4.1
       ora: 5.4.1
@@ -29974,9 +29983,9 @@ snapshots:
 
   axe-core@4.10.3: {}
 
-  axios-retry@4.5.0(axios@1.18.1):
+  axios-retry@4.5.0(axios@1.20.0):
     dependencies:
-      axios: 1.18.1
+      axios: 1.20.0
       is-retry-allowed: 2.2.0
 
   axios@0.18.1:
@@ -30004,9 +30013,9 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  axios@1.18.1:
+  axios@1.20.0:
     dependencies:
-      follow-redirects: 1.16.0(debug@4.4.1)
+      follow-redirects: 1.16.1(debug@4.4.1)
       form-data: 4.0.6
       https-proxy-agent: 5.0.1
       proxy-from-env: 2.1.0
@@ -30016,7 +30025,7 @@ snapshots:
 
   axios@1.4.0:
     dependencies:
-      follow-redirects: 1.16.0(debug@4.4.1)
+      follow-redirects: 1.16.1(debug@4.4.1)
       form-data: 4.0.6
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
@@ -31675,7 +31684,7 @@ snapshots:
 
   centra@2.7.0(debug@4.4.1):
     dependencies:
-      follow-redirects: 1.16.0(debug@4.4.1)
+      follow-redirects: 1.16.1(debug@4.4.1)
     transitivePeerDependencies:
       - debug
 
@@ -35788,7 +35797,7 @@ snapshots:
   eth-gas-reporter@0.2.27(bufferutil@4.0.9)(utf-8-validate@5.0.10):
     dependencies:
       '@solidity-parser/parser': 0.14.5
-      axios: 1.18.1
+      axios: 1.20.0
       cli-table3: 0.5.1
       colors: 1.4.0
       ethereum-cryptography: 1.2.0
@@ -37170,13 +37179,17 @@ snapshots:
     optionalDependencies:
       debug: 3.2.7(supports-color@5.5.0)
 
-  follow-redirects@1.16.0(debug@4.4.1):
+  follow-redirects@1.16.0(debug@4.4.3(supports-color@6.1.0)):
     optionalDependencies:
-      debug: 4.4.1(supports-color@5.5.0)
+      debug: 4.4.3(supports-color@6.1.0)
 
   follow-redirects@1.16.0(debug@4.4.3):
     optionalDependencies:
       debug: 4.4.3(supports-color@6.1.0)
+
+  follow-redirects@1.16.1(debug@4.4.1):
+    optionalDependencies:
+      debug: 4.4.1(supports-color@5.5.0)
 
   follow-redirects@1.5.10:
     dependencies:
@@ -39218,7 +39231,7 @@ snapshots:
   http-proxy@1.18.1:
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.16.0(debug@4.4.1)
+      follow-redirects: 1.16.0(debug@4.4.3)
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -39234,7 +39247,7 @@ snapshots:
   http-proxy@1.18.1(debug@4.4.3(supports-color@6.1.0)):
     dependencies:
       eventemitter3: 4.0.7
-      follow-redirects: 1.16.0(debug@4.4.3)
+      follow-redirects: 1.16.0(debug@4.4.3(supports-color@6.1.0))
       requires-port: 1.0.0
     transitivePeerDependencies:
       - debug
@@ -43282,7 +43295,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.3
       '@zkochan/js-yaml': 0.0.6
-      axios: 1.18.1
+      axios: 1.20.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -43335,7 +43348,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.0-rc.46
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.18.1
+      axios: 1.20.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -43387,7 +43400,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.18.1
+      axios: 1.20.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
@@ -43440,7 +43453,7 @@ snapshots:
       '@yarnpkg/lockfile': 1.1.0
       '@yarnpkg/parsers': 3.0.2
       '@zkochan/js-yaml': 0.0.7
-      axios: 1.18.1
+      axios: 1.20.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
       cli-spinners: 2.6.1
